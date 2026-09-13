@@ -89,7 +89,7 @@
 <h2>☕ Coffee</h2>
 </br>
 <a href="https://buymeacoffee.com/0xbabyalien">
-  <img src="https://img.shields.io/badge/​buymeacoffee-%23000000.svg?style=for-the-badge&logo=buymeacoffee&logoColor=yellow" alt="Buy me a Coffee">
+  <img src="https://img.shields.io/badge/​givecoffee-%23000000.svg?style=for-the-badge&logo=buymeacoffee&logoColor=yellow" alt="BuyMeACoffee">
 </a>
 <a href="https://www.sayecho.xyz/tip/cmcxeqr7x00axjp04nww1i6hb">
   <img src="https://img.shields.io/badge/​SayEcho-%23000000.svg?style=for-the-badge&logo=tablecheck&logoColor=%23E6A8B8" alt="SayEcho">
