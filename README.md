@@ -68,7 +68,7 @@
   <img src="https://img.shields.io/badge/Dune-%23000000.svg?style=for-the-badge&logo=dinersclub&logoColor=orange" alt="Dune">
 </a>
 <a href="https://coinmarketcap.com/community/profile/0xBabyAlien/">
-  <img src="https://img.shields.io/badge/CoinMarketCap-%23000000.svg?style=for-the-badge&logo=CoinMarketCap&logoColor=blue" alt="CoinMarketCap">
+  <img src="https://img.shields.io/badge/CoinMarketCap-%23000000.svg?style=for-the-badge&logo=CoinMarketCap&logoColor=%233861FB" alt="CoinMarketCap">
 </a>
 <a href="https://mirror.xyz/0x228aD3b30a809e7d410fdC9845aeCA5c21bbeC0d">
   <img src="https://img.shields.io/badge/Mirror-%23000000.svg?style=for-the-badge&logo=namebase&logoColor=blue" alt="Mirror">
@@ -80,12 +80,19 @@
   <img src="https://img.shields.io/badge/Vercel-%23000000.svg?style=for-the-badge&logo=Vercel&logoColor=white" alt="Vercel">
 </a>
 
+
+
+
+
 </br>
 </br>
 <h2>☕ Coffee</h2>
 </br>
+<a href="https://buymeacoffee.com/0xbabyalien">
+  <img src="https://img.shields.io/badge/​buymeacoffee-%23000000.svg?style=for-the-badge&logo=buymeacoffee&logoColor=yellow" alt="Buy me a Coffee">
+</a>
 <a href="https://www.sayecho.xyz/tip/cmcxeqr7x00axjp04nww1i6hb">
-  <img src="https://img.shields.io/badge/​SayEcho-%23000000.svg?style=for-the-badge&logo=buymeacoffee&logoColor=saddlebrown" alt="SayEcho">
+  <img src="https://img.shields.io/badge/​SayEcho-%23000000.svg?style=for-the-badge&logo=tablecheck&logoColor=%23E6A8B8" alt="SayEcho">
 </a>
 <a href="https://base.app/pay-request?EIP681Link=ethereum%3A0x228ad3b30a809e7d410fdc9845aeca5c21bbec0d%408453%3Fvalue%3D203737e10">
   <img src="https://img.shields.io/badge/​BaseApp-%23000000.svg?style=for-the-badge&logo=Ethereum&logoColor=blue" alt="Coinbase">
@@ -101,7 +108,7 @@
 </a>
 
 <a href="https://www.paypal.me/0xbabyalien">
-    <img src="https://img.shields.io/badge/Paypal-%23000000.svg?style=for-the-badge&logo=Paypal&logoColor=mediumblue" alt="Paypal">
+    <img src="https://img.shields.io/badge/Paypal-%23000000.svg?style=for-the-badge&logo=Paypal&logoColor=%23003087" alt="Paypal">
 </a>
 </br></br>
 <a href="#"><img src="x/1500x500px.jpg" alt="Banner"></a>
