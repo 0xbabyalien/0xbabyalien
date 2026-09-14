@@ -88,7 +88,7 @@
   <img src="https://img.shields.io/badge/​givecoffee-%23000000.svg?style=for-the-badge&logo=buymeacoffee&logoColor=yellow" alt="BuyMeACoffee">
 </a>
 <a href="https://ko-fi.com/0xbabyalien">
-  <img src="https://img.shields.io/badge/​Kofi-%23000000.svg?style=for-the-badge&logo=ko-fi&logoColor=lowpink" alt="Kofi">
+  <img src="https://img.shields.io/badge/​Kofi-%23000000.svg?style=for-the-badge&logo=ko-fi&logoColor=%23FF5E5B" alt="Kofi">
 </a>
 <a href="https://app.handlpay.com/pay/tw/0xbabyalien">
   <img src="https://img.shields.io/badge/​HandlPay-%23000000.svg?style=for-the-badge&logo=flickr&logoColor=orange" alt="Handlpay">
