@@ -80,16 +80,18 @@
   <img src="https://img.shields.io/badge/Vercel-%23000000.svg?style=for-the-badge&logo=Vercel&logoColor=white" alt="Vercel">
 </a>
 
-
-
-
-
 </br>
 </br>
 <h2>☕ Coffee</h2>
 </br>
 <a href="https://buymeacoffee.com/0xbabyalien">
   <img src="https://img.shields.io/badge/​givecoffee-%23000000.svg?style=for-the-badge&logo=buymeacoffee&logoColor=yellow" alt="BuyMeACoffee">
+</a>
+<a href="https://ko-fi.com/0xbabyalien">
+  <img src="https://img.shields.io/badge/​Kofi-%23000000.svg?style=for-the-badge&logo=ko-fi&logoColor=lowpink" alt="Kofi">
+</a>
+<a href="https://app.handlpay.com/pay/tw/0xbabyalien">
+  <img src="https://img.shields.io/badge/​HandlPay-%23000000.svg?style=for-the-badge&logo=flickr&logoColor=orange" alt="Handlpay">
 </a>
 <a href="https://www.sayecho.xyz/tip/cmcxeqr7x00axjp04nww1i6hb">
   <img src="https://img.shields.io/badge/​SayEcho-%23000000.svg?style=for-the-badge&logo=tablecheck&logoColor=%23E6A8B8" alt="SayEcho">
