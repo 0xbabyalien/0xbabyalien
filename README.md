@@ -43,6 +43,10 @@
 <a href="#">
   <img src="https://img.shields.io/badge/Blog-%23000000.svg?style=for-the-badge&logo=Blogger&logoColor=orange" alt="Blog">
 </a>
+<a href="https://paragraph.com/@0xbabyalien">
+  <img src="https://img.shields.io/badge/Paragraph-%23000000.svg?style=for-the-badge&logo=paragraph&logoColor=white" alt="Paragraph">
+</a>
+
 
 </br>
 </br>
@@ -73,7 +77,7 @@
 <a href="https://coinmarketcap.com/community/profile/0xBabyAlien/">
   <img src="https://img.shields.io/badge/CoinMarketCap-%23000000.svg?style=for-the-badge&logo=CoinMarketCap&logoColor=%233861FB" alt="CoinMarketCap">
 </a>
-<a href="https://mirror.xyz/0x228aD3b30a809e7d410fdC9845aeCA5c21bbeC0d">
+<a href="https://paragraph.com/@0xbabyalien">
   <img src="https://img.shields.io/badge/Mirror-%23000000.svg?style=for-the-badge&logo=namebase&logoColor=blue" alt="Mirror">
 </a>
 <a href="https://debank.com/profile/0x228ad3b30a809e7d410fdc9845aeca5c21bbec0d/">
