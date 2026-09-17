@@ -25,6 +25,9 @@
 <a href="https://medium.com/@0xBabyAlien">
   <img src="https://img.shields.io/badge/Medium-%23000000.svg?style=for-the-badge&logo=Medium&logoColor=white" alt="Medium">
 </a>
+<a href="https://0xbabyalien.notion.site/">
+  <img src="https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white" alt="Notion">
+</a>
 <a href="https://www.youtube.com/@0xbabyalien">
   <img src="https://img.shields.io/badge/YouTube-%23000000.svg?style=for-the-badge&logo=YouTube&logoColor=red" alt="Youtube">
 </a>
