@@ -135,6 +135,7 @@
 </picture>
 </br>
 <!-- DAILY_QUOTE:START -->
+> 
 <!-- DAILY_QUOTE:END -->
 <br/>
 <a href="#"><img src="x/1500x500.jpeg"></a>
