@@ -1,0 +1,43 @@
+name: Update WakaTime Stats
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    name: Update WakaTime Stats in README
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update Readme with WakaTime Graph
+        run: |
+          python3 - << 'EOF'
+          import re
+
+          graph_url = "https://github-readme-activity-graph.vercel.app/graph?username=0xBabyalien&theme=tokyonight&hide_border=true&area=true"
+          
+          with open('README.md', 'r', encoding='utf-8') as f:
+              content = f.read()
+
+          pattern = r'<!-- WAKATIME_GRAPH:START -->[\s\S]*?<!-- WAKATIME_GRAPH:END -->'
+          
+          formatted_text = f'<!-- WAKATIME_GRAPH:START -->\n<center>\n  <img src="{graph_url}" alt="Activity Graph" />\n</center>\n<!-- WAKATIME_GRAPH:END -->'
+
+          if re.search(pattern, content):
+              new_content = re.sub(pattern, formatted_text, content)
+          else:
+              new_content = content + f'\n{formatted_text}\n'
+
+          with open('README.md', 'w', encoding='utf-8') as f:
+              f.write(new_content)
+          EOF
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --staged --quiet || (git commit -m "chore: update wakatime activity graph" && git push)
