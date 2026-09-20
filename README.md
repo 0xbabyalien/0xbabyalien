@@ -138,7 +138,7 @@
 <hr class="cyberpunk glitched" />
 </br>
 <!-- DAILY_QUOTE:START -->
-> "Just because you are happy it does not mean that the day is perfect but that you have looked beyond its imperfections. — Bob Marley"
+Everybody needs a passion. That's what keeps life interesting. — <font color="#808080">Betty White</font>
 <!-- DAILY_QUOTE:END -->
 
 </center>
