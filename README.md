@@ -136,7 +136,6 @@
 <br/>
 <a href="#"><img src="x/1500x500.jpeg"></a>
 <hr class="cyberpunk glitched" />
-</br>
 <!-- DAILY_QUOTE:START -->
 Everybody needs a passion. That's what keeps life interesting. — <font color="#808080">Betty White</font>
 <!-- DAILY_QUOTE:END -->
