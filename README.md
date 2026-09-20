@@ -137,7 +137,6 @@
 <a href="#"><img src="x/1500x500.jpeg"></a>
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
-<center><font color="#0c7ec9">Go confidently in the direction of your dreams! Live the life you've imagined.</font><br/>— <font color="#064c7a">Henry David Thoreau</font></center>
 <!-- DAILY_QUOTE:END -->
 
 </center>
