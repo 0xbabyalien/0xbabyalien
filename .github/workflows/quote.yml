@@ -16,18 +16,23 @@ jobs:
 
       - name: Fetch Quote and Update README
         run: |
-          QUOTE_TEXT=$(curl -s https://zenquotes.io/api/random | jq -r '.[0].q + " — " + .[0].a')
-          echo "Quote fetched: $QUOTE_TEXT"
+          RAW_DATA=$(curl -s https://zenquotes.io/api/random)
+          QUOTE_ONLY=$(echo "$RAW_DATA" | jq -r '.[0].q')
+          AUTHOR_ONLY=$(echo "$RAW_DATA" | jq -r '.[0].a')
           
           python3 -c "
           import re
           
-          quote = '''$QUOTE_TEXT'''
+          quote = '''$QUOTE_ONLY'''
+          author = '''$AUTHOR_ONLY'''
+          
           with open('README.md', 'r') as f:
               content = f.read()
           
           pattern = r'<!-- DAILY_QUOTE:START -->[\s\S]*?<!-- DAILY_QUOTE:END -->'
-          replacement = f'<!-- DAILY_QUOTE:START -->\n> \"{quote}\"\n<!-- DAILY_QUOTE:END -->'
+          
+          formatted_text = f'{quote} — <font color=\"#808080\">{author}</font>'
+          replacement = f'<!-- DAILY_QUOTE:START -->\n{formatted_text}\n<!-- DAILY_QUOTE:END -->'
           
           new_content = re.sub(pattern, replacement, content)
           
@@ -37,4 +42,4 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git diff --staged --quiet || (git commit -m "chore: update daily quote" && git push)
+          git diff --staged --quiet || (git commit -m "chore: update styled daily quote" && git push)
