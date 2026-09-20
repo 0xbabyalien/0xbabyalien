@@ -31,7 +31,7 @@ jobs:
           
           pattern = r'<!-- DAILY_QUOTE:START -->[\s\S]*?<!-- DAILY_QUOTE:END -->'
           
-          formatted_text = f'{quote} — <font color=\"#808080\">{author}</font>'
+          formatted_text = f'<font color=\"#0c7ec9\">{quote}</font> — <font color=\"#064c7a\">{author}</font>'
           replacement = f'<!-- DAILY_QUOTE:START -->\n{formatted_text}\n<!-- DAILY_QUOTE:END -->'
           
           new_content = re.sub(pattern, replacement, content)
