@@ -14,20 +14,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch and Update Quote
+      - name: Fetch Quote and Update README
         run: |
-          QUOTE=$(curl -s "https://zenquotes.io/api/random" | jq -r '.[0].q + " — *" + .[0].a + "*"')
-          python -c "
+          QUOTE_TEXT=$(curl -s https://zenquotes.io/api/random | jq -r '.[0].q + " — " + .[0].a')
+          echo "Quote fetched: $QUOTE_TEXT"
+          
+          python3 -c "
+          import re
+          
+          quote = '''$QUOTE_TEXT'''
           with open('README.md', 'r') as f:
               content = f.read()
           
-          start = '<!-- DAILY_QUOTE:START -->'
-          end = '<!-- DAILY_QUOTE:END -->'
+          pattern = r'<!-- DAILY_QUOTE:START -->[\s\S]*?<!-- DAILY_QUOTE:END -->'
+          replacement = f'<!-- DAILY_QUOTE:START -->\n> \"{quote}\"\n<!-- DAILY_QUOTE:END -->'
           
-          if start in content and end in content:
-              new_content = content.split(start)[0] + start + '\n> ' + '''$QUOTE''' + '\n' + end + content.split(end)[1]
-              with open('README.md', 'w') as f:
-                  f.write(new_content)
+          new_content = re.sub(pattern, replacement, content)
+          
+          with open('README.md', 'w') as f:
+              f.write(new_content)
           "
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
