@@ -13,7 +13,6 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - uses: gautamkrishnar/blog-post-workflow@v1
+      - uses: alexandresanlim/readme-daily-quotes@master
         with:
-          comment_tag_name: DAILY_QUOTE
-          feed_list: "https://zenquotes.io/api/atom"
+          quote_type: quotes
