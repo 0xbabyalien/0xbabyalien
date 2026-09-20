@@ -135,6 +135,9 @@
 </picture>
 <br/>
 <!-- WAKATIME_GRAPH:START -->
+<center>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=0xBabyalien&theme=tokyonight&hide_border=true&area=true" alt="Activity Graph" />
+</center>
 <!-- WAKATIME_GRAPH:END -->
 <br/>
 <a href="#"><img src="x/1500x500.jpeg"></a>
