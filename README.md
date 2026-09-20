@@ -134,9 +134,8 @@
   <img alt="github-snake" src="assets/github-contribution-grid-snake.svg" />
 </picture>
 </br>
-<!-- DAILY_QUOTE:START -->
-<!-- DAILY_QUOTE:END -->
-
+<!--DAILY_QUOTE:START-->
+<!--DAILY_QUOTE:END-->
 <br/>
 <a href="#"><img src="x/1500x500.jpeg"></a>
 <hr class="cyberpunk glitched" />
