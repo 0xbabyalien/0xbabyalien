@@ -13,6 +13,7 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - uses: alexandresanlim/readme-daily-quotes@master
+      - uses: gautamkrishnar/blog-post-workflow@v1
         with:
-          quote_type: quotes
+          comment_tag_name: DAILY_QUOTE
+          feed_list: "https://quotes.rest/qod.rss"
