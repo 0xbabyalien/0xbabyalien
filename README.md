@@ -134,6 +134,9 @@
   <img alt="github-snake" src="assets/github-contribution-grid-snake.svg" />
 </picture>
 <br/>
+<!-- WAKATIME_GRAPH:START -->
+<!-- WAKATIME_GRAPH:END -->
+<br/>
 <a href="#"><img src="x/1500x500.jpeg"></a>
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
