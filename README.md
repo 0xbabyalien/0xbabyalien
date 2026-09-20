@@ -133,7 +133,9 @@
   <source media="(prefers-color-scheme: light)" srcset="assets/github-contribution-grid-snake.svg" />
   <img alt="github-snake" src="assets/github-contribution-grid-snake.svg" />
 </picture>
-
+</br>
+<!-- DAILY_QUOTE:START -->
+<!-- DAILY_QUOTE:END -->
 
 <br/>
 <a href="#"><img src="x/1500x500.jpeg"></a>
