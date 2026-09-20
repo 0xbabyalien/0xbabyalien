@@ -137,6 +137,7 @@
 <a href="#"><img src="x/1500x500.jpeg"></a>
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
+<font color="#0c7ec9">Far more crucial than what we know or do not know is what we do not want to know.</font> — <font color="#064c7a">Eric Hoffer</font>
 <!-- DAILY_QUOTE:END -->
 
 </center>
