@@ -19,7 +19,7 @@ jobs:
           python3 - << 'EOF'
           import re
 
-          graph_url = "https://github-readme-activity-graph.vercel.app/graph?username=0xBabyalien&theme=tokyonight&hide_border=true&area=true"
+          graph_url = "https://github-readme-activity-graph.vercel.app/graph?username=0xbabyalien&theme=tokyonight&hide_border=true&area=true"
           
           with open('README.md', 'r', encoding='utf-8') as f:
               content = f.read()
