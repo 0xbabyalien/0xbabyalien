@@ -9,6 +9,8 @@ jobs:
   update-readme:
     name: Update Readme with Daily Quote
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: gautamkrishnar/blog-post-workflow@v1
