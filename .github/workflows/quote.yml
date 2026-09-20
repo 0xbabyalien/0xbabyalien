@@ -13,7 +13,23 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - uses: gautamkrishnar/blog-post-workflow@v1
-        with:
-          comment_tag_name: DAILY_QUOTE
-          feed_list: "https://quotes.rest/qod.rss"
+
+      - name: Fetch and Update Quote
+        run: |
+          QUOTE=$(curl -s "https://zenquotes.io/api/random" | jq -r '.[0].q + " — *" + .[0].a + "*"')
+          python -c "
+          with open('README.md', 'r') as f:
+              content = f.read()
+          
+          start = '<!-- DAILY_QUOTE:START -->'
+          end = '<!-- DAILY_QUOTE:END -->'
+          
+          if start in content and end in content:
+              new_content = content.split(start)[0] + start + '\n> ' + '''$QUOTE''' + '\n' + end + content.split(end)[1]
+              with open('README.md', 'w') as f:
+                  f.write(new_content)
+          "
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --staged --quiet || (git commit -m "chore: update daily quote" && git push)
