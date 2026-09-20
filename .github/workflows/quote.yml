@@ -19,26 +19,31 @@ jobs:
           RAW_DATA=$(curl -s https://zenquotes.io/api/random)
           QUOTE_ONLY=$(echo "$RAW_DATA" | jq -r '.[0].q')
           AUTHOR_ONLY=$(echo "$RAW_DATA" | jq -r '.[0].a')
-          
-          python3 -c "
+
+          export QUOTE_TEXT="$QUOTE_ONLY"
+          export AUTHOR_TEXT="$AUTHOR_ONLY"
+
+          python3 - << 'EOF'
+          import os
           import re
-          
-          quote = '''$QUOTE_ONLY'''
-          author = '''$AUTHOR_ONLY'''
-          
-          with open('README.md', 'r') as f:
+
+          quote = os.environ.get('QUOTE_TEXT', '')
+          author = os.environ.get('AUTHOR_TEXT', '')
+
+          with open('README.md', 'r', encoding='utf-8') as f:
               content = f.read()
-          
+
           pattern = r'<!-- DAILY_QUOTE:START -->[\s\S]*?<!-- DAILY_QUOTE:END -->'
-          
-          formatted_text = '🗯 Daily Quote :\n<center>$$\\color{#0c7ec9}{\\text{' + quote + '}}$$<br/>— $$\\color{#808080}{\\text{' + author + '}}$$</center>'
-          replacement = '<!-- DAILY_QUOTE:START -->\n' + formatted_text + '\n<!-- DAILY_QUOTE:END -->'
-          
+
+          formatted_text = f'🗯 Daily Quote :\n<center><font color="#0c7ec9">{quote}</font><br/>— <font color="#808080">{author}</font></center>'
+          replacement = f'<!-- DAILY_QUOTE:START -->\n{formatted_text}\n<!-- DAILY_QUOTE:END -->'
+
           new_content = re.sub(pattern, replacement, content)
-          
-          with open('README.md', 'w') as f:
+
+          with open('README.md', 'w', encoding='utf-8') as f:
               f.write(new_content)
-          "
+          EOF
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md
