@@ -135,7 +135,7 @@
 </picture>
 </br>
 <!-- DAILY_QUOTE:START -->
-> ""
+> "Just because you are happy it does not mean that the day is perfect but that you have looked beyond its imperfections. — Bob Marley"
 <!-- DAILY_QUOTE:END -->
 <br/>
 <a href="#"><img src="x/1500x500.jpeg"></a>
