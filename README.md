@@ -138,7 +138,7 @@
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Keep pushing forward, every step matters.</font><br/>— <font color="#808080">System</font></center>
+<center><font color="#0c7ec9">Be mindful. Be grateful. Be positive. Be true. Be kind.</font><br/>— <font color="#808080">Roy T. Bennett</font></center>
 <!-- DAILY_QUOTE:END -->
 
 </center>
