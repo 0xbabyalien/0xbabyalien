@@ -1,25 +1,35 @@
 from datetime import datetime, timezone
 from pathlib import Path
 
+readme_path = Path("README.md")
+
 now = datetime.now(timezone.utc)
 date = now.strftime("%Y-%m-%d")
 time = now.strftime("%H:%M:%S UTC")
 
-readme = Path("README.md")
-content = readme.read_text(encoding="utf-8")
+readme = readme_path.read_text(encoding="utf-8")
 
-marker = "<!-- STAT -->"
+start_marker = "<!-- STAT_START -->"
+end_marker = "<!-- STAT_END -->"
 
-new_stat = f"""<!-- STAT -->
-Last updated: {date} {time}
+start_index = readme.find(start_marker)
+end_index = readme.find(end_marker)
+
+if start_index == -1 or end_index == -1:
+    raise ValueError("STAT_START or STAT_END marker was not found in README.md")
+
+if end_index <= start_index:
+    raise ValueError("STAT_END appears before STAT_START")
+
+new_content = (
+    readme[:start_index + len(start_marker)]
+    + f"""
+📅 Daily commits: 1
+🖥 Last update: {date} {time}
 """
+    + readme[end_index:]
+)
 
-if marker in content:
-    before = content.split(marker)[0]
-    content = before + new_stat
-else:
-    content += f"\n\n{new_stat}"
+readme_path.write_text(new_content, encoding="utf-8")
 
-readme.write_text(content, encoding="utf-8")
-
-print(f"README.md updated on {date} at {time}")
+print(f"README.md updated successfully on {date} at {time}")
