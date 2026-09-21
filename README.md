@@ -127,13 +127,17 @@
 <a href="#"><img src="x/1500x500px.jpg" alt="Banner"></a>
 </br>
 
-<h2>📊 Stats</h2> <br/>
+<h2>📊 Stats</h2>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/github-contribution-grid-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="assets/github-contribution-grid-snake.svg" />
   <img alt="github-snake" src="assets/github-contribution-grid-snake.svg" />
 </picture>
-<br/>
+<!-- STAT_START -->
+Daily commits: ...
+Last update: ...
+<!-- STAT_END -->
+<br/><br/>
 <a href="#"><img src="x/1500x500.jpeg"></a>
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
