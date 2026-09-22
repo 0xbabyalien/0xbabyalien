@@ -142,7 +142,7 @@
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">In youth we run into difficulties. In old age difficulties run into us.</font><br/>— <font color="#808080">Beverly Sills</font></center>
+<center><font color="#0c7ec9">To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.</font><br/>— <font color="#808080">Ralph Waldo Emerson</font></center>
 <!-- DAILY_QUOTE:END -->
 
 </center>
