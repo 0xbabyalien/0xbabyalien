@@ -142,7 +142,7 @@
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.</font><br/>— <font color="#808080">Ralph Waldo Emerson</font></center>
+<center><font color="#0c7ec9">Too many of us are not living our dreams because we are living our fears.</font><br/>— <font color="#808080">Les Brown</font></center>
 <!-- DAILY_QUOTE:END -->
 
 </center>
