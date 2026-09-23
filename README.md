@@ -50,7 +50,9 @@
 <a href="https://paragraph.com/@0xbabyalien">
   <img src="https://img.shields.io/badge/Paragraph-%23000000.svg?style=for-the-badge&logo=paragraph&logoColor=white" alt="Paragraph">
 </a>
-
+<a href="https://0xbabyalien.vercel.app/">
+  <img src="https://img.shields.io/badge/Vercel-%23000000.svg?style=for-the-badge&logo=Vercel&logoColor=white" alt="Vercel">
+</a>
 
 </br>
 </br>
@@ -74,6 +76,12 @@
 <a href="https://app.binance.com/uni-qr/cpro/0xbabyalien?l=en&r=415452117&uc=app_square_share_link&us=copylink ">
     <img src="https://img.shields.io/badge/BinanceSquare-%23000000.svg?style=for-the-badge&logo=Binance&logoColor=yellow" alt="Binancesquare">
 </a>
+<a href="https://gate.com/profile?profile_key=FQQQDQYBWR1WVwMNHSUOAlFaXBgEDhkO0O0O&ref=BQBAXV8L&ref_type=127">
+    <img src="https://img.shields.io/badge/GateSquare-%23000000.svg?style=for-the-badge&logo=gate&logoColor=yellow" alt="Gatesquare">
+</a>
+
+
+
 </a>
 <a href="https://dune.com/0xbabyalien">
   <img src="https://img.shields.io/badge/Dune-%23000000.svg?style=for-the-badge&logo=dinersclub&logoColor=orange" alt="Dune">
@@ -86,9 +94,6 @@
 </a>
 <a href="https://debank.com/profile/0x228ad3b30a809e7d410fdc9845aeca5c21bbec0d/">
   <img src="https://img.shields.io/badge/Debank-%23000000.svg?style=for-the-badge&logo=d3&logoColor=mediumyellow" alt="Debank">
-</a>
-<a href="https://0xbabyalien.vercel.app/">
-  <img src="https://img.shields.io/badge/Vercel-%23000000.svg?style=for-the-badge&logo=Vercel&logoColor=white" alt="Vercel">
 </a>
 
 </br>
