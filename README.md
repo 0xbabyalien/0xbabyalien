@@ -147,7 +147,7 @@
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Too many of us are not living our dreams because we are living our fears.</font><br/>— <font color="#808080">Les Brown</font></center>
+<center><font color="#0c7ec9">Remember that this moment is not your life, it's just a moment in your life. Focus on what is in front of you, right now.</font><br/>— <font color="#808080">Ryan Holiday</font></center>
 <!-- DAILY_QUOTE:END -->
 
 </center>
