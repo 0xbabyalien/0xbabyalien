@@ -53,6 +53,9 @@
 <a href="https://0xbabyalien.vercel.app/">
   <img src="https://img.shields.io/badge/Vercel-%23000000.svg?style=for-the-badge&logo=Vercel&logoColor=white" alt="Vercel">
 </a>
+<a href="https://0xbabyalien.page.dev/">
+  <img src="https://img.shields.io/badge/Cloudflare-%23000000.svg?style=for-the-badge&logo=cloudflare&logoColor=orange" alt="dash cloudflare">
+</a>
 
 </br>
 </br>
