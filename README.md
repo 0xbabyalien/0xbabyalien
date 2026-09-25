@@ -147,7 +147,7 @@
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Remember that this moment is not your life, it's just a moment in your life. Focus on what is in front of you, right now.</font><br/>— <font color="#808080">Ryan Holiday</font></center>
+<center><font color="#0c7ec9">The man who does not value himself, cannot value anything or anyone.</font><br/>— <font color="#808080">Ayn Rand</font></center>
 <!-- DAILY_QUOTE:END -->
 
 </center>
