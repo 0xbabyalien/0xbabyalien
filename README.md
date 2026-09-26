@@ -150,7 +150,7 @@
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">The man who does not value himself, cannot value anything or anyone.</font><br/>— <font color="#808080">Ayn Rand</font></center>
+<center><font color="#0c7ec9">The significance of life is living.</font><br/>— <font color="#808080">Jiddu Krishnamurti</font></center>
 <!-- DAILY_QUOTE:END -->
 
 </center>
