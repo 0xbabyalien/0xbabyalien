@@ -105,9 +105,9 @@
 <a href="https://www.htx.com/id-id/live/community/dynamic/h5?uidUnique=225142567&invite_code=d9rh5223&inviter_id=11346540" target="_blank">
     <img src="https://img.shields.io/badge/HTX_Community-%23000000.svg?style=for-the-badge&logo=htx&logoColor=white" alt="HTXCommunity">
 </a>
-
-
-
+<a href="https://www.bybit.com/en/social/user/?byx_uid=P7KG9Z" target="_blank">
+    <img src="https://img.shields.io/badge/Bybit_ByX-%23000000.svg?style=for-the-badge&logo=bybit&logoColor=white" alt="Bybit_ByX">
+</a>
 </br>
 </br>
 <h2>☕ Coffee</h2>
