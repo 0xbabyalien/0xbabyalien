@@ -150,7 +150,7 @@
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">The significance of life is living.</font><br/>— <font color="#808080">Jiddu Krishnamurti</font></center>
+<center><font color="#0c7ec9">Freedom is the open window through which pours the sunlight of the human spirit and human dignity.</font><br/>— <font color="#808080">Herbert Hoover</font></center>
 <!-- DAILY_QUOTE:END -->
 
 </center>
