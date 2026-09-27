@@ -100,14 +100,18 @@
     <img src="https://img.shields.io/badge/Kucoin_Square-%23000000.svg?style=for-the-badge&logo=kucoin&logoColor=%2323C986" alt="KucoinSquare">
 </a>
 <a href="https://gate.com/profile?profile_key=FQQQDQYBWR1WVwMNHSUOAlFaXBgEDhkO0O0O&ref=BQBAXV8L&ref_type=127" target="_blank">
-    <img src="https://img.shields.io/badge/Gate_Square-%23000000.svg?style=for-the-badge&logo=gate&logoColor=yellow" alt="Gatesquare">
+    <img src="https://img.shields.io/badge/Gate_Square-%23000000.svg?style=for-the-badge&logo=gate&logoColor=yellow" alt="GateSquare">
 </a>
 <a href="https://www.htx.com/id-id/live/community/dynamic/h5?uidUnique=225142567&invite_code=d9rh5223&inviter_id=11346540" target="_blank">
     <img src="https://img.shields.io/badge/HTX_Community-%23000000.svg?style=for-the-badge&logo=htx&logoColor=white" alt="HTXCommunity">
 </a>
 <a href="https://www.bybit.com/en/social/user/?byx_uid=P7KG9Z" target="_blank">
-    <img src="https://img.shields.io/badge/Bybit_ByX-%23000000.svg?style=for-the-badge&logo=bybit&logoColor=white" alt="Bybit_ByX">
+    <img src="https://img.shields.io/badge/Bybit_ByX-%23000000.svg?style=for-the-badge&logo=bybit&logoColor=white" alt="BybitByX">
 </a>
+<a href="https://www.bitget.com/id/insights/user/b0b44c718bb43856a497" target="_blank">
+    <img src="https://img.shields.io/badge/Bitget_Insights-%23000000.svg?style=for-the-badge&logo=bitget&logoColor=white" alt="BitgetInsights">
+</a>
+
 </br>
 </br>
 <h2>☕ Coffee</h2>
