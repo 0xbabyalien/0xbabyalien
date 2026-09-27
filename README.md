@@ -40,7 +40,6 @@
 <a href="https://www.linkedin.com/in/0xbabyalien">
   <img src="https://img.shields.io/badge/LinkedIn-%23000000?style=for-the-badge&logo=linkedin&logoColor=white" alt="Linkedin">
 </a>
-
 <a href="https://0xbabyalien.tumblr.com/">
   <img src="https://img.shields.io/badge/Tumblr-%23000000.svg?style=for-the-badge&logo=Tumblr&logoColor=mediumblue" alt="Tumblr">
 </a>
@@ -56,7 +55,7 @@
 <a href="https://0xbabyalien.pages.dev/">
   <img src="https://img.shields.io/badge/Cloudflare-%23000000.svg?style=for-the-badge&logo=cloudflare&logoColor=orange" alt="dash cloudflare">
 </a>
-
+</br>
 </br>
 </br>
 <a href="#"><img src="x/474e37334d4b4261775a5941414141692f627573792d637574652e676955.gif" width="90" height="80" align="right"></a>
@@ -76,16 +75,6 @@
 <a href="https://hey.xyz/u/babyalien">
   <img src="https://img.shields.io/badge/Lens-%23000000.svg?style=for-the-badge&logo=Lens&logoColor=green" alt="Lens">
 </a>
-<a href="https://app.binance.com/uni-qr/cpro/0xbabyalien?l=en&r=415452117&uc=app_square_share_link&us=copylink ">
-    <img src="https://img.shields.io/badge/BinanceSquare-%23000000.svg?style=for-the-badge&logo=Binance&logoColor=yellow" alt="Binancesquare">
-</a>
-<a href="https://gate.com/profile?profile_key=FQQQDQYBWR1WVwMNHSUOAlFaXBgEDhkO0O0O&ref=BQBAXV8L&ref_type=127">
-    <img src="https://img.shields.io/badge/GateSquare-%23000000.svg?style=for-the-badge&logo=gate&logoColor=yellow" alt="Gatesquare">
-</a>
-
-
-
-</a>
 <a href="https://dune.com/0xbabyalien">
   <img src="https://img.shields.io/badge/Dune-%23000000.svg?style=for-the-badge&logo=dinersclub&logoColor=orange" alt="Dune">
 </a>
@@ -98,7 +87,18 @@
 <a href="https://debank.com/profile/0x228ad3b30a809e7d410fdc9845aeca5c21bbec0d/">
   <img src="https://img.shields.io/badge/Debank-%23000000.svg?style=for-the-badge&logo=d3&logoColor=mediumyellow" alt="Debank">
 </a>
-
+</br>
+</br>
+</br>
+<a href="https://app.binance.com/uni-qr/cpro/0xbabyalien?l=en&r=RSYNJO4F&uc=app_square_share_link&us=copylink">
+    <img src="https://img.shields.io/badge/Binance_Square-%23000000.svg?style=for-the-badge&logo=Binance&logoColor=yellow" alt="Binancesquare">
+</a>
+<a href="https://gate.com/profile?profile_key=FQQQDQYBWR1WVwMNHSUOAlFaXBgEDhkO0O0O&ref=BQBAXV8L&ref_type=127">
+    <img src="https://img.shields.io/badge/Gate_Square-%23000000.svg?style=for-the-badge&logo=gate&logoColor=yellow" alt="Gatesquare">
+</a>
+<a href="https://www.okx.com/orbit/user/872878954074812416?shortCode=zKFqAI2&channelid=14970201&link_from=sharing&content_scene=planet_trade&utm_campaign=sharing&utm_content=planet_trade&utm_medium=referral&utm_term=upto_10USDT">
+    <img src="https://img.shields.io/badge/Okx_Orbit-%23000000.svg?style=for-the-badge&logo=okx&logoColor=white" alt="OKXOrbit">
+</a>
 </br>
 </br>
 <h2>☕ Coffee</h2>
@@ -127,14 +127,14 @@
 <a href="https://link3.to/0xbabyalien">
   <img src="https://img.shields.io/badge/❮ Link3-%23000000.svg?style=for-the-badge&logo=Link3&logoColor=white" alt="Link3">
 </a>
-
 <a href="https://www.paypal.me/0xbabyalien">
     <img src="https://img.shields.io/badge/Paypal-%23000000.svg?style=for-the-badge&logo=Paypal&logoColor=%23003087" alt="Paypal">
 </a>
 </br></br>
 <a href="#"><img src="x/1500x500px.jpg" alt="Banner"></a>
 </br>
-
+</br>
+</br>
 <h2>📊 Stats</h2>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/github-contribution-grid-snake-dark.svg" />
