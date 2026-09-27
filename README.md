@@ -96,12 +96,16 @@
 <a href="https://www.okx.com/orbit/user/872878954074812416?shortCode=zKFqAI2&channelid=14970201&link_from=sharing&content_scene=planet_trade&utm_campaign=sharing&utm_content=planet_trade&utm_medium=referral&utm_term=upto_10USDT" target="_blank">
     <img src="https://img.shields.io/badge/Okx_Orbit-%23000000.svg?style=for-the-badge&logo=okx&logoColor=white" alt="OKXOrbit">
 </a>
+<a href="https://www.kucoin.com/square/profile/6a40e45c78fbcc0001d81a3eaeacf4" target="_blank">
+    <img src="https://img.shields.io/badge/Kucoin_Square-%23000000.svg?style=for-the-badge&logo=kucoin&logoColor=%2323C986" alt="KucoinSquare">
+</a>
 <a href="https://gate.com/profile?profile_key=FQQQDQYBWR1WVwMNHSUOAlFaXBgEDhkO0O0O&ref=BQBAXV8L&ref_type=127" target="_blank">
     <img src="https://img.shields.io/badge/Gate_Square-%23000000.svg?style=for-the-badge&logo=gate&logoColor=yellow" alt="Gatesquare">
 </a>
 <a href="https://www.htx.com/id-id/live/community/dynamic/h5?uidUnique=225142567&invite_code=d9rh5223&inviter_id=11346540" target="_blank">
-    <img src="https://img.shields.io/badge/HTX_Community-%23000000.svg?style=for-the-badge&logo=huobi&logoColor=yellow" alt="HTXCommunity">
+    <img src="https://img.shields.io/badge/HTX_Community-%23000000.svg?style=for-the-badge&logo=htx&logoColor=white" alt="HTXCommunity">
 </a>
+
 
 
 </br>
