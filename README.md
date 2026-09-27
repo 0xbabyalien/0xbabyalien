@@ -90,13 +90,13 @@
 </br>
 </br>
 </br>
-<a href="https://app.binance.com/uni-qr/cpro/0xbabyalien?l=en&r=RSYNJO4F&uc=app_square_share_link&us=copylink">
+<a href="https://app.binance.com/uni-qr/cpro/0xbabyalien?l=en&r=RSYNJO4F&uc=app_square_share_link&us=copylink" target="_blank">
     <img src="https://img.shields.io/badge/Binance_Square-%23000000.svg?style=for-the-badge&logo=Binance&logoColor=yellow" alt="Binancesquare">
 </a>
-<a href="https://gate.com/profile?profile_key=FQQQDQYBWR1WVwMNHSUOAlFaXBgEDhkO0O0O&ref=BQBAXV8L&ref_type=127">
+<a href="https://gate.com/profile?profile_key=FQQQDQYBWR1WVwMNHSUOAlFaXBgEDhkO0O0O&ref=BQBAXV8L&ref_type=127" target="_blank">
     <img src="https://img.shields.io/badge/Gate_Square-%23000000.svg?style=for-the-badge&logo=gate&logoColor=yellow" alt="Gatesquare">
 </a>
-<a href="https://www.okx.com/orbit/user/872878954074812416?shortCode=zKFqAI2&channelid=14970201&link_from=sharing&content_scene=planet_trade&utm_campaign=sharing&utm_content=planet_trade&utm_medium=referral&utm_term=upto_10USDT">
+<a href="https://www.okx.com/orbit/user/872878954074812416?shortCode=zKFqAI2&channelid=14970201&link_from=sharing&content_scene=planet_trade&utm_campaign=sharing&utm_content=planet_trade&utm_medium=referral&utm_term=upto_10USDT" target="_blank">
     <img src="https://img.shields.io/badge/Okx_Orbit-%23000000.svg?style=for-the-badge&logo=okx&logoColor=white" alt="OKXOrbit">
 </a>
 </br>
