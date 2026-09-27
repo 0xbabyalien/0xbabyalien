@@ -99,6 +99,11 @@
 <a href="https://gate.com/profile?profile_key=FQQQDQYBWR1WVwMNHSUOAlFaXBgEDhkO0O0O&ref=BQBAXV8L&ref_type=127" target="_blank">
     <img src="https://img.shields.io/badge/Gate_Square-%23000000.svg?style=for-the-badge&logo=gate&logoColor=yellow" alt="Gatesquare">
 </a>
+<a href="https://www.htx.com/id-id/live/community/dynamic/h5?uidUnique=225142567&invite_code=d9rh5223&inviter_id=11346540" target="_blank">
+    <img src="https://img.shields.io/badge/HTX_Community-%23000000.svg?style=for-the-badge&logo=huobi&logoColor=yellow" alt="HTXCommunity">
+</a>
+
+
 </br>
 </br>
 <h2>☕ Coffee</h2>
