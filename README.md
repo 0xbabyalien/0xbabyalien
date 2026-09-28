@@ -3,7 +3,7 @@
     <link rel="stylesheet" type="text/css" href="css/death.css">
 </head>
 
-<a href="#">![HELLO](x/hello.svg)</a>
+<a href="#">![HELLO](x/babyalien.svg)</a>
 <hr class="cyberpunk glitched" /></br>
 
 <h2>👩‍🚀 Social</h2></br>
