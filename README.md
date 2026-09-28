@@ -3,7 +3,7 @@
     <link rel="stylesheet" type="text/css" href="css/death.css">
 </head>
 
-<a href="#">![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Hello+World+!!+😉;My+Nickname+0xBabyAlien+😜)</a>
+<a href="#">![HELLO](x/hello.svg)</a>
 <hr class="cyberpunk glitched" /></br>
 
 <h2>👩‍🚀 Social</h2></br>
