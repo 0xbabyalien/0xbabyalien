@@ -163,7 +163,7 @@
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Freedom is the open window through which pours the sunlight of the human spirit and human dignity.</font><br/>— <font color="#808080">Herbert Hoover</font></center>
+<center><font color="#0c7ec9">Life doesn't get easier or more forgiving, we get stronger and more resilient.</font><br/>— <font color="#808080">Steve Maraboli</font></center>
 <!-- DAILY_QUOTE:END -->
 
 </center>
