@@ -1,4 +1,4 @@
-<a href="#">![HELLO](x/babyalien.svg)</a></br>
+<a href="https://link3.to/0xbabyalien">![HELLO](x/babyalien.svg)</a></br>
 
 <hr class="cyberpunk glitched" />
 <h2>👩‍🚀 Social</h2></br>
@@ -139,7 +139,7 @@
     <img src="https://img.shields.io/badge/Paypal-%23000000.svg?style=for-the-badge&logo=Paypal&logoColor=%23003087" alt="Paypal">
 </a>
 </br></br>
-<a href="#"><img src="x/banner1-jpg-1500x500px.jpg" alt="Banner"></a>
+<a href="https://link3.to/0xbabyalien"><img src="x/banner1-jpg-1500x500px.jpg" alt="Banner"></a>
 </br>
 </br>
 </br>
@@ -154,7 +154,7 @@
 🖥 Last update: 2026-09-27 14:58:08 UTC
 <!-- STAT_END -->
 <br/><br/>
-<a href="#"><img src="x/banner2-jpeg-1500x500.jpeg"></a>
+<a href="https://x.com/0xbabyalien"><img src="x/banner2-jpeg-1500x500.jpeg"></a>
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
