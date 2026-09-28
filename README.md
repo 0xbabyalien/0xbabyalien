@@ -1,11 +1,6 @@
-<head>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/death.css">
-</head>
+<a href="#">![HELLO](x/babyalien.svg)</a></br>
 
-<a href="#">![HELLO](x/babyalien.svg)</a>
-<hr class="cyberpunk glitched" /></br>
-
+<hr class="cyberpunk glitched" />
 <h2>👩‍🚀 Social</h2></br>
 <a href="https://github.com/0xbabyalien">
   <img src="https://img.shields.io/badge/Github-%23000000.svg?style=for-the-badge&logo=Github&logoColor=white" alt="Github">
