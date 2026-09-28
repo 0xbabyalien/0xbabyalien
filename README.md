@@ -139,7 +139,7 @@
     <img src="https://img.shields.io/badge/Paypal-%23000000.svg?style=for-the-badge&logo=Paypal&logoColor=%23003087" alt="Paypal">
 </a>
 </br></br>
-<a href="https://link3.to/0xbabyalien"><img src="x/banner1-jpg-1500x500px.jpg" alt="Banner"></a>
+<a href="https://link3.to/0xbabyalien"><img src="x/banner1-babyalien-svg-1500x500.svg" alt="Banner"></a>
 </br>
 </br>
 </br>
