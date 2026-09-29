@@ -158,7 +158,7 @@
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Life doesn't get easier or more forgiving, we get stronger and more resilient.</font><br/>— <font color="#808080">Steve Maraboli</font></center>
+<center><font color="#0c7ec9">You don't have to be great to start, but you have to start to be great.</font><br/>— <font color="#808080">Zig Ziglar</font></center>
 <!-- DAILY_QUOTE:END -->
 
 </center>
