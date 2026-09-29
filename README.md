@@ -154,7 +154,7 @@
 🖥 Last update: 2026-09-28 17:56:31 UTC
 <!-- STAT_END -->
 <br/><br/>
-<a href="https://x.com/0xbabyalien"><img src="x/banner2-jpeg-1500x500.jpeg"></a>
+<a href="https://x.com/0xbabyalien"><img src="x/banner2-babyalien-svg-1500x500.svg"></a>
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
