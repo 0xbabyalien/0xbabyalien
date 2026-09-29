@@ -234,7 +234,7 @@
       </linearGradient>
     </defs>
 
-    <g class="coin-group" opacity="0.6">
+    <g class="coin-group" opacity="0.85">
       
       <g class="c-btc" transform="translate(20, 20) scale(5)">
         <g fill="none" fill-rule="evenodd">
