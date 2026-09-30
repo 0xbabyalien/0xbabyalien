@@ -158,7 +158,7 @@
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">You don't have to be great to start, but you have to start to be great.</font><br/>— <font color="#808080">Zig Ziglar</font></center>
+<center><font color="#0c7ec9">Anger begins with folly, and ends with repentance.</font><br/>— <font color="#808080">Beverly Sills</font></center>
 <!-- DAILY_QUOTE:END -->
 
 </center>
