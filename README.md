@@ -1,5 +1,8 @@
-<a href="https://link3.to/0xbabyalien">![HELLO](x/babyalien.svg)</a></br>
-
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="x/babyalien.svg">
+  <source media="(prefers-color-scheme: light)" srcset="x/babyalien.svg">
+  <img src="x/babyalien.svg" width="100%" alt="0xbabyalien — BBalien">
+</picture>
 <hr class="cyberpunk glitched" />
 <h2>👩‍🚀 Social</h2></br>
 <a href="https://github.com/0xbabyalien">
@@ -139,9 +142,11 @@
     <img src="https://img.shields.io/badge/Paypal-%23000000.svg?style=for-the-badge&logo=Paypal&logoColor=%23003087" alt="Paypal">
 </a>
 </br></br>
-<a href="https://link3.to/0xbabyalien"><img src="x/banner1-babyalien-svg-1500x500.svg" alt="Banner"></a>
-</br>
-</br>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="x/banner1-babyalien-svg-1500x500.svg">
+  <source media="(prefers-color-scheme: light)" srcset="x/banner1-babyalien-svg-1500x500.svg">
+  <img src="x/banner1-babyalien-svg-1500x500.svg" width="100%" alt="Banner1 — 0xbabyalien">
+</picture>
 </br>
 <h2>📊 Stats</h2>
 <picture>
@@ -154,7 +159,11 @@
 🖥 Last update: 2026-09-30 16:14:10 UTC
 <!-- STAT_END -->
 <br/><br/>
-<a href="https://x.com/0xbabyalien"><img src="x/banner2-babyalien-svg-1500x500.svg"></a>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="x/banner2-babyalien-svg-1500x500.svg">
+  <source media="(prefers-color-scheme: light)" srcset="x/banner2-babyalien-svg-1500x500.svg">
+  <img src="x/banner2-babyalien-svg-1500x500.svg" width="100%" alt="Banner2 — 0xbabyalien">
+</picture>
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
