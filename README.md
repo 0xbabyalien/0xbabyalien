@@ -115,10 +115,15 @@
 <h2>☕ Coffee</h2>
 </br>
 <a href="https://buymeacoffee.com/0xbabyalien">
-  <img src="https://img.shields.io/badge/​givecoffee-%23000000.svg?style=for-the-badge&logo=buymeacoffee&logoColor=yellow" alt="BuyMeACoffee">
+  <img src="https://img.shields.io/badge/​Give_coffee-%23000000.svg?style=for-the-badge&logo=buymeacoffee&logoColor=yellow" alt="BuyMeACoffee">
 </a>
 <a href="https://ko-fi.com/0xbabyalien">
-  <img src="https://img.shields.io/badge/​Kofi-%23000000.svg?style=for-the-badge&logo=ko-fi&logoColor=%23FF5E5B" alt="Kofi">
+  <img src="https://img.shields.io/badge/​Give_Kofi-%23000000.svg?style=for-the-badge&logo=ko-fi&logoColor=%23FF5E5B" alt="Kofi">
+</a>
+<a href="https://pay.blink.sv/0xbabyalien">
+  <img src="https://img.shields.io/badge/​Give_BTC-%23000000.svg?style=for-the-badge&logo=bitcoin&logoColor=%23F7931A" alt="Give BTC">
+  <a href="https://phantom.com/user/sayusd">
+  <img src="https://img.shields.io/badge/​Give_SOL-%23000000.svg?style=for-the-badge&logo=Solana&logoColor=%239945FF" alt="Phantom">
 </a>
 <a href="https://app.handlpay.com/pay/tw/0xbabyalien">
   <img src="https://img.shields.io/badge/​HandlPay-%23000000.svg?style=for-the-badge&logo=flickr&logoColor=orange" alt="Handlpay">
@@ -128,9 +133,6 @@
 </a>
 <a href="https://base.app/pay-request?EIP681Link=ethereum%3A0x228ad3b30a809e7d410fdc9845aeca5c21bbec0d%408453%3Fvalue%3D203737e10">
   <img src="https://img.shields.io/badge/​BaseApp-%23000000.svg?style=for-the-badge&logo=Ethereum&logoColor=blue" alt="Coinbase">
-</a>
-<a href="https://phantom.com/user/sayusd">
-  <img src="https://img.shields.io/badge/​Phantom-%23000000.svg?style=for-the-badge&logo=Solana&logoColor=violate" alt="Phantom">
 </a>
 <a href="https://link.trustwallet.com/send?coin=20000714&address=0x960fbe9b5c9e9bb514f0eb55ad63c4fd459bf07d&amount=0.003">
     <img src="https://img.shields.io/badge/Trustwallet-%23000000.svg?style=for-the-badge&logo=bnbchain&logoColor=yellow" alt="Trustwallet">
