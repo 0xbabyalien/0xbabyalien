@@ -167,7 +167,7 @@
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Anger begins with folly, and ends with repentance.</font><br/>— <font color="#808080">Beverly Sills</font></center>
+<center><font color="#0c7ec9">Life is filled with secrets. You can't learn them all at once.</font><br/>— <font color="#808080">Dan Brown</font></center>
 <!-- DAILY_QUOTE:END -->
 
 </center>
