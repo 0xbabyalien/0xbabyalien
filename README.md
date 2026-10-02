@@ -153,7 +153,7 @@
   <img src="x/banner1-babyalien-svg-1500x500.svg" width="100%" alt="Banner1 — 0xbabyalien">
 </picture><br><br>
   <details>
-    <summary>Template portfolio-001</summary>
+    <summary>📝 Template portfolio-001</summary>
     [<a href="https://github.com/0xbabyalien/0x228a/tree/0xBabyAlien/template/portfolio-001">github</a>] [<a href="https://0xbabyalien.vercel.app/template/portfolio-001/">live demo</a>]
   </details>
 </br>
