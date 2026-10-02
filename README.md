@@ -172,7 +172,7 @@
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Life is filled with secrets. You can't learn them all at once.</font><br/>— <font color="#808080">Dan Brown</font></center>
+<center><font color="#0c7ec9">You are your best thing.</font><br/>— <font color="#808080">Toni Morrison</font></center>
 <!-- DAILY_QUOTE:END -->
 
 </center>
