@@ -152,6 +152,10 @@
   <source media="(prefers-color-scheme: light)" srcset="x/banner1-babyalien-svg-1500x500.svg">
   <img src="x/banner1-babyalien-svg-1500x500.svg" width="100%" alt="Banner1 — 0xbabyalien">
 </picture>
+  <details>
+    <summary>Template portfolio-001</summary>
+    [github] [<a href="https://0xbabyalien.vercel.app/template/portfolio-001/">live demo</a>]
+  </details>
 </br>
 <h2>📊 Stats</h2>
 <picture>
