@@ -195,7 +195,7 @@
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">You are your best thing.</font><br/>— <font color="#808080">Toni Morrison</font></center>
+<center><font color="#0c7ec9">Watch what you say, and whatever you say, practice it.</font><br/>— <font color="#808080">Soyen Shaku</font></center>
 <!-- DAILY_QUOTE:END -->
 
 </center>
