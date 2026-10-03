@@ -152,60 +152,34 @@
   <source media="(prefers-color-scheme: light)" srcset="x/banner1-babyalien-svg-1500x500.svg">
   <img src="x/banner1-babyalien-svg-1500x500.svg" width="100%" alt="Banner1 — 0xbabyalien">
 </picture><br><br>
-<table width="100%" align="center" style="border:none;">
-  <tr>
-    <td colspan="2" style="border:none;">
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <img src="https://img.shields.io/badge/GITHUB_REPOSITORY-%23000000?logo=github"/>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </td>
-  </tr>
-  <tr>
-    <td valign="top" width="50%" style="border:none;">
-      <details>
-        <summary>📝 Template portfolio-001</summary>
-        <br>
-        <a href="https://github.com/0xbabyalien/0x228a/tree/0xBabyAlien/template/portfolio-001">
-          <img height="15" width="15" src="https://cdn.simpleicons.org/github/aaaaaa"/> github
-        </a>
-        —
-        <a href="https://0xbabyalien.vercel.app/template/portfolio-001/">
-          <img height="15" width="15" src="https://cdn.simpleicons.org/vercel/aaaaaa"/> live
-        </a>
-        —
-        <a href="https://0xbabyalien.pages.dev/template/portfolio-001/">
-          <img height="15" width="15" src="https://cdn.simpleicons.org/cloudflare/de860e"/> live
-        </a>
-      </details>
-    </td>
-    <td valign="top" width="50%" style="border:none;">
-      <details>
-        <summary>📝 Template portfolio-00x</summary>
-        <br>
-        <a href="#">
-          <img height="15" width="15" src="https://cdn.simpleicons.org/git/888888"/> github
-        </a>
-        —
-        <a href="#">
-          <img height="15" width="15" src="https://cdn.simpleicons.org/files/c5ff88"/> demo
-        </a><br><br>
-        <summary>📝 Template portfolio-00x2</summary><br>
-        <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/git/888888"/></a>
-        <a href="#"> github </a>  —  <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/files/c5ff88"/></a>
-        <a href="#"> live demo </a> 
-        <br><br>
-        <summary>📝 Template portfolio-00x3</summary><br>
-        <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/git/888888"/></a>
-        <a href="#"> github </a>  —  <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/files/c5ff88" color="#9c5616"/></a>
-        <a href="#"> live demo </a> 
-      </details>
-    </td>
-  </tr>
-            </table>
+<details>
+  <summary>📝 Template portfolio-001</summary><br>
+    <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/github/ffffff"/></a>
+    <a href="https://github.com/0xbabyalien/0x228a/tree/0xBabyAlien/template/portfolio-001" style="text-decoration: none;">
+    github </a>
+     — <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/files/00aadd" style="text-decoration: none;"/></a>
+    <a href="https://0xbabyalien.vercel.app/template/portfolio-001/" style="text-decoration: none;">
+    live demo </a> - <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/files/c8ff00" style="text-decoration: none;"/></a>
+    <a href="https://0xbabyalien.pages.dev/template/portfolio-001/" style="text-decoration: none;">
+    live demo </a>
+  </details><br>
+  <details>
+   <summary>📝 Template portfolio-00x</summary><br>
+    <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/git/888888"/></a>
+    <a href="#"> github </a>  —  <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/files/c5ff88"/></a>
+    <a href="#"> live demo </a> 
+    <br><br>
+   <summary>📝 Template portfolio-00x2</summary><br>
+    <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/git/888888"/></a>
+    <a href="#"> github </a>  —  <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/files/c5ff88"/></a>
+    <a href="#"> live demo </a> 
+    <br><br>
+   <summary>📝 Template portfolio-00x3</summary><br>
+    <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/git/888888"/></a>
+    <a href="#"> github </a>  —  <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/files/c5ff88" color="#9c5616"/></a>
+    <a href="#"> live demo </a> 
+    <br><br>
+</details>
 </br>
 <h2>📊 Stats</h2>
 <picture>
