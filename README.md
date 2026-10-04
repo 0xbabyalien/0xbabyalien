@@ -200,7 +200,7 @@
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Watch what you say, and whatever you say, practice it.</font><br/>— <font color="#808080">Soyen Shaku</font></center>
+<center><font color="#0c7ec9">We crave for new sensations but soon become indifferent to them. The wonders of yesterday are today common occurrences</font><br/>— <font color="#808080">Nikola Tesla</font></center>
 <!-- DAILY_QUOTE:END -->
 
 </center>
