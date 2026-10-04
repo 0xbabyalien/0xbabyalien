@@ -192,7 +192,7 @@
   <source media="(prefers-color-scheme: light)" srcset="./github-activity-7days.svg" />
   <img alt="GitHub Activity" src="./github-activity-7days.svg" width="100%" />
 </picture>
- 
+ <br><br>
 <!-- STAT_START -->
 📅 Daily commits: 1
 🖥 Last update: 2026-10-03 14:32:20 UTC
