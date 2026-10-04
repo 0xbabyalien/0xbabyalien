@@ -49,7 +49,7 @@ poly_points.append("388.0,144")
 points_str = " ".join([f"{x:.1f},{y:.1f}" for x,y,_ in points])
 polygon_str = " ".join(poly_points)
 
-svg = f\'\'\'<svg xmlns="http://www.w3.org/2000/svg" width="400" height="170" viewBox="0 0 400 170" role="img" aria-label="Daily GitHub activity line chart - last 7 days">
+svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="400" height="170" viewBox="0 0 400 170" role="img" aria-label="Daily GitHub activity line chart - last 7 days">
 <style>
 .bg{{fill:#fff}} .t{{font:9px -apple-system,Segoe UI,Arial,sans-serif;fill:#57606a}}
 .h{{font:600 12px -apple-system,Segoe UI,Arial,sans-serif;fill:#1f2328}}
@@ -65,18 +65,18 @@ svg = f\'\'\'<svg xmlns="http://www.w3.org/2000/svg" width="400" height="170" vi
 <line x1="32" x2="388" y1="40.0" y2="40.0" class="g"/><text x="26" y="43.0" class="t" text-anchor="end">15</text>
 <polygon points="{polygon_str}" class="a"/>
 <polyline points="{points_str}" class="ln"/>
-\'\'\'
+'''
 
 for x,y,d in points:
     date = datetime.fromisoformat(d["date"]).strftime("%b %d")
     label = "contribution" if d["contributionCount"] == 1 else "contributions"
-    svg += f\'<circle cx="{x:.1f}" cy="{y:.1f}" r="2.5" class="d"><title>{date}: {d["contributionCount"]} {label}</title></circle>\n\'
+    svg += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="2.5" class="d"><title>{date}: {d["contributionCount"]} {label}</title></circle>n'
 
 for x,y,d in points:
     date = datetime.fromisoformat(d["date"]).strftime("%b %d")
-    svg += f\'<text x="{x:.1f}" y="162" class="t" text-anchor="middle">{date}</text>\n\'
+    svg += f'<text x="{x:.1f}" y="162" class="t" text-anchor="middle">{date}</text>n'
 
-svg += \'</svg>\'
+svg += '</svg>'
 
 open("github-activity-7days.svg","w").write(svg)
 print(f"Generated {total} contributions")
