@@ -4,7 +4,7 @@
   <img src="x/babyalien.svg" width="100%" alt="0xbabyalien — BBalien">
 </picture>
 <hr class="cyberpunk glitched" />
-<h2>👩‍🚀 Social</h2></br>
+<h2>👩‍🚀 Social</h2><br>
 <a href="https://github.com/0xbabyalien">
   <img src="https://img.shields.io/badge/Github-%23000000.svg?style=for-the-badge&logo=Github&logoColor=white" alt="Github">
 </a>
@@ -53,9 +53,9 @@
 <a href="https://0xbabyalien.pages.dev/">
   <img src="https://img.shields.io/badge/Cloudflare-%23000000.svg?style=for-the-badge&logo=cloudflare&logoColor=orange" alt="dash cloudflare">
 </a>
-</br>
-</br>
-</br>
+<br>
+<br>
+<br>
 <a href="#"><img src="x/474e37334d4b4261775a5941414141692f627573792d637574652e676955.gif" width="90" height="80" align="right"></a>
 <a href="#"><img src="x/68747470733a2f2f632e74656e6f722e636f6d2f474e37334d4b4261775a5941414141692f627573792d637574652e676966.gif" width="110" height="100" align="right"></a>
 <a href="https://web3.bio/0xbabyalien.base.eth">
@@ -85,9 +85,9 @@
 <a href="https://debank.com/profile/0x228ad3b30a809e7d410fdc9845aeca5c21bbec0d/">
   <img src="https://img.shields.io/badge/Debank-%23000000.svg?style=for-the-badge&logo=d3&logoColor=mediumyellow" alt="Debank">
 </a>
-</br>
-</br>
-</br>
+<br>
+<br>
+<br>
 <a href="https://app.binance.com/uni-qr/cpro/0xbabyalien?l=en&r=RSYNJO4F&uc=app_square_share_link&us=copylink" target="_blank">
     <img src="https://img.shields.io/badge/Binance_Square-%23000000.svg?style=for-the-badge&logo=Binance&logoColor=yellow" alt="Binancesquare">
 </a>
@@ -110,8 +110,8 @@
     <img src="https://img.shields.io/badge/Bitget_Insights-%23000000.svg?style=for-the-badge&logo=bitget&logoColor=white" alt="BitgetInsights">
 </a>
 
-</br>
-</br>
+<br>
+<br>
 <h2>☕ Coffee</h2>
 </br>
 <a href="https://buymeacoffee.com/0xbabyalien">
@@ -180,7 +180,7 @@
     <a href="#"> live demo </a> 
     <br><br>
 </details>
-</br>
+<br>
 <h2>📊 Stats</h2>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/github-contribution-grid-snake-dark.svg" />
