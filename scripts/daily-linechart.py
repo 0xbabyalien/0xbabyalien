@@ -59,7 +59,7 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="170" view
 <style>
 .bg{{fill:#fff}} .t{{font:9px -apple-system,Segoe UI,Arial,sans-serif;fill:#57606a}}
 .h{{font:600 12px -apple-system,Segoe UI,Arial,sans-serif;fill:#1f2328}}
-.g{{stroke:#d8dee4;stroke-width:1}} .a{{fill:#0ad;opacity:.2}} .ln{{fill:none;stroke:#888;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}} .d{{fill:#fff;stroke:#216e39;stroke-width:1.5}}
+.g{{stroke:#d8dee4;stroke-width:1}} .a{{fill:#0ad;opacity:.2}} .ln{{fill:none;stroke:#a819bbff;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}} .d{{fill:#fff;stroke:#216e39;stroke-width:1.5}}
 @media (prefers-color-scheme: dark){{.bg{{fill:#0d1117}} .t{{fill:#8b949e}} .h{{fill:#e6edf3}} .g{{stroke:#30363d}} .a{{fill:#0ad}} .ln{{stroke:#0ad}} .d{{fill:#0d1117;stroke:#a819bbff}}}}
 </style>
 <rect class="bg" width="100%" height="100%" rx="8"/>
