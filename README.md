@@ -187,10 +187,10 @@
   <source media="(prefers-color-scheme: light)" srcset="assets/github-contribution-grid-snake.svg" />
   <img alt="github-snake" src="assets/github-contribution-grid-snake.svg" />
 </picture>
-  <picture>
+<picture>
   <source media="(prefers-color-scheme: dark)" srcset="./github-activity-7days.svg" />
   <source media="(prefers-color-scheme: light)" srcset="./github-activity-7days.svg" />
-  <img alt="github-snake" src="./github-activity-7days.svg" />
+  <img alt="GitHub Activity" src="./github-activity-7days.svg" width="100%" />
 </picture>
  
 <!-- STAT_START -->
