@@ -3,7 +3,6 @@ from datetime import datetime, timedelta, timezone
 
 USERNAME = "0xbabyalien"
 TOKEN = os.environ["GH_TOKEN"]
-MAX_Y = 15
 
 query = """
 query($login:String!, $from:DateTime!, $to:DateTime!){
@@ -16,6 +15,7 @@ query($login:String!, $from:DateTime!, $to:DateTime!){
   }
 }
 """
+
 now = datetime.now(timezone.utc)
 seven_days_ago = now - timedelta(days=7)
 variables = {"login": USERNAME, "from": seven_days_ago.isoformat(), "to": now.isoformat()}
@@ -33,14 +33,16 @@ days = days[-7:]
 counts = [d["contributionCount"] for d in days]
 total = sum(counts)
 
+max_count = max(counts) if counts else 0
+MAX_Y = max(15, ((max_count + 9) // 5) * 5)
+
 def y_for(count):
-    # y 144 = 0, y 40 = 15
-    return 144 - (count / MAX_Y * 104)
+    return 144 - (count / MAX_Y * 104) if MAX_Y > 0 else 144
 
 points = []
 poly_points = ["32,144"]
 for i, d in enumerate(days):
-    x = 32 + i * (356 / 6) 
+    x = 32 + i * (356 / 6)
     y = y_for(d["contributionCount"])
     points.append((x, y, d))
     poly_points.append(f"{x:.1f},{y:.1f}")
@@ -59,13 +61,15 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="170" view
 <rect class="bg" width="100%" height="100%" rx="8"/>
 <text x="32" y="20" class="h">GitHub Activity</text>
 <text x="388" y="20" class="t" text-anchor="end">{total} contributions / 7 days</text>
-<line x1="32" x2="388" y1="144.0" y2="144.0" class="g"/><text x="26" y="147.0" class="t" text-anchor="end">0</text>
-<line x1="32" x2="388" y1="109.3" y2="109.3" class="g"/><text x="26" y="112.3" class="t" text-anchor="end">5</text>
-<line x1="32" x2="388" y1="74.7" y2="74.7" class="g"/><text x="26" y="77.7" class="t" text-anchor="end">10</text>
-<line x1="32" x2="388" y1="40.0" y2="40.0" class="g"/><text x="26" y="43.0" class="t" text-anchor="end">15</text>
-<polygon points="{polygon_str}" class="a"/>
-<polyline points="{points_str}" class="ln"/>
 '''
+
+for val in [0, round(MAX_Y*0.33), round(MAX_Y*0.66), MAX_Y]:
+    y = y_for(val)
+    svg += f'<line x1="32" x2="388" y1="{y:.1f}" y2="{y:.1f}" class="g"/><text x="26" y="{y+3:.1f}" class="t" text-anchor="end">{val}</text>n'
+
+svg += f'<polygon points="{polygon_str}" class="a"/>n'
+svg += f'<polyline points="{points_str}" class="ln"/>n'
+svg += "'''n"
 
 for x,y,d in points:
     date = datetime.fromisoformat(d["date"]).strftime("%b %d")
@@ -79,4 +83,4 @@ for x,y,d in points:
 svg += '</svg>'
 
 open("github-activity-7days.svg","w").write(svg)
-print(f"Generated {total} contributions")
+print(f"Generated {total} contributions, MAX_Y={MAX_Y}")
