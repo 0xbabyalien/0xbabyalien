@@ -188,9 +188,9 @@
   <img alt="github-snake" src="assets/github-contribution-grid-snake.svg" />
 </picture>
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./github-activity-7days.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./github-activity-7days.svg" />
-  <img alt="GitHub Activity" src="./github-activity-7days.svg" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="./github-activity-30days.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./github-activity-30days.svg" />
+  <img alt="GitHub Activity" src="./github-activity-30days.svg" width="100%" />
 </picture>
  <br><br>
 <!-- STAT_START -->
