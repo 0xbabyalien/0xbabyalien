@@ -209,7 +209,6 @@
 <center><font color="#0c7ec9">We crave for new sensations but soon become indifferent to them. The wonders of yesterday are today common occurrences</font><br/>— <font color="#808080">Nikola Tesla</font></center>
 <!-- DAILY_QUOTE:END -->
 
-</center>
 
 
 
