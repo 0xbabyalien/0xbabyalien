@@ -4,7 +4,7 @@
   <img src="x/babyalien.svg" width="100%" alt="0xbabyalien — BBalien">
 </picture>
 <hr class="cyberpunk glitched" />
-<h2>👩‍🚀 Social</h2><br>
+<h2>👩‍🚀 Social</h2><br/>
 <a href="https://github.com/0xbabyalien">
   <img src="https://img.shields.io/badge/Github-%23000000.svg?style=for-the-badge&logo=Github&logoColor=white" alt="Github">
 </a>
@@ -113,7 +113,7 @@
 <br>
 <br>
 <h2>☕ Coffee</h2>
-</br>
+<br/>
 <a href="https://buymeacoffee.com/0xbabyalien">
   <img src="https://img.shields.io/badge/​Give_coffee-%23000000.svg?style=for-the-badge&logo=buymeacoffee&logoColor=yellow" alt="BuyMeACoffee">
 </a>
