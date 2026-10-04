@@ -187,6 +187,12 @@
   <source media="(prefers-color-scheme: light)" srcset="assets/github-contribution-grid-snake.svg" />
   <img alt="github-snake" src="assets/github-contribution-grid-snake.svg" />
 </picture>
+  <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./github-activity-7days.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./github-activity-7days.svg" />
+  <img alt="github-snake" src="./github-activity-7days.svg" />
+</picture>
+ 
 <!-- STAT_START -->
 📅 Daily commits: 1
 🖥 Last update: 2026-10-03 14:32:20 UTC
