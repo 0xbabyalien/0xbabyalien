@@ -49,7 +49,7 @@ poly_points.append("388.0,144")
 points_str = " ".join([f"{x:.1f},{y:.1f}" for x,y,_ in points])
 polygon_str = " ".join(poly_points)
 
-svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="400" height="170" viewBox="0 0 400 170" role="img" aria-label="Daily GitHub activity line chart - last 7 days">
+svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="170" viewBox="0 0 400 170" role="img" aria-label="Daily GitHub activity line chart - last 7 days">
 <style>
 .bg{{fill:#fff}} .t{{font:9px -apple-system,Segoe UI,Arial,sans-serif;fill:#57606a}}
 .h{{font:600 12px -apple-system,Segoe UI,Arial,sans-serif;fill:#1f2328}}
