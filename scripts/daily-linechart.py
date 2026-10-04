@@ -55,12 +55,26 @@ poly_points.append(f"{RIGHT},144")
 points_str = " ".join([f"{x:.1f},{y:.1f}" for x,y,_ in points])
 polygon_str = " ".join(poly_points)
 
+# SVG with animated walking dashed line
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="170" viewBox="0 0 {VIEW_W} 170" role="img" aria-label="Daily GitHub activity line chart - last {DAYS} days">
 <style>
 .bg{{fill:#fff}} .t{{font:9px -apple-system,Segoe UI,Arial,sans-serif;fill:#57606a}}
 .h{{font:600 12px -apple-system,Segoe UI,Arial,sans-serif;fill:#1f2328}}
-.g{{stroke:#d8dee4;stroke-width:1}} .a{{fill:#0ad;opacity:.2}} .ln{{fill:none;stroke:#a819bb;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}} .d{{fill:#fff;stroke:#216e39;stroke-width:1.5}}
+.g{{stroke:#d8dee4;stroke-width:1}} .a{{fill:#0ad;opacity:.2}}
+.ln{{
+  fill:none;
+  stroke:#a819bb;
+  stroke-width:2;
+  stroke-linejoin:round;
+  stroke-linecap:round;
+  stroke-dasharray: 10 10;
+  stroke-dashoffset: 0;
+  animation: walk 0.8s linear infinite;
+}}
+.d{{fill:#fff;stroke:#216e39;stroke-width:1.5}}
+@keyframes walk{{ to {{ stroke-dashoffset: -20; }} }}
 @media (prefers-color-scheme: dark){{.bg{{fill:#0d1117}} .t{{fill:#8b949e}} .h{{fill:#e6edf3}} .g{{stroke:#30363d}} .a{{fill:#0ad}} .ln{{stroke:#0ad}} .d{{fill:#0d1117;stroke:#a819bb}}}}
+@media (prefers-reduced-motion: reduce){{ .ln{{animation:none}} }}
 </style>
 <rect class="bg" width="100%" height="100%" rx="8"/>
 <text x="{LEFT}" y="20" class="h"></text>
