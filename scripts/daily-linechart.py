@@ -63,7 +63,7 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="170" view
 @media (prefers-color-scheme: dark){{.bg{{fill:#0d1117}} .t{{fill:#8b949e}} .h{{fill:#e6edf3}} .g{{stroke:#30363d}} .a{{fill:#0ad}} .ln{{stroke:#0ad}} .d{{fill:#0d1117;stroke:#a819bb}}}}
 </style>
 <rect class="bg" width="100%" height="100%" rx="8"/>
-<text x="{LEFT}" y="20" class="h">activity</text>
+<text x="{LEFT}" y="20" class="h"></text>
 <text x="{RIGHT}" y="20" class="t" text-anchor="end">{total} contributions / {DAYS} days</text>
 '''
 
