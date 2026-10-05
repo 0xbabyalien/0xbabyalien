@@ -164,19 +164,9 @@
     live demo </a>
   </details><br>
   <details>
-   <summary>📝 Template portfolio-00x</summary><br>
+   <summary>📝 Template portfolio-002</summary><br>
     <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/git/888888"/></a>
-    <a href="#"> github </a>  —  <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/files/c5ff88"/></a>
-    <a href="#"> live demo </a> 
-    <br><br>
-   <summary>📝 Template portfolio-00x2</summary><br>
-    <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/git/888888"/></a>
-    <a href="#"> github </a>  —  <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/files/c5ff88"/></a>
-    <a href="#"> live demo </a> 
-    <br><br>
-   <summary>📝 Template portfolio-00x3</summary><br>
-    <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/git/888888"/></a>
-    <a href="#"> github </a>  —  <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/files/c5ff88" color="#9c5616"/></a>
+    <a href="https://github.com/0xbabyalien/virtual-office"> github </a>  —  <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/files/c5ff88"/></a>
     <a href="#"> live demo </a> 
     <br><br>
 </details>
