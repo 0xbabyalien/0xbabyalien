@@ -206,7 +206,7 @@
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">We crave for new sensations but soon become indifferent to them. The wonders of yesterday are today common occurrences</font><br/>— <font color="#808080">Nikola Tesla</font></center>
+<center><font color="#0c7ec9">Definitions belong to the definers, not the defined.</font><br/>— <font color="#808080">Toni Morrison</font></center>
 <!-- DAILY_QUOTE:END -->
 
 
