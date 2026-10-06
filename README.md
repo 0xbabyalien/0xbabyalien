@@ -196,7 +196,7 @@
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Definitions belong to the definers, not the defined.</font><br/>— <font color="#808080">Toni Morrison</font></center>
+<center><font color="#0c7ec9">Conquer the devils with a little thing called love.</font><br/>— <font color="#808080">Bob Marley</font></center>
 <!-- DAILY_QUOTE:END -->
 
 
