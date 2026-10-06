@@ -164,7 +164,7 @@
     live demo </a>
   </details><br>
   <details>
-   <summary>📝 Template portfolio-002</summary><br>
+   <summary>📝 Template projects-001</summary><br>
     <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/git/888888"/></a>
     <a href="https://github.com/0xbabyalien/virtual-office"> github </a>  —  <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/files/c5ff88"/></a>
     <a href="https://0xbabyalien.github.io/virtual-office/"> live demo </a> 
