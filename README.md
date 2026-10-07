@@ -205,11 +205,13 @@
   <source media="(prefers-color-scheme: light)" srcset="x/banner2-babyalien-svg-1500x500.svg">
   <img src="x/banner2-babyalien-svg-1500x500.svg" width="100%" alt="Banner2 — 0xbabyalien">
 </picture>
-<hr class="cyberpunk glitched" /><br/>
+<hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
 <center><font color="#0c7ec9">Every drop in the ocean counts.</font><br/>— <font color="#808080">Yoko Ono</font></center>
 <!-- DAILY_QUOTE:END -->
+<hr class="cyberpunk glitched" />
+
 
 
 
