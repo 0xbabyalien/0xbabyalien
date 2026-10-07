@@ -196,7 +196,7 @@
 <hr class="cyberpunk glitched" /><br/>
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Conquer the devils with a little thing called love.</font><br/>— <font color="#808080">Bob Marley</font></center>
+<center><font color="#0c7ec9">Every drop in the ocean counts.</font><br/>— <font color="#808080">Yoko Ono</font></center>
 <!-- DAILY_QUOTE:END -->
 
 
