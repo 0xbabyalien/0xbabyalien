@@ -12,7 +12,7 @@
   <img src="https://img.shields.io/badge/Twitter-%23000000.svg?style=for-the-badge&logo=X&logoColor=white" alt="Twitter">
 </a>
 <a href= "https://www.instagram.com/0xbabyalien">
-    <img src="https://img.shields.io/badge/Instagram-%23000000.svg?style=for-the-badge&logo=Instagram&logoColor=magenta">
+    <img src="https://img.shields.io/badge/Instagram-%23000000.svg?style=for-the-badge&logo=Instagram&logoColor=%23FF0069">
 </a>
 <a href= "https://bsky.app/profile/0xbabyalien.bsky.social">
     <img src="https://img.shields.io/badge/Bsky-%23000000.svg?style=for-the-badge&logo=Bluesky&logoColor=blue">
@@ -32,20 +32,32 @@
 <a href="https://www.tiktok.com/@0xbabyalien">
   <img src="https://img.shields.io/badge/TikTok-%23000000.svg?style=for-the-badge&logo=TikTok&logoColor=white" alt="TikTok">
 </a>
+<a href="#">
+  <img src="https://img.shields.io/badge/Line-%23000000.svg?style=for-the-badge&logo=line&logoColor=#00C300" alt="Line">
+</a>
+<a href="#">
+  <img src="https://img.shields.io/badge/Telegram-%23000000.svg?style=for-the-badge&logo=telegram&logoColor=#26A5E4" alt="Telegram">
+</a>
+<a href="#">
+  <img src="https://img.shields.io/badge/Wechat-%23000000.svg?style=for-the-badge&logo=wechat&logoColor=#07C160" alt="Wechat">
+</a>
 <a href="https://www.reddit.com/user/xbabyalien">
-  <img src="https://img.shields.io/badge/Reddit-%23000000.svg?style=for-the-badge&logo=Reddit&logoColor=mediumorange" alt="Reddit">
+  <img src="https://img.shields.io/badge/Reddit-%23000000.svg?style=for-the-badge&logo=Reddit&logoColor=#FF4500" alt="Reddit">
 </a>
 <a href="https://www.linkedin.com/in/0xbabyalien">
   <img src="https://img.shields.io/badge/LinkedIn-%23000000?style=for-the-badge&logo=linkedin&logoColor=white" alt="Linkedin">
 </a>
 <a href="https://0xbabyalien.tumblr.com/">
-  <img src="https://img.shields.io/badge/Tumblr-%23000000.svg?style=for-the-badge&logo=Tumblr&logoColor=mediumblue" alt="Tumblr">
+  <img src="https://img.shields.io/badge/Tumblr-%23000000.svg?style=for-the-badge&logo=Tumblr&logoColor=#36465D" alt="Tumblr">
 </a>
 <a href="#">
   <img src="https://img.shields.io/badge/Blog-%23000000.svg?style=for-the-badge&logo=Blogger&logoColor=orange" alt="Blog">
 </a>
 <a href="https://paragraph.com/@0xbabyalien">
   <img src="https://img.shields.io/badge/Paragraph-%23000000.svg?style=for-the-badge&logo=paragraph&logoColor=white" alt="Paragraph">
+</a>
+<a href="https://gitlab.com/0xbabyalien">
+  <img src="https://img.shields.io/badge/Gitlab-%23000000.svg?style=for-the-badge&logo=Gitlab&logoColor=#FC6D26" alt="Gitlab">
 </a>
 <a href="https://0xbabyalien.vercel.app/">
   <img src="https://img.shields.io/badge/Vercel-%23000000.svg?style=for-the-badge&logo=Vercel&logoColor=white" alt="Vercel">
