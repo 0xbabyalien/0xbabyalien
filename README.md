@@ -41,6 +41,9 @@
 <a href="#">
   <img src="https://img.shields.io/badge/Wechat-%23000000.svg?style=for-the-badge&logo=wechat&logoColor=#07C160" alt="Wechat">
 </a>
+<a href="https://mastodon.social/@0xbabyalien">
+  <img src="https://img.shields.io/badge/Mastodon-%23000000.svg?style=for-the-badge&logo=mastodon&logoColor=#l#6364FF" alt="mastodon">
+</a>
 <a href="https://www.reddit.com/user/xbabyalien">
   <img src="https://img.shields.io/badge/Reddit-%23000000.svg?style=for-the-badge&logo=Reddit&logoColor=#FF4500" alt="Reddit">
 </a>
