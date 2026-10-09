@@ -211,7 +211,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">I would rather be a little nobody, then to be an evil somebody.</font><br/>— <font color="#808080">Abraham Lincoln</font></center>
+<center><font color="#0c7ec9">Never give up work. Work gives you meaning and purpose and life is empty without it.</font><br/>— <font color="#808080">Stephen Hawking</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
