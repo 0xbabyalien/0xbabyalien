@@ -211,7 +211,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Never give up work. Work gives you meaning and purpose and life is empty without it.</font><br/>— <font color="#808080">Stephen Hawking</font></center>
+<center><font color="#0c7ec9">It is not the knowing that is difficult, but the doing.</font><br/>— <font color="#808080">Chinese Proverb</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
