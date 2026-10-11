@@ -50,7 +50,8 @@
       .bubble {
         transform-box: fill-box;
         transform-origin: center;
-        animation: drift 9.5s ease-in-out infinite;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
         animation-delay: var(--delay);
       }
 
@@ -63,13 +64,6 @@
         transform-box: fill-box;
         transform-origin: center;
         animation: spark 2.8s ease-in-out infinite alternate;
-      }
-
-      @keyframes drift {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(1px, -1px); }
-        63% { transform: translate(-1px, -2px); }
-        82% { transform: translate(-1px, 0); }
       }
 
       @keyframes sweep {
@@ -87,7 +81,7 @@
 
       @media (prefers-reduced-motion: reduce) {
         .bubble, .sweep, .spark {
-          animation: none;
+          animation: none !important;
         }
         .sweep {
           display: none;
@@ -110,7 +104,23 @@
   </text>
 
   
-    <g class="bubble" style="--delay:0.00s">
+    <g class="bubble bubble-0"
+       style="--duration:14s; --delay:-13.86s">
+      <style>
+        
+      @keyframes drift-0 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(-1px, -1px); }
+        58% { transform: translate(-6px, 5px); }
+        82% { transform: translate(2px, 1px); }
+      }
+    
+        .bubble-0 {
+          animation-name: drift-0;
+          animation-duration: 14s;
+        }
+      </style>
+
       <circle cx="357.20" cy="281.33" r="55.00"
               fill="#dea584" fill-opacity=".96"
               stroke="#dea584" stroke-width="1.5"
@@ -157,7 +167,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-0.55s">
+    <g class="bubble bubble-1"
+       style="--duration:15s; --delay:-4.61s">
+      <style>
+        
+      @keyframes drift-1 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(-3px, -3px); }
+        58% { transform: translate(5px, 3px); }
+        82% { transform: translate(0px, 1px); }
+      }
+    
+        .bubble-1 {
+          animation-name: drift-1;
+          animation-duration: 15s;
+        }
+      </style>
+
       <circle cx="453.20" cy="281.33" r="35.54"
               fill="#8b949e" fill-opacity=".96"
               stroke="#8b949e" stroke-width="1.5"
@@ -204,7 +230,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-1.10s">
+    <g class="bubble bubble-2"
+       style="--duration:11s; --delay:-7.17s">
+      <style>
+        
+      @keyframes drift-2 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(-3px, -2px); }
+        58% { transform: translate(4px, 1px); }
+        82% { transform: translate(-4px, -1px); }
+      }
+    
+        .bubble-2 {
+          animation-name: drift-2;
+          animation-duration: 11s;
+        }
+      </style>
+
       <circle cx="425.09" cy="349.21" r="34.12"
               fill="#f34b7d" fill-opacity=".96"
               stroke="#f34b7d" stroke-width="1.5"
@@ -251,7 +293,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-1.65s">
+    <g class="bubble bubble-3"
+       style="--duration:10s; --delay:-3.92s">
+      <style>
+        
+      @keyframes drift-3 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(4px, 1px); }
+        58% { transform: translate(5px, -3px); }
+        82% { transform: translate(-2px, -1px); }
+      }
+    
+        .bubble-3 {
+          animation-name: drift-3;
+          animation-duration: 10s;
+        }
+      </style>
+
       <circle cx="359.30" cy="373.31" r="32.10"
               fill="#f1e05a" fill-opacity=".96"
               stroke="#f1e05a" stroke-width="1.5"
@@ -298,7 +356,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-2.20s">
+    <g class="bubble bubble-4"
+       style="--duration:16s; --delay:-4.69s">
+      <style>
+        
+      @keyframes drift-4 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(3px, 1px); }
+        58% { transform: translate(-2px, -4px); }
+        82% { transform: translate(-2px, 0px); }
+      }
+    
+        .bubble-4 {
+          animation-name: drift-4;
+          animation-duration: 16s;
+        }
+      </style>
+
       <circle cx="298.01" cy="346.44" r="29.84"
               fill="#58a6ff" fill-opacity=".96"
               stroke="#58a6ff" stroke-width="1.5"
@@ -345,7 +419,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-2.75s">
+    <g class="bubble bubble-5"
+       style="--duration:14s; --delay:-12.58s">
+      <style>
+        
+      @keyframes drift-5 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(3px, -3px); }
+        58% { transform: translate(-5px, 2px); }
+        82% { transform: translate(-4px, -3px); }
+      }
+    
+        .bubble-5 {
+          animation-name: drift-5;
+          animation-duration: 14s;
+        }
+      </style>
+
       <circle cx="269.83" cy="291.78" r="27.42"
               fill="#8b949e" fill-opacity=".96"
               stroke="#8b949e" stroke-width="1.5"
@@ -392,7 +482,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-3.30s">
+    <g class="bubble bubble-6"
+       style="--duration:12s; --delay:-2.82s">
+      <style>
+        
+      @keyframes drift-6 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(-3px, 2px); }
+        58% { transform: translate(-4px, -5px); }
+        82% { transform: translate(-4px, 1px); }
+      }
+    
+        .bubble-6 {
+          animation-name: drift-6;
+          animation-duration: 12s;
+        }
+      </style>
+
       <circle cx="282.06" cy="235.53" r="27.05"
               fill="#e34c26" fill-opacity=".96"
               stroke="#e34c26" stroke-width="1.5"
@@ -439,7 +545,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-3.85s">
+    <g class="bubble bubble-7"
+       style="--duration:11s; --delay:-4.94s">
+      <style>
+        
+      @keyframes drift-7 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(4px, -4px); }
+        58% { transform: translate(-3px, -4px); }
+        82% { transform: translate(-1px, -1px); }
+      }
+    
+        .bubble-7 {
+          animation-name: drift-7;
+          animation-duration: 11s;
+        }
+      </style>
+
       <circle cx="326.45" cy="198.88" r="26.33"
               fill="#89e051" fill-opacity=".96"
               stroke="#89e051" stroke-width="1.5"
@@ -486,7 +608,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-4.40s">
+    <g class="bubble bubble-8"
+       style="--duration:16s; --delay:-4.46s">
+      <style>
+        
+      @keyframes drift-8 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(3px, 4px); }
+        58% { transform: translate(-4px, 5px); }
+        82% { transform: translate(1px, 3px); }
+      }
+    
+        .bubble-8 {
+          animation-name: drift-8;
+          animation-duration: 16s;
+        }
+      </style>
+
       <circle cx="382.00" cy="196.89" r="26.01"
               fill="#3178c6" fill-opacity=".96"
               stroke="#3178c6" stroke-width="1.5"
@@ -533,7 +671,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-4.95s">
+    <g class="bubble bubble-9"
+       style="--duration:15s; --delay:-9.46s">
+      <style>
+        
+      @keyframes drift-9 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(5px, -5px); }
+        58% { transform: translate(3px, 6px); }
+        82% { transform: translate(-2px, 4px); }
+      }
+    
+        .bubble-9 {
+          animation-name: drift-9;
+          animation-duration: 15s;
+        }
+      </style>
+
       <circle cx="434.26" cy="217.59" r="25.39"
               fill="#a371f7" fill-opacity=".96"
               stroke="#a371f7" stroke-width="1.5"
@@ -580,7 +734,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-5.50s">
+    <g class="bubble bubble-10"
+       style="--duration:15s; --delay:-14.77s">
+      <style>
+        
+      @keyframes drift-10 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(-3px, 4px); }
+        58% { transform: translate(-1px, -2px); }
+        82% { transform: translate(3px, -2px); }
+      }
+    
+        .bubble-10 {
+          animation-name: drift-10;
+          animation-duration: 15s;
+        }
+      </style>
+
       <circle cx="239.88" cy="341.81" r="25.33"
               fill="#8b949e" fill-opacity=".96"
               stroke="#8b949e" stroke-width="1.5"
@@ -627,7 +797,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-6.05s">
+    <g class="bubble bubble-11"
+       style="--duration:13s; --delay:-11.95s">
+      <style>
+        
+      @keyframes drift-11 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(5px, -2px); }
+        58% { transform: translate(5px, 1px); }
+        82% { transform: translate(-3px, 4px); }
+      }
+    
+        .bubble-11 {
+          animation-name: drift-11;
+          animation-duration: 13s;
+        }
+      </style>
+
       <circle cx="228.00" cy="254.29" r="25.09"
               fill="#8b949e" fill-opacity=".96"
               stroke="#8b949e" stroke-width="1.5"
@@ -674,7 +860,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-6.60s">
+    <g class="bubble bubble-12"
+       style="--duration:9s; --delay:-0.85s">
+      <style>
+        
+      @keyframes drift-12 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(0px, 2px); }
+        58% { transform: translate(3px, 1px); }
+        82% { transform: translate(2px, -1px); }
+      }
+    
+        .bubble-12 {
+          animation-name: drift-12;
+          animation-duration: 9s;
+        }
+      </style>
+
       <circle cx="270.76" cy="181.57" r="25.06"
               fill="#8b949e" fill-opacity=".96"
               stroke="#8b949e" stroke-width="1.5"
@@ -721,7 +923,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-7.15s">
+    <g class="bubble bubble-13"
+       style="--duration:16s; --delay:-2.27s">
+      <style>
+        
+      @keyframes drift-13 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(-5px, 4px); }
+        58% { transform: translate(-6px, 1px); }
+        82% { transform: translate(1px, -1px); }
+      }
+    
+        .bubble-13 {
+          animation-name: drift-13;
+          animation-duration: 16s;
+        }
+      </style>
+
       <circle cx="350.92" cy="149.48" r="25.00"
               fill="#8b949e" fill-opacity=".96"
               stroke="#8b949e" stroke-width="1.5"
@@ -768,7 +986,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-7.70s">
+    <g class="bubble bubble-14"
+       style="--duration:11s; --delay:-9.39s">
+      <style>
+        
+      @keyframes drift-14 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(-3px, -3px); }
+        58% { transform: translate(-5px, -6px); }
+        82% { transform: translate(2px, 0px); }
+      }
+    
+        .bubble-14 {
+          animation-name: drift-14;
+          animation-duration: 11s;
+        }
+      </style>
+
       <circle cx="310.03" cy="408.89" r="24.86"
               fill="#701516" fill-opacity=".96"
               stroke="#701516" stroke-width="1.5"
@@ -815,7 +1049,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-8.25s">
+    <g class="bubble bubble-15"
+       style="--duration:9s; --delay:-0.28s">
+      <style>
+        
+      @keyframes drift-15 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(3px, -4px); }
+        58% { transform: translate(-5px, 4px); }
+        82% { transform: translate(-3px, 0px); }
+      }
+    
+        .bubble-15 {
+          animation-name: drift-15;
+          animation-duration: 9s;
+        }
+      </style>
+
       <circle cx="423.38" cy="162.52" r="24.59"
               fill="#8b949e" fill-opacity=".96"
               stroke="#8b949e" stroke-width="1.5"
@@ -862,7 +1112,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-8.80s">
+    <g class="bubble bubble-16"
+       style="--duration:16s; --delay:-15.01s">
+      <style>
+        
+      @keyframes drift-16 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(2px, 2px); }
+        58% { transform: translate(3px, 0px); }
+        82% { transform: translate(1px, -2px); }
+      }
+    
+        .bubble-16 {
+          animation-name: drift-16;
+          animation-duration: 16s;
+        }
+      </style>
+
       <circle cx="485.94" cy="336.35" r="24.53"
               fill="#DA5B0B" fill-opacity=".96"
               stroke="#DA5B0B" stroke-width="1.5"
@@ -909,7 +1175,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-9.35s">
+    <g class="bubble bubble-17"
+       style="--duration:13s; --delay:-0.48s">
+      <style>
+        
+      @keyframes drift-17 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(-5px, 0px); }
+        58% { transform: translate(2px, 2px); }
+        82% { transform: translate(-4px, -1px); }
+      }
+    
+        .bubble-17 {
+          animation-name: drift-17;
+          animation-duration: 13s;
+        }
+      </style>
+
       <circle cx="412.23" cy="410.06" r="24.43"
               fill="#8b949e" fill-opacity=".96"
               stroke="#8b949e" stroke-width="1.5"
@@ -956,7 +1238,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-9.90s">
+    <g class="bubble bubble-18"
+       style="--duration:14s; --delay:-8.76s">
+      <style>
+        
+      @keyframes drift-18 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(-4px, -5px); }
+        58% { transform: translate(1px, -6px); }
+        82% { transform: translate(4px, 1px); }
+      }
+    
+        .bubble-18 {
+          animation-name: drift-18;
+          animation-duration: 14s;
+        }
+      </style>
+
       <circle cx="487.71" cy="220.47" r="24.32"
               fill="#8b949e" fill-opacity=".96"
               stroke="#8b949e" stroke-width="1.5"
@@ -1003,7 +1301,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-10.45s">
+    <g class="bubble bubble-19"
+       style="--duration:11s; --delay:-4.25s">
+      <style>
+        
+      @keyframes drift-19 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(4px, 3px); }
+        58% { transform: translate(-4px, 0px); }
+        82% { transform: translate(3px, 1px); }
+      }
+    
+        .bubble-19 {
+          animation-name: drift-19;
+          animation-duration: 11s;
+        }
+      </style>
+
       <circle cx="259.42" cy="392.43" r="24.32"
               fill="#8b949e" fill-opacity=".96"
               stroke="#8b949e" stroke-width="1.5"
@@ -1050,7 +1364,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-11.00s">
+    <g class="bubble bubble-20"
+       style="--duration:11s; --delay:-5.43s">
+      <style>
+        
+      @keyframes drift-20 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(3px, 2px); }
+        58% { transform: translate(4px, -2px); }
+        82% { transform: translate(-1px, 2px); }
+      }
+    
+        .bubble-20 {
+          animation-name: drift-20;
+          animation-duration: 11s;
+        }
+      </style>
+
       <circle cx="365.58" cy="433.10" r="24.25"
               fill="#8b949e" fill-opacity=".96"
               stroke="#8b949e" stroke-width="1.5"
@@ -1097,7 +1427,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-11.55s">
+    <g class="bubble bubble-21"
+       style="--duration:11s; --delay:-10.61s">
+      <style>
+        
+      @keyframes drift-21 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(2px, 1px); }
+        58% { transform: translate(2px, -3px); }
+        82% { transform: translate(4px, -2px); }
+      }
+    
+        .bubble-21 {
+          animation-name: drift-21;
+          animation-duration: 11s;
+        }
+      </style>
+
       <circle cx="202.90" cy="304.28" r="24.25"
               fill="#d29922" fill-opacity=".96"
               stroke="#d29922" stroke-width="1.5"
@@ -1144,7 +1490,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-12.10s">
+    <g class="bubble bubble-22"
+       style="--duration:15s; --delay:-2.38s">
+      <style>
+        
+      @keyframes drift-22 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(2px, 5px); }
+        58% { transform: translate(4px, 1px); }
+        82% { transform: translate(-4px, 3px); }
+      }
+    
+        .bubble-22 {
+          animation-name: drift-22;
+          animation-duration: 15s;
+        }
+      </style>
+
       <circle cx="299.93" cy="136.22" r="24.22"
               fill="#8b949e" fill-opacity=".96"
               stroke="#8b949e" stroke-width="1.5"
@@ -1191,7 +1553,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-12.65s">
+    <g class="bubble bubble-23"
+       style="--duration:13s; --delay:-1.64s">
+      <style>
+        
+      @keyframes drift-23 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(-3px, 4px); }
+        58% { transform: translate(3px, -3px); }
+        82% { transform: translate(-1px, -2px); }
+      }
+    
+        .bubble-23 {
+          animation-name: drift-23;
+          animation-duration: 13s;
+        }
+      </style>
+
       <circle cx="517.20" cy="281.33" r="24.15"
               fill="#8b949e" fill-opacity=".96"
               stroke="#8b949e" stroke-width="1.5"
@@ -1238,7 +1616,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-13.20s">
+    <g class="bubble bubble-24"
+       style="--duration:14s; --delay:-9.98s">
+      <style>
+        
+      @keyframes drift-24 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(-4px, 0px); }
+        58% { transform: translate(3px, 6px); }
+        82% { transform: translate(-3px, 1px); }
+      }
+    
+        .bubble-24 {
+          animation-name: drift-24;
+          animation-duration: 14s;
+        }
+      </style>
+
       <circle cx="476.11" cy="388.39" r="24.07"
               fill="#8b949e" fill-opacity=".96"
               stroke="#8b949e" stroke-width="1.5"
@@ -1285,7 +1679,23 @@
       </text>
     </g>
 
-    <g class="bubble" style="--delay:-13.75s">
+    <g class="bubble bubble-25"
+       style="--duration:16s; --delay:-12.67s">
+      <style>
+        
+      @keyframes drift-25 {
+        0%, 100% { transform: translate(0, 0); }
+        27% { transform: translate(2px, -5px); }
+        58% { transform: translate(3px, -1px); }
+        82% { transform: translate(-2px, 3px); }
+      }
+    
+        .bubble-25 {
+          animation-name: drift-25;
+          animation-duration: 16s;
+        }
+      </style>
+
       <circle cx="217.61" cy="203.15" r="24.02"
               fill="#8b949e" fill-opacity=".96"
               stroke="#8b949e" stroke-width="1.5"
@@ -1335,6 +1745,6 @@
 
   <text x="688" y="488" text-anchor="end"
         fill="#8b949e" font-size="9">
-    UPDATED 2026-10-12 06:00 WIB
+    UPDATED 2026-10-12 06:07 WIB
   </text>
 </svg>
