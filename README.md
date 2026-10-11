@@ -197,6 +197,11 @@
   <source media="(prefers-color-scheme: light)" srcset="./github-activity-30days.svg" />
   <img alt="GitHub Activity" src="./github-activity-30days.svg" width="100%" />
 </picture>
+  <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/language-stats.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/language-stats.svg" />
+  <img alt="GitHub Activity" src="assets/language-stats.svg" width="100%" />
+</picture>
  <br><br>
 <!-- STAT_START -->
 📅 Daily commits: 1
