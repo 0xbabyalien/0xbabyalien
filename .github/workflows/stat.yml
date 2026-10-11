@@ -22,7 +22,7 @@ jobs:
           python-version: "3.x"
 
       - name: Run stat
-        run: python stat.py
+        run: python scripts/stat.py
 
       - name: Commit stat
         run: |
