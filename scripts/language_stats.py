@@ -1,6 +1,7 @@
 import json
 import math
 import os
+import random
 import urllib.request
 from datetime import datetime
 from html import escape
@@ -101,26 +102,26 @@ def circles_overlap(x, y, radius, placed, gap=PACKING_GAP):
 def candidate_positions(placed, radius, width, height):
     center_x = width / 2
     center_y = height / 2
-
-    # Test positions around the center and around existing circles.
     yield center_x, center_y
 
+    # Search expanding rings around the center for compact placement.
     for ring in range(1, 45):
-        distance_from_center = ring * 4
+        ring_distance = ring * 4
         samples = max(16, ring * 12)
 
         for step in range(samples):
-            angle = (2 * math.pi * step) / samples
+            angle = 2 * math.pi * step / samples
             yield (
-                center_x + math.cos(angle) * distance_from_center,
-                center_y + math.sin(angle) * distance_from_center,
+                center_x + math.cos(angle) * ring_distance,
+                center_y + math.sin(angle) * ring_distance,
             )
 
+    # Also test positions tangent to already-placed bubbles.
     for other in placed:
         distance = radius + other["radius"] + PACKING_GAP
 
         for step in range(48):
-            angle = (2 * math.pi * step) / 48
+            angle = 2 * math.pi * step / 48
             yield (
                 other["x"] + math.cos(angle) * distance,
                 other["y"] + math.sin(angle) * distance,
@@ -139,115 +140,89 @@ def pack_circles(language_data):
             MAX_RADIUS - MIN_RADIUS
         ) * math.sqrt(share)
 
-    # Place larger bubbles first, which makes compact packing easier.
-    sorted_items = sorted(
+    # Place larger circles first to make compact packing easier.
+    ordered = sorted(
         language_data,
         key=lambda item: item["radius"],
         reverse=True,
     )
 
-    width = SVG_WIDTH - 2 * MARGIN
-    initial_height = max(240, int(math.sqrt(len(sorted_items)) * 190))
+    pack_width = SVG_WIDTH - 2 * MARGIN
+    initial_height = max(240, int(math.sqrt(len(ordered)) * 190))
     placed = []
 
-    for item in sorted_items:
+    for item in ordered:
         radius = item["radius"]
-        found = None
+        selected_position = None
 
-        for current_height in (
-            initial_height,
-            initial_height + 180,
-            initial_height + 360,
-            initial_height + 720,
-            initial_height + 1440,
-        ):
+        # Increase the search area if the current height is insufficient.
+        for extra_height in (0, 180, 360, 720, 1440, 2400):
+            search_height = initial_height + extra_height
+
             for x, y in candidate_positions(
                 placed,
                 radius,
-                width,
-                current_height,
+                pack_width,
+                search_height,
             ):
-                # Keep a small inset around the panel edges.
                 if (
                     x < radius + 4
-                    or x > width - radius - 4
+                    or x > pack_width - radius - 4
                     or y < radius + 4
-                    or y > current_height - radius - 4
+                    or y > search_height - radius - 4
                 ):
                     continue
 
                 if not circles_overlap(x, y, radius, placed):
-                    found = (x, y)
+                    selected_position = (x, y)
                     break
 
-            if found:
+            if selected_position is not None:
                 break
 
-        # If the trial area is still too small, add more vertical room.
-        if not found:
-            current_height = initial_height + 1800
-
-            for x, y in candidate_positions(
-                placed,
-                radius,
-                width,
-                current_height,
-            ):
-                if (
-                    x >= radius + 4
-                    and x <= width - radius - 4
-                    and y >= radius + 4
-                    and y <= current_height - radius - 4
-                    and not circles_overlap(x, y, radius, placed)
-                ):
-                    found = (x, y)
-                    break
-
-        if not found:
+        if selected_position is None:
             raise RuntimeError(
-                f"Could not place the bubble for {item['language']}."
+                f"Could not place bubble for {item['language']}."
             )
 
-        item["x"], item["y"] = found
+        item["x"], item["y"] = selected_position
         placed.append(item)
 
-    # Crop unused space by shifting the packed group toward the top.
+    # Shift the cluster down below the title.
     min_y = min(item["y"] - item["radius"] for item in placed)
-    shift_y = TOP - min_y
+    vertical_shift = TOP - min_y
 
     for item in placed:
-        item["y"] += shift_y
+        item["y"] += vertical_shift
         item["x"] += MARGIN
 
-    # Center the packed cluster horizontally within the SVG.
+    # Center the complete cluster horizontally.
     min_x = min(item["x"] - item["radius"] for item in placed)
     max_x = max(item["x"] + item["radius"] for item in placed)
     cluster_width = max_x - min_x
-    shift_x = (SVG_WIDTH - cluster_width) / 2 - min_x
+    horizontal_shift = (SVG_WIDTH - cluster_width) / 2 - min_x
 
     for item in placed:
-        item["x"] += shift_x
+        item["x"] += horizontal_shift
 
-    bottom = max(item["y"] + item["radius"] for item in placed)
-    height = math.ceil(bottom + 48)
-
-    # Confirm there are no overlaps after centering.
+    # Check that circles do not overlap after final positioning.
     for index, first in enumerate(placed):
         for second in placed[index + 1:]:
             distance = math.hypot(
                 second["x"] - first["x"],
                 second["y"] - first["y"],
             )
-            minimum = (
+            minimum_distance = (
                 first["radius"]
                 + second["radius"]
                 + PACKING_GAP
             )
 
-            if distance < minimum:
-                raise RuntimeError(
-                    "Bubble overlap detected after final positioning."
-                )
+            if distance < minimum_distance:
+                raise RuntimeError("Bubble overlap detected.")
+
+    bottom = max(item["y"] + item["radius"] for item in placed)
+    height = math.ceil(bottom + 48)
 
     return placed, height
 
@@ -259,6 +234,20 @@ def make_bubble(index, item, total_bytes):
     cy = item["y"]
     percentage = item["bytes"] / total_bytes * 100
     color = COLORS.get(language, "#8b949e")
+
+    # Stable per-language seed gives each bubble its own repeatable motion path.
+    rng = random.Random(f"{language}-{index}")
+
+    drift_x1 = rng.randint(-5, 5)
+    drift_y1 = rng.randint(-5, 5)
+    drift_x2 = rng.randint(-6, 6)
+    drift_y2 = rng.randint(-6, 6)
+    drift_x3 = rng.randint(-4, 4)
+    drift_y3 = rng.randint(-4, 4)
+
+    duration = rng.randint(9, 16)
+    delay = -rng.uniform(0, duration)
+    animation_name = f"drift-{index}"
 
     if radius >= 48:
         label_size = 12
@@ -272,8 +261,26 @@ def make_bubble(index, item, total_bytes):
 
     text_width = max(28, radius * 1.55)
 
+    drift_keyframes = f"""
+      @keyframes {animation_name} {{
+        0%, 100% {{ transform: translate(0, 0); }}
+        27% {{ transform: translate({drift_x1}px, {drift_y1}px); }}
+        58% {{ transform: translate({drift_x2}px, {drift_y2}px); }}
+        82% {{ transform: translate({drift_x3}px, {drift_y3}px); }}
+      }}
+    """
+
     return f"""
-    <g class="bubble" style="--delay:{-index * 0.55:.2f}s">
+    <g class="bubble bubble-{index}"
+       style="--duration:{duration}s; --delay:{delay:.2f}s">
+      <style>
+        {drift_keyframes}
+        .bubble-{index} {{
+          animation-name: {animation_name};
+          animation-duration: {duration}s;
+        }}
+      </style>
+
       <circle cx="{cx:.2f}" cy="{cy:.2f}" r="{radius:.2f}"
               fill="{color}" fill-opacity=".96"
               stroke="{color}" stroke-width="1.5"
@@ -340,10 +347,7 @@ def build_svg(username, repositories, language_totals):
     )
 
     language_data = [
-        {
-            "language": language,
-            "bytes": byte_count,
-        }
+        {"language": language, "bytes": byte_count}
         for language, byte_count in languages
     ]
 
@@ -421,7 +425,8 @@ def build_svg(username, repositories, language_totals):
       .bubble {{
         transform-box: fill-box;
         transform-origin: center;
-        animation: drift 9.5s ease-in-out infinite;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
         animation-delay: var(--delay);
       }}
 
@@ -434,13 +439,6 @@ def build_svg(username, repositories, language_totals):
         transform-box: fill-box;
         transform-origin: center;
         animation: spark 2.8s ease-in-out infinite alternate;
-      }}
-
-      @keyframes drift {{
-        0%, 100% {{ transform: translate(0, 0); }}
-        28% {{ transform: translate(1px, -1px); }}
-        63% {{ transform: translate(-1px, -2px); }}
-        82% {{ transform: translate(-1px, 0); }}
       }}
 
       @keyframes sweep {{
@@ -458,7 +456,7 @@ def build_svg(username, repositories, language_totals):
 
       @media (prefers-reduced-motion: reduce) {{
         .bubble, .sweep, .spark {{
-          animation: none;
+          animation: none !important;
         }}
         .sweep {{
           display: none;
