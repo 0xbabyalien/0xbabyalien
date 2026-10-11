@@ -104,7 +104,7 @@ def candidate_positions(placed, radius, width, height):
     center_y = height / 2
     yield center_x, center_y
 
-    # Search expanding rings around the center for compact placement.
+    # Search expanding rings around the center.
     for ring in range(1, 45):
         ring_distance = ring * 4
         samples = max(16, ring * 12)
@@ -116,7 +116,7 @@ def candidate_positions(placed, radius, width, height):
                 center_y + math.sin(angle) * ring_distance,
             )
 
-    # Also test positions tangent to already-placed bubbles.
+    # Also test positions close to already placed circles.
     for other in placed:
         distance = radius + other["radius"] + PACKING_GAP
 
@@ -140,7 +140,7 @@ def pack_circles(language_data):
             MAX_RADIUS - MIN_RADIUS
         ) * math.sqrt(share)
 
-    # Place larger circles first to make compact packing easier.
+    # Place the largest circles first.
     ordered = sorted(
         language_data,
         key=lambda item: item["radius"],
@@ -155,7 +155,7 @@ def pack_circles(language_data):
         radius = item["radius"]
         selected_position = None
 
-        # Increase the search area if the current height is insufficient.
+        # Expand the search area if needed.
         for extra_height in (0, 180, 360, 720, 1440, 2400):
             search_height = initial_height + extra_height
 
@@ -188,7 +188,7 @@ def pack_circles(language_data):
         item["x"], item["y"] = selected_position
         placed.append(item)
 
-    # Shift the cluster down below the title.
+    # Move the cluster below the heading.
     min_y = min(item["y"] - item["radius"] for item in placed)
     vertical_shift = TOP - min_y
 
@@ -196,7 +196,7 @@ def pack_circles(language_data):
         item["y"] += vertical_shift
         item["x"] += MARGIN
 
-    # Center the complete cluster horizontally.
+    # Center the cluster horizontally.
     min_x = min(item["x"] - item["radius"] for item in placed)
     max_x = max(item["x"] + item["radius"] for item in placed)
     cluster_width = max_x - min_x
@@ -205,7 +205,7 @@ def pack_circles(language_data):
     for item in placed:
         item["x"] += horizontal_shift
 
-    # Check that circles do not overlap after final positioning.
+    # Verify that the final circle positions do not overlap.
     for index, first in enumerate(placed):
         for second in placed[index + 1:]:
             distance = math.hypot(
@@ -233,9 +233,9 @@ def make_bubble(index, item, total_bytes):
     cx = item["x"]
     cy = item["y"]
     percentage = item["bytes"] / total_bytes * 100
-    color = COLORS.get(language, "#8b949e")
+    fill_color = COLORS.get(language, "#8b949e")
 
-    # Stable per-language seed gives each bubble its own repeatable motion path.
+    # Keep each bubble's drift path consistent between daily runs.
     rng = random.Random(f"{language}-{index}")
 
     drift_x1 = rng.randint(-5, 5)
@@ -261,50 +261,39 @@ def make_bubble(index, item, total_bytes):
 
     text_width = max(28, radius * 1.55)
 
-    drift_keyframes = f"""
-      @keyframes {animation_name} {{
-        0%, 100% {{ transform: translate(0, 0); }}
-        27% {{ transform: translate({drift_x1}px, {drift_y1}px); }}
-        58% {{ transform: translate({drift_x2}px, {drift_y2}px); }}
-        82% {{ transform: translate({drift_x3}px, {drift_y3}px); }}
-      }}
-    """
-
     return f"""
     <g class="bubble bubble-{index}"
-       style="--duration:{duration}s; --delay:{delay:.2f}s">
-      <style>
-        {drift_keyframes}
-        .bubble-{index} {{
-          animation-name: {animation_name};
-          animation-duration: {duration}s;
-        }}
-      </style>
-
-      <circle cx="{cx:.2f}" cy="{cy:.2f}" r="{radius:.2f}"
-              fill="{color}" fill-opacity=".96"
-              stroke="{color}" stroke-width="1.5"
+       style="--delay:{delay:.2f}s; --duration:{duration}s">
+      <circle class="bubble-outline"
+              cx="{cx:.2f}" cy="{cy:.2f}" r="{radius:.2f}"
+              fill="{fill_color}" fill-opacity=".96"
+              stroke="#0ad" stroke-width="1.5"
               filter="url(#shadow)"/>
+
       <circle cx="{cx:.2f}" cy="{cy:.2f}" r="{radius - 1:.2f}"
               fill="url(#gloss)" pointer-events="none"/>
+
       <ellipse cx="{cx - radius * 0.28:.2f}"
                cy="{cy - radius * 0.58:.2f}"
                rx="{radius * 0.32:.2f}"
                ry="{max(3, radius * 0.11):.2f}"
                fill="#ffffff" opacity=".40"
                filter="url(#softGlow)" pointer-events="none"/>
+
       <path d="M {cx - radius * 0.53:.2f} {cy - radius * 0.49:.2f}
                Q {cx - radius * 0.28:.2f} {cy - radius * 0.78:.2f}
                  {cx - radius * 0.02:.2f} {cy - radius * 0.53:.2f}"
             fill="none" stroke="#ffffff" stroke-opacity=".68"
             stroke-width="{max(1, radius * 0.025):.2f}"
             stroke-linecap="round" pointer-events="none"/>
+
       <circle class="spark"
               cx="{cx + radius * 0.56:.2f}"
               cy="{cy - radius * 0.40:.2f}"
               r="{max(1.2, radius * 0.035):.2f}"
               fill="#ffffff" filter="url(#softGlow)"
               pointer-events="none"/>
+
       <g clip-path="url(#clip-{index})">
         <rect class="sweep"
               x="{cx - radius * 1.5:.2f}"
@@ -315,18 +304,55 @@ def make_bubble(index, item, total_bytes):
               transform="rotate(-25 {cx:.2f} {cy:.2f})"
               pointer-events="none"/>
       </g>
+
       <text x="{cx:.2f}" y="{cy - 2:.2f}" text-anchor="middle"
             textLength="{text_width:.2f}"
             lengthAdjust="spacingAndGlyphs"
             fill="#ffffff" font-size="{label_size}" font-weight="700">
         {escape(language)}
       </text>
+
       <text x="{cx:.2f}" y="{cy + 15:.2f}" text-anchor="middle"
             fill="#ffffff" font-size="{percentage_size}" font-weight="700">
         {percentage:.2f}%
       </text>
     </g>
 """
+
+
+def make_drift_keyframes(bubbles):
+    rules = []
+
+    for index, item in enumerate(bubbles):
+        language = item["language"]
+        rng = random.Random(f"{language}-{index}")
+
+        x1 = rng.randint(-5, 5)
+        y1 = rng.randint(-5, 5)
+        x2 = rng.randint(-6, 6)
+        y2 = rng.randint(-6, 6)
+        x3 = rng.randint(-4, 4)
+        y3 = rng.randint(-4, 4)
+        duration = rng.randint(9, 16)
+
+        rules.append(
+            f"""
+      .bubble-{index} {{
+        animation-name: drift-{index};
+        animation-duration: {duration}s;
+      }}
+
+      @keyframes drift-{index} {{
+        0%, 100% {{ transform: translate(0, 0); }}
+        27% {{ transform: translate({x1}px, {y1}px); }}
+        58% {{ transform: translate({x2}px, {y2}px); }}
+        82% {{ transform: translate({x3}px, {y3}px); }}
+      }}
+"""
+        )
+
+    return "
+".join(rules)
 
 
 def build_svg(username, repositories, language_totals):
@@ -372,6 +398,8 @@ def build_svg(username, repositories, language_totals):
     updated = datetime.now(ZoneInfo("Asia/Jakarta")).strftime(
         "%Y-%m-%d %H:%M WIB"
     )
+
+    global_drift_rules = make_drift_keyframes(bubbles)
 
     return f"""<svg xmlns="http://www.w3.org/2000/svg"
      width="{SVG_WIDTH}" height="{height}"
@@ -430,6 +458,27 @@ def build_svg(username, repositories, language_totals):
         animation-delay: var(--delay);
       }}
 
+      .bubble-outline {{
+        stroke: #0ad;
+        stroke-width: 1.5;
+        animation: outline-pulse 2s ease-in-out infinite alternate;
+      }}
+
+      @keyframes outline-pulse {{
+        from {{
+          stroke: #0ad;
+          stroke-width: 1.5;
+          stroke-opacity: .95;
+        }}
+        to {{
+          stroke: #a819bb;
+          stroke-width: 1.8;
+          stroke-opacity: .9;
+        }}
+      }}
+
+      {global_drift_rules}
+
       .sweep {{
         animation: sweep 4.6s ease-in-out infinite;
         opacity: 0;
@@ -455,8 +504,13 @@ def build_svg(username, repositories, language_totals):
       }}
 
       @media (prefers-reduced-motion: reduce) {{
-        .bubble, .sweep, .spark {{
+        .bubble, .bubble-outline, .sweep, .spark {{
           animation: none !important;
+        }}
+        .bubble-outline {{
+          stroke: #0ad;
+          stroke-width: 1.5;
+          stroke-opacity: .95;
         }}
         .sweep {{
           display: none;
