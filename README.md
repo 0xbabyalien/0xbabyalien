@@ -211,7 +211,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">It is not the knowing that is difficult, but the doing.</font><br/>— <font color="#808080">Chinese Proverb</font></center>
+<center><font color="#0c7ec9">Being kind is more important than being right.</font><br/>— <font color="#808080">David Brinkley</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
