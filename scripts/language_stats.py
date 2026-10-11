@@ -20,6 +20,13 @@ HEADERS = {
 if TOKEN:
     HEADERS["Authorization"] = f"Bearer {TOKEN}"
 
+SVG_WIDTH = 720
+MARGIN = 28
+TOP = 112
+PACKING_GAP = 3
+MIN_RADIUS = 24
+MAX_RADIUS = 55
+
 COLORS = {
     "HTML": "#e34c26",
     "CSS": "#a371f7",
@@ -69,172 +76,245 @@ def get_all_public_repositories(username):
     return repositories
 
 
-def get_all_language_totals(repositories):
-    language_totals = {}
+def get_language_totals(repositories):
+    totals = {}
 
     for repository in repositories:
         owner = repository["owner"]["login"]
         name = repository["name"]
         url = f"https://api.github.com/repos/{owner}/{name}/languages"
-        repository_languages = github_get(url)
 
-        for language, byte_count in repository_languages.items():
-            language_totals[language] = (
-                language_totals.get(language, 0) + byte_count
+        for language, byte_count in github_get(url).items():
+            totals[language] = totals.get(language, 0) + byte_count
+
+    return totals
+
+
+def circles_overlap(x, y, radius, placed, gap=PACKING_GAP):
+    for other in placed:
+        distance = math.hypot(x - other["x"], y - other["y"])
+        if distance < radius + other["radius"] + gap:
+            return True
+    return False
+
+
+def candidate_positions(placed, radius, width, height):
+    center_x = width / 2
+    center_y = height / 2
+
+    # Test positions around the center and around existing circles.
+    yield center_x, center_y
+
+    for ring in range(1, 45):
+        distance_from_center = ring * 4
+        samples = max(16, ring * 12)
+
+        for step in range(samples):
+            angle = (2 * math.pi * step) / samples
+            yield (
+                center_x + math.cos(angle) * distance_from_center,
+                center_y + math.sin(angle) * distance_from_center,
             )
 
-    return language_totals
+    for other in placed:
+        distance = radius + other["radius"] + PACKING_GAP
 
-
-def place_bubbles(bubbles, width=720):
-    """Place circles without overlap and return positions and total height."""
-    margin_x = 38
-    top = 112
-    gap = 12
-    row_gap = 22
-    max_radius = 54
-    min_radius = 30
-    usable_width = width - 2 * margin_x
-
-    # Scale circle area by language share while keeping every label readable.
-    max_value = max(item["bytes"] for item in bubbles)
-
-    for item in bubbles:
-        share = item["bytes"] / max_value
-        item["radius"] = min_radius + (max_radius - min_radius) * math.sqrt(share)
-
-    positions = []
-    row = []
-    x = margin_x
-
-    for item in bubbles:
-        radius = item["radius"]
-        diameter = radius * 2
-
-        if row and x + diameter > width - margin_x:
-            row_y = top + max_radius + len(positions) * (2 * max_radius + row_gap)
-
-            for row_item in row:
-                positions.append(
-                    (
-                        row_item,
-                        row_item["_x"],
-                        row_y,
-                    )
-                )
-
-            row = []
-            x = margin_x
-
-        if x + diameter > width - margin_x:
-            item["radius"] = min_radius
-            radius = min_radius
-            diameter = radius * 2
-
-        item["_x"] = x + radius
-        row.append(item)
-        x += diameter + gap
-
-    if row:
-        row_y = top + max_radius + len(positions) * (2 * max_radius + row_gap)
-
-        for row_item in row:
-            positions.append(
-                (
-                    row_item,
-                    row_item["_x"],
-                    row_y,
-                )
+        for step in range(48):
+            angle = (2 * math.pi * step) / 48
+            yield (
+                other["x"] + math.cos(angle) * distance,
+                other["y"] + math.sin(angle) * distance,
             )
 
-    # Center bubbles within each row and verify circle-to-circle clearance.
-    rows = {}
-    for item, cx, cy in positions:
-        rows.setdefault(cy, []).append((item, cx, cy))
 
-    centered_positions = []
+def pack_circles(language_data):
+    if not language_data:
+        return [], 220
 
-    for cy, row_items in rows.items():
-        left_edge = min(cx - item["radius"] for item, cx, _ in row_items)
-        right_edge = max(cx + item["radius"] for item, cx, _ in row_items)
-        row_width = right_edge - left_edge
-        offset = (width - row_width) / 2 - left_edge
+    largest_value = max(item["bytes"] for item in language_data)
 
-        centered_positions.extend(
-            (item, cx + offset, cy)
-            for item, cx, cy in row_items
-        )
+    for item in language_data:
+        share = item["bytes"] / largest_value
+        item["radius"] = MIN_RADIUS + (
+            MAX_RADIUS - MIN_RADIUS
+        ) * math.sqrt(share)
 
-    for i, (first, x1, y1) in enumerate(centered_positions):
-        for second, x2, y2 in centered_positions[i + 1:]:
-            distance = math.hypot(x2 - x1, y2 - y1)
-            required_distance = first["radius"] + second["radius"] + 8
-
-            if distance < required_distance:
-                raise ValueError(
-                    "Bubble overlap detected. "
-                    "Increase the SVG width or reduce bubble sizes."
-                )
-
-    last_bottom = max(
-        cy + item["radius"]
-        for item, _, cy in centered_positions
+    # Place larger bubbles first, which makes compact packing easier.
+    sorted_items = sorted(
+        language_data,
+        key=lambda item: item["radius"],
+        reverse=True,
     )
-    height = math.ceil(last_bottom + 58)
 
-    return centered_positions, height
+    width = SVG_WIDTH - 2 * MARGIN
+    initial_height = max(240, int(math.sqrt(len(sorted_items)) * 190))
+    placed = []
+
+    for item in sorted_items:
+        radius = item["radius"]
+        found = None
+
+        for current_height in (
+            initial_height,
+            initial_height + 180,
+            initial_height + 360,
+            initial_height + 720,
+            initial_height + 1440,
+        ):
+            for x, y in candidate_positions(
+                placed,
+                radius,
+                width,
+                current_height,
+            ):
+                # Keep a small inset around the panel edges.
+                if (
+                    x < radius + 4
+                    or x > width - radius - 4
+                    or y < radius + 4
+                    or y > current_height - radius - 4
+                ):
+                    continue
+
+                if not circles_overlap(x, y, radius, placed):
+                    found = (x, y)
+                    break
+
+            if found:
+                break
+
+        # If the trial area is still too small, add more vertical room.
+        if not found:
+            current_height = initial_height + 1800
+
+            for x, y in candidate_positions(
+                placed,
+                radius,
+                width,
+                current_height,
+            ):
+                if (
+                    x >= radius + 4
+                    and x <= width - radius - 4
+                    and y >= radius + 4
+                    and y <= current_height - radius - 4
+                    and not circles_overlap(x, y, radius, placed)
+                ):
+                    found = (x, y)
+                    break
+
+        if not found:
+            raise RuntimeError(
+                f"Could not place the bubble for {item['language']}."
+            )
+
+        item["x"], item["y"] = found
+        placed.append(item)
+
+    # Crop unused space by shifting the packed group toward the top.
+    min_y = min(item["y"] - item["radius"] for item in placed)
+    shift_y = TOP - min_y
+
+    for item in placed:
+        item["y"] += shift_y
+        item["x"] += MARGIN
+
+    # Center the packed cluster horizontally within the SVG.
+    min_x = min(item["x"] - item["radius"] for item in placed)
+    max_x = max(item["x"] + item["radius"] for item in placed)
+    cluster_width = max_x - min_x
+    shift_x = (SVG_WIDTH - cluster_width) / 2 - min_x
+
+    for item in placed:
+        item["x"] += shift_x
+
+    bottom = max(item["y"] + item["radius"] for item in placed)
+    height = math.ceil(bottom + 48)
+
+    # Confirm there are no overlaps after centering.
+    for index, first in enumerate(placed):
+        for second in placed[index + 1:]:
+            distance = math.hypot(
+                second["x"] - first["x"],
+                second["y"] - first["y"],
+            )
+            minimum = (
+                first["radius"]
+                + second["radius"]
+                + PACKING_GAP
+            )
+
+            if distance < minimum:
+                raise RuntimeError(
+                    "Bubble overlap detected after final positioning."
+                )
+
+    return placed, height
 
 
-def make_bubble(index, language, percentage, cx, cy, radius):
+def make_bubble(index, item, total_bytes):
+    language = item["language"]
+    radius = item["radius"]
+    cx = item["x"]
+    cy = item["y"]
+    percentage = item["bytes"] / total_bytes * 100
     color = COLORS.get(language, "#8b949e")
 
-    # Smaller circles get smaller text; textLength prevents long labels
-    # from extending beyond their bubble.
-    label_size = 13 if radius >= 50 else 11 if radius >= 38 else 9
-    percentage_size = 11 if radius >= 45 else 9
-    max_text_width = max(28, radius * 1.55)
+    if radius >= 48:
+        label_size = 12
+        percentage_size = 10
+    elif radius >= 36:
+        label_size = 10
+        percentage_size = 9
+    else:
+        label_size = 8
+        percentage_size = 8
+
+    text_width = max(28, radius * 1.55)
 
     return f"""
-    <g class="bubble bubble-{index}" style="--delay:{-index * 0.7:.1f}s">
-      <circle cx="{cx:.1f}" cy="{cy:.1f}" r="{radius:.1f}"
-              fill="{color}" stroke="{color}" stroke-width="1.5"
+    <g class="bubble" style="--delay:{-index * 0.55:.2f}s">
+      <circle cx="{cx:.2f}" cy="{cy:.2f}" r="{radius:.2f}"
+              fill="{color}" fill-opacity=".96"
+              stroke="{color}" stroke-width="1.5"
               filter="url(#shadow)"/>
-      <circle cx="{cx:.1f}" cy="{cy:.1f}" r="{radius - 1:.1f}"
+      <circle cx="{cx:.2f}" cy="{cy:.2f}" r="{radius - 1:.2f}"
               fill="url(#gloss)" pointer-events="none"/>
-      <ellipse cx="{cx - radius * 0.28:.1f}"
-               cy="{cy - radius * 0.58:.1f}"
-               rx="{radius * 0.32:.1f}"
-               ry="{max(3, radius * 0.11):.1f}"
+      <ellipse cx="{cx - radius * 0.28:.2f}"
+               cy="{cy - radius * 0.58:.2f}"
+               rx="{radius * 0.32:.2f}"
+               ry="{max(3, radius * 0.11):.2f}"
                fill="#ffffff" opacity=".40"
                filter="url(#softGlow)" pointer-events="none"/>
-      <path d="M {cx - radius * 0.53:.1f} {cy - radius * 0.49:.1f}
-               Q {cx - radius * 0.28:.1f} {cy - radius * 0.78:.1f}
-                 {cx - radius * 0.02:.1f} {cy - radius * 0.53:.1f}"
+      <path d="M {cx - radius * 0.53:.2f} {cy - radius * 0.49:.2f}
+               Q {cx - radius * 0.28:.2f} {cy - radius * 0.78:.2f}
+                 {cx - radius * 0.02:.2f} {cy - radius * 0.53:.2f}"
             fill="none" stroke="#ffffff" stroke-opacity=".68"
-            stroke-width="{max(1, radius * 0.025):.1f}"
+            stroke-width="{max(1, radius * 0.025):.2f}"
             stroke-linecap="round" pointer-events="none"/>
       <circle class="spark"
-              cx="{cx + radius * 0.56:.1f}"
-              cy="{cy - radius * 0.40:.1f}"
-              r="{max(1.2, radius * 0.035):.1f}"
+              cx="{cx + radius * 0.56:.2f}"
+              cy="{cy - radius * 0.40:.2f}"
+              r="{max(1.2, radius * 0.035):.2f}"
               fill="#ffffff" filter="url(#softGlow)"
               pointer-events="none"/>
       <g clip-path="url(#clip-{index})">
         <rect class="sweep"
-              x="{cx - radius * 1.5:.1f}"
-              y="{cy - radius * 1.2:.1f}"
-              width="{radius * 3:.1f}"
-              height="{radius * 2.4:.1f}"
+              x="{cx - radius * 1.5:.2f}"
+              y="{cy - radius * 1.2:.2f}"
+              width="{radius * 3:.2f}"
+              height="{radius * 2.4:.2f}"
               fill="url(#shineBand)"
-              transform="rotate(-25 {cx:.1f} {cy:.1f})"
+              transform="rotate(-25 {cx:.2f} {cy:.2f})"
               pointer-events="none"/>
       </g>
-      <text x="{cx:.1f}" y="{cy - 2:.1f}" text-anchor="middle"
-            textLength="{max_text_width:.1f}" lengthAdjust="spacingAndGlyphs"
+      <text x="{cx:.2f}" y="{cy - 2:.2f}" text-anchor="middle"
+            textLength="{text_width:.2f}"
+            lengthAdjust="spacingAndGlyphs"
             fill="#ffffff" font-size="{label_size}" font-weight="700">
         {escape(language)}
       </text>
-      <text x="{cx:.1f}" y="{cy + 17:.1f}" text-anchor="middle"
+      <text x="{cx:.2f}" y="{cy + 15:.2f}" text-anchor="middle"
             fill="#ffffff" font-size="{percentage_size}" font-weight="700">
         {percentage:.2f}%
       </text>
@@ -259,50 +339,39 @@ def build_svg(username, repositories, language_totals):
         reverse=True,
     )
 
-    bubble_data = [
+    language_data = [
         {
             "language": language,
             "bytes": byte_count,
-            "percentage": byte_count / total_bytes * 100,
         }
         for language, byte_count in languages
     ]
 
-    positioned, height = place_bubbles(bubble_data)
+    bubbles, height = pack_circles(language_data)
 
     clip_paths = []
     bubble_groups = []
 
-    for index, (item, cx, cy) in enumerate(positioned):
+    for index, item in enumerate(bubbles):
+        cx = item["x"]
+        cy = item["y"]
         radius = item["radius"]
-        language = item["language"]
 
         clip_paths.append(
             f'<clipPath id="clip-{index}">'
-            f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{radius:.1f}"/>'
+            f'<circle cx="{cx:.2f}" cy="{cy:.2f}" r="{radius:.2f}"/>'
             f"</clipPath>"
         )
 
-        bubble_groups.append(
-            make_bubble(
-                index=index,
-                language=language,
-                percentage=item["percentage"],
-                cx=cx,
-                cy=cy,
-                radius=radius,
-            )
-        )
+        bubble_groups.append(make_bubble(index, item, total_bytes))
 
     updated = datetime.now(ZoneInfo("Asia/Jakarta")).strftime(
         "%Y-%m-%d %H:%M WIB"
     )
 
-    repository_count = len(repositories)
-    language_count = len(languages)
-
     return f"""<svg xmlns="http://www.w3.org/2000/svg"
-     width="720" height="{height}" viewBox="0 0 720 {height}"
+     width="{SVG_WIDTH}" height="{height}"
+     viewBox="0 0 {SVG_WIDTH} {height}"
      role="img" aria-labelledby="title desc">
   <title id="title">Repository Language Bubbles</title>
   <desc id="desc">
@@ -369,9 +438,9 @@ def build_svg(username, repositories, language_totals):
 
       @keyframes drift {{
         0%, 100% {{ transform: translate(0, 0); }}
-        28% {{ transform: translate(5px, -7px); }}
-        63% {{ transform: translate(-4px, -10px); }}
-        82% {{ transform: translate(-6px, -2px); }}
+        28% {{ transform: translate(1px, -1px); }}
+        63% {{ transform: translate(-1px, -2px); }}
+        82% {{ transform: translate(-1px, 0); }}
       }}
 
       @keyframes sweep {{
@@ -401,19 +470,19 @@ def build_svg(username, repositories, language_totals):
     </style>
   </defs>
 
-  <rect x="8" y="8" width="704" height="{height - 16}" rx="22"
-        fill="url(#bg)" stroke="#30363d"/>
+  <rect x="8" y="8" width="{SVG_WIDTH - 16}" height="{height - 16}"
+        rx="22" fill="url(#bg)" stroke="#30363d"/>
 
   <text x="32" y="42" fill="#f0f6fc" font-size="18" font-weight="700">
     Repository Language Bubbles
   </text>
   <text x="32" y="62" fill="#8b949e" font-size="11">
-    {escape(username)} · {repository_count} public repositories · {language_count} languages
+    {escape(username)} · {len(repositories)} public repositories · {len(languages)} languages
   </text>
 
   {''.join(bubble_groups)}
 
-  <text x="688" y="{height - 18}" text-anchor="end"
+  <text x="{SVG_WIDTH - 32}" y="{height - 18}" text-anchor="end"
         fill="#8b949e" font-size="9">
     UPDATED {updated}
   </text>
@@ -422,14 +491,13 @@ def build_svg(username, repositories, language_totals):
 
 
 repositories = get_all_public_repositories(USERNAME)
-language_totals = get_all_language_totals(repositories)
+language_totals = get_language_totals(repositories)
 svg_content = build_svg(USERNAME, repositories, language_totals)
 
 OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 OUTPUT.write_text(svg_content, encoding="utf-8")
 
 print(
-    f"Updated {OUTPUT} with "
-    f"{len(language_totals)} languages from "
-    f"{len(repositories)} public repositories."
-        )
+    f"Updated {OUTPUT} with {len(language_totals)} languages "
+    f"from {len(repositories)} public repositories."
+)
