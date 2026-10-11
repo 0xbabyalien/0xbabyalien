@@ -1,32 +1,1287 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="324" viewBox="0 0 720 324">
-<rect width="100%" height="100%" rx="12" fill="#0d1117" stroke="#30363d"/>
-<g font-family="Arial, Helvetica, sans-serif" fill="#e6edf3">
-<text x="24" y="34" font-size="19" font-weight="bold">Repository Language Statistics</text>
-<text x="24" y="56" font-size="11" fill="#8b949e">0xbabyalien/0xbabyalien</text>
-<rect x="24.00" y="76" width="564.07" height="14" fill="#e34c26"/>
-<rect x="588.07" y="76" width="61.08" height="14" fill="#563d7c"/>
-<rect x="649.15" y="76" width="21.98" height="14" fill="#3572A5"/>
-<rect x="671.13" y="76" width="21.41" height="14" fill="#f34b7d"/>
-<rect x="692.54" y="76" width="2.00" height="14" fill="#8b949e"/>
-<rect x="694.54" y="76" width="1.46" height="14" fill="#b07219"/>
-<circle cx="30" cy="115" r="5" fill="#e34c26"/>
-<text x="46" y="119" font-size="13">HTML</text>
-<text x="696" y="119" font-size="13" text-anchor="end" fill="#8b949e">83.94%</text>
-<circle cx="30" cy="149" r="5" fill="#563d7c"/>
-<text x="46" y="153" font-size="13">CSS</text>
-<text x="696" y="153" font-size="13" text-anchor="end" fill="#8b949e">9.09%</text>
-<circle cx="30" cy="183" r="5" fill="#3572A5"/>
-<text x="46" y="187" font-size="13">Python</text>
-<text x="696" y="187" font-size="13" text-anchor="end" fill="#8b949e">3.27%</text>
-<circle cx="30" cy="217" r="5" fill="#f34b7d"/>
-<text x="46" y="221" font-size="13">C++</text>
-<text x="696" y="221" font-size="13" text-anchor="end" fill="#8b949e">3.19%</text>
-<circle cx="30" cy="251" r="5" fill="#8b949e"/>
-<text x="46" y="255" font-size="13">C#</text>
-<text x="696" y="255" font-size="13" text-anchor="end" fill="#8b949e">0.30%</text>
-<circle cx="30" cy="285" r="5" fill="#b07219"/>
-<text x="46" y="289" font-size="13">Java</text>
-<text x="696" y="289" font-size="13" text-anchor="end" fill="#8b949e">0.22%</text>
-<text x="24" y="306" font-size="10" fill="#8b949e">Last updated: 2026-10-11 23:44 WIB</text>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="720" height="3375" viewBox="0 0 720 3375"
+     role="img" aria-labelledby="title desc">
+  <title id="title">Repository Language Bubbles</title>
+  <desc id="desc">
+    Combined language statistics for 0xbabyalien's public repositories
+  </desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#171e2b"/>
+      <stop offset="1" stop-color="#0b1018"/>
+    </linearGradient>
+
+    <linearGradient id="shineBand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset=".42" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset=".50" stop-color="#ffffff" stop-opacity=".8"/>
+      <stop offset=".58" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="gloss" cx="32%" cy="20%" r="80%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".38"/>
+      <stop offset=".28" stop-color="#ffffff" stop-opacity=".12"/>
+      <stop offset=".58" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="shadow" x="-45%" y="-45%" width="190%" height="190%">
+      <feDropShadow dx="0" dy="7" stdDeviation="7"
+                    flood-color="#000000" flood-opacity=".33"/>
+    </filter>
+
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <clipPath id="clip-0"><circle cx="111.4" cy="166.0" r="54.0"/></clipPath><clipPath id="clip-1"><circle cx="216.4" cy="166.0" r="38.9"/></clipPath><clipPath id="clip-2"><circle cx="305.1" cy="166.0" r="37.8"/></clipPath><clipPath id="clip-3"><circle cx="391.2" cy="166.0" r="36.3"/></clipPath><clipPath id="clip-4"><circle cx="474.0" cy="166.0" r="34.5"/></clipPath><clipPath id="clip-5"><circle cx="553.2" cy="166.0" r="32.6"/></clipPath><clipPath id="clip-6"><circle cx="630.2" cy="166.0" r="32.4"/></clipPath><clipPath id="clip-7"><circle cx="101.2" cy="1076.0" r="31.8"/></clipPath><clipPath id="clip-8"><circle cx="176.6" cy="1076.0" r="31.6"/></clipPath><clipPath id="clip-9"><circle cx="251.2" cy="1076.0" r="31.1"/></clipPath><clipPath id="clip-10"><circle cx="325.3" cy="1076.0" r="31.0"/></clipPath><clipPath id="clip-11"><circle cx="399.2" cy="1076.0" r="30.8"/></clipPath><clipPath id="clip-12"><circle cx="472.9" cy="1076.0" r="30.8"/></clipPath><clipPath id="clip-13"><circle cx="546.5" cy="1076.0" r="30.8"/></clipPath><clipPath id="clip-14"><circle cx="619.9" cy="1076.0" r="30.7"/></clipPath><clipPath id="clip-15"><circle cx="70.1" cy="2116.0" r="30.5"/></clipPath><clipPath id="clip-16"><circle cx="142.9" cy="2116.0" r="30.4"/></clipPath><clipPath id="clip-17"><circle cx="215.7" cy="2116.0" r="30.3"/></clipPath><clipPath id="clip-18"><circle cx="288.3" cy="2116.0" r="30.3"/></clipPath><clipPath id="clip-19"><circle cx="360.8" cy="2116.0" r="30.2"/></clipPath><clipPath id="clip-20"><circle cx="433.2" cy="2116.0" r="30.2"/></clipPath><clipPath id="clip-21"><circle cx="505.6" cy="2116.0" r="30.2"/></clipPath><clipPath id="clip-22"><circle cx="578.0" cy="2116.0" r="30.2"/></clipPath><clipPath id="clip-23"><circle cx="650.3" cy="2116.0" r="30.1"/></clipPath><clipPath id="clip-24"><circle cx="324.0" cy="3286.0" r="30.1"/></clipPath><clipPath id="clip-25"><circle cx="396.1" cy="3286.0" r="30.0"/></clipPath>
+
+    <style>
+      text {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .bubble {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: drift 9.5s ease-in-out infinite;
+        animation-delay: var(--delay);
+      }
+
+      .sweep {
+        animation: sweep 4.6s ease-in-out infinite;
+        opacity: 0;
+      }
+
+      .spark {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: spark 2.8s ease-in-out infinite alternate;
+      }
+
+      @keyframes drift {
+        0%, 100% { transform: translate(0, 0); }
+        28% { transform: translate(5px, -7px); }
+        63% { transform: translate(-4px, -10px); }
+        82% { transform: translate(-6px, -2px); }
+      }
+
+      @keyframes sweep {
+        0%, 18% { transform: translateX(-150%); opacity: 0; }
+        28% { opacity: .7; }
+        70% { opacity: .42; }
+        88%, 100% { transform: translateX(150%); opacity: 0; }
+      }
+
+      @keyframes spark {
+        0% { opacity: .15; transform: scale(.75); }
+        55% { opacity: .88; transform: scale(1.16); }
+        100% { opacity: .28; transform: scale(.85); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .bubble, .sweep, .spark {
+          animation: none;
+        }
+        .sweep {
+          display: none;
+        }
+        .spark {
+          opacity: .5;
+        }
+      }
+    </style>
+  </defs>
+
+  <rect x="8" y="8" width="704" height="3359" rx="22"
+        fill="url(#bg)" stroke="#30363d"/>
+
+  <text x="32" y="42" fill="#f0f6fc" font-size="18" font-weight="700">
+    Repository Language Bubbles
+  </text>
+  <text x="32" y="62" fill="#8b949e" font-size="11">
+    0xbabyalien · 10 public repositories · 26 languages
+  </text>
+
+  
+    <g class="bubble bubble-0" style="--delay:0.0s">
+      <circle cx="111.4" cy="166.0" r="54.0"
+              fill="#dea584" stroke="#dea584" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="111.4" cy="166.0" r="53.0"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="96.3"
+               cy="134.7"
+               rx="17.3"
+               ry="5.9"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 82.8 139.5
+               Q 96.3 123.9
+                 110.3 137.4"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.4"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="141.7"
+              cy="144.4"
+              r="1.9"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-0)">
+        <rect class="sweep"
+              x="30.4"
+              y="101.2"
+              width="162.0"
+              height="129.6"
+              fill="url(#shineBand)"
+              transform="rotate(-25 111.4 166.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="111.4" y="164.0" text-anchor="middle"
+            textLength="83.7" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="13" font-weight="700">
+        Rust
+      </text>
+      <text x="111.4" y="183.0" text-anchor="middle"
+            fill="#ffffff" font-size="11" font-weight="700">
+        71.94%
+      </text>
+    </g>
+
+    <g class="bubble bubble-1" style="--delay:-0.7s">
+      <circle cx="216.4" cy="166.0" r="38.9"
+              fill="#8b949e" stroke="#8b949e" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="216.4" cy="166.0" r="37.9"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="205.5"
+               cy="143.4"
+               rx="12.5"
+               ry="4.3"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 195.7 146.9
+               Q 205.5 135.6
+                 215.6 145.4"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="238.2"
+              cy="150.4"
+              r="1.4"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-1)">
+        <rect class="sweep"
+              x="158.0"
+              y="119.3"
+              width="116.8"
+              height="93.4"
+              fill="url(#shineBand)"
+              transform="rotate(-25 216.4 166.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="216.4" y="164.0" text-anchor="middle"
+            textLength="60.3" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="11" font-weight="700">
+        Solidity
+      </text>
+      <text x="216.4" y="183.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        9.97%
+      </text>
+    </g>
+
+    <g class="bubble bubble-2" style="--delay:-1.4s">
+      <circle cx="305.1" cy="166.0" r="37.8"
+              fill="#f34b7d" stroke="#f34b7d" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="305.1" cy="166.0" r="36.8"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="294.5"
+               cy="144.1"
+               rx="12.1"
+               ry="4.2"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 285.1 147.5
+               Q 294.5 136.5
+                 304.4 145.9"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="326.3"
+              cy="150.9"
+              r="1.3"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-2)">
+        <rect class="sweep"
+              x="248.4"
+              y="120.6"
+              width="113.5"
+              height="90.8"
+              fill="url(#shineBand)"
+              transform="rotate(-25 305.1 166.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="305.1" y="164.0" text-anchor="middle"
+            textLength="58.6" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        C++
+      </text>
+      <text x="305.1" y="183.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        7.67%
+      </text>
+    </g>
+
+    <g class="bubble bubble-3" style="--delay:-2.1s">
+      <circle cx="391.2" cy="166.0" r="36.3"
+              fill="#f1e05a" stroke="#f1e05a" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="391.2" cy="166.0" r="35.3"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="381.1"
+               cy="145.0"
+               rx="11.6"
+               ry="4.0"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 372.0 148.2
+               Q 381.1 137.7
+                 390.5 146.8"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="411.6"
+              cy="151.5"
+              r="1.3"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-3)">
+        <rect class="sweep"
+              x="336.8"
+              y="122.5"
+              width="108.8"
+              height="87.1"
+              fill="url(#shineBand)"
+              transform="rotate(-25 391.2 166.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="391.2" y="164.0" text-anchor="middle"
+            textLength="56.2" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        JavaScript
+      </text>
+      <text x="391.2" y="183.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        4.91%
+      </text>
+    </g>
+
+    <g class="bubble bubble-4" style="--delay:-2.8s">
+      <circle cx="474.0" cy="166.0" r="34.5"
+              fill="#58a6ff" stroke="#58a6ff" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="474.0" cy="166.0" r="33.5"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="464.4"
+               cy="146.0"
+               rx="11.0"
+               ry="3.8"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 455.7 149.1
+               Q 464.4 139.1
+                 473.3 147.7"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="493.4"
+              cy="152.2"
+              r="1.2"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-4)">
+        <rect class="sweep"
+              x="422.3"
+              y="124.6"
+              width="103.6"
+              height="82.9"
+              fill="url(#shineBand)"
+              transform="rotate(-25 474.0 166.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="474.0" y="164.0" text-anchor="middle"
+            textLength="53.5" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        Python
+      </text>
+      <text x="474.0" y="183.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        2.55%
+      </text>
+    </g>
+
+    <g class="bubble bubble-5" style="--delay:-3.5s">
+      <circle cx="553.2" cy="166.0" r="32.6"
+              fill="#8b949e" stroke="#8b949e" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="553.2" cy="166.0" r="31.6"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="544.1"
+               cy="147.1"
+               rx="10.4"
+               ry="3.6"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 535.9 150.0
+               Q 544.1 140.5
+                 552.6 148.7"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="571.5"
+              cy="152.9"
+              r="1.2"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-5)">
+        <rect class="sweep"
+              x="504.2"
+              y="126.8"
+              width="97.9"
+              height="78.4"
+              fill="url(#shineBand)"
+              transform="rotate(-25 553.2 166.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="553.2" y="164.0" text-anchor="middle"
+            textLength="50.6" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        Yul
+      </text>
+      <text x="553.2" y="183.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        0.88%
+      </text>
+    </g>
+
+    <g class="bubble bubble-6" style="--delay:-4.2s">
+      <circle cx="630.2" cy="166.0" r="32.4"
+              fill="#e34c26" stroke="#e34c26" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="630.2" cy="166.0" r="31.4"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="621.2"
+               cy="147.2"
+               rx="10.4"
+               ry="3.6"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 613.1 150.1
+               Q 621.2 140.8
+                 629.6 148.9"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="648.3"
+              cy="153.1"
+              r="1.2"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-6)">
+        <rect class="sweep"
+              x="581.7"
+              y="127.2"
+              width="97.1"
+              height="77.7"
+              fill="url(#shineBand)"
+              transform="rotate(-25 630.2 166.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="630.2" y="164.0" text-anchor="middle"
+            textLength="50.2" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        HTML
+      </text>
+      <text x="630.2" y="183.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        0.69%
+      </text>
+    </g>
+
+    <g class="bubble bubble-7" style="--delay:-4.9s">
+      <circle cx="101.2" cy="1076.0" r="31.8"
+              fill="#89e051" stroke="#89e051" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="101.2" cy="1076.0" r="30.8"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="92.3"
+               cy="1057.6"
+               rx="10.2"
+               ry="3.5"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 84.4 1060.4
+               Q 92.3 1051.2
+                 100.6 1059.1"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="119.1"
+              cy="1063.3"
+              r="1.2"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-7)">
+        <rect class="sweep"
+              x="53.5"
+              y="1037.8"
+              width="95.4"
+              height="76.3"
+              fill="url(#shineBand)"
+              transform="rotate(-25 101.2 1076.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="101.2" y="1074.0" text-anchor="middle"
+            textLength="49.3" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        Shell
+      </text>
+      <text x="101.2" y="1093.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        0.41%
+      </text>
+    </g>
+
+    <g class="bubble bubble-8" style="--delay:-5.6s">
+      <circle cx="176.6" cy="1076.0" r="31.6"
+              fill="#3178c6" stroke="#3178c6" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="176.6" cy="1076.0" r="30.6"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="167.8"
+               cy="1057.7"
+               rx="10.1"
+               ry="3.5"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 159.9 1060.5
+               Q 167.8 1051.4
+                 176.0 1059.3"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="194.3"
+              cy="1063.4"
+              r="1.2"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-8)">
+        <rect class="sweep"
+              x="129.3"
+              y="1038.1"
+              width="94.7"
+              height="75.7"
+              fill="url(#shineBand)"
+              transform="rotate(-25 176.6 1076.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="176.6" y="1074.0" text-anchor="middle"
+            textLength="48.9" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        TypeScript
+      </text>
+      <text x="176.6" y="1093.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        0.30%
+      </text>
+    </g>
+
+    <g class="bubble bubble-9" style="--delay:-6.3s">
+      <circle cx="251.2" cy="1076.0" r="31.1"
+              fill="#a371f7" stroke="#a371f7" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="251.2" cy="1076.0" r="30.1"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="242.5"
+               cy="1058.0"
+               rx="9.9"
+               ry="3.4"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 234.8 1060.8
+               Q 242.5 1051.8
+                 250.6 1059.5"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="268.6"
+              cy="1063.6"
+              r="1.2"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-9)">
+        <rect class="sweep"
+              x="204.6"
+              y="1038.7"
+              width="93.2"
+              height="74.6"
+              fill="url(#shineBand)"
+              transform="rotate(-25 251.2 1076.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="251.2" y="1074.0" text-anchor="middle"
+            textLength="48.2" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        CSS
+      </text>
+      <text x="251.2" y="1093.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        0.14%
+      </text>
+    </g>
+
+    <g class="bubble bubble-10" style="--delay:-7.0s">
+      <circle cx="325.3" cy="1076.0" r="31.0"
+              fill="#8b949e" stroke="#8b949e" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="325.3" cy="1076.0" r="30.0"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="316.7"
+               cy="1058.0"
+               rx="9.9"
+               ry="3.4"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 308.9 1060.8
+               Q 316.7 1051.8
+                 324.7 1059.6"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="342.7"
+              cy="1063.6"
+              r="1.2"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-10)">
+        <rect class="sweep"
+              x="278.8"
+              y="1038.8"
+              width="93.1"
+              height="74.5"
+              fill="url(#shineBand)"
+              transform="rotate(-25 325.3 1076.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="325.3" y="1074.0" text-anchor="middle"
+            textLength="48.1" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        Starlark
+      </text>
+      <text x="325.3" y="1093.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        0.13%
+      </text>
+    </g>
+
+    <g class="bubble bubble-11" style="--delay:-7.7s">
+      <circle cx="399.2" cy="1076.0" r="30.8"
+              fill="#8b949e" stroke="#8b949e" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="399.2" cy="1076.0" r="29.8"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="390.6"
+               cy="1058.1"
+               rx="9.9"
+               ry="3.4"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 382.9 1060.9
+               Q 390.6 1051.9
+                 398.6 1059.7"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="416.5"
+              cy="1063.7"
+              r="1.2"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-11)">
+        <rect class="sweep"
+              x="352.9"
+              y="1039.0"
+              width="92.5"
+              height="74.0"
+              fill="url(#shineBand)"
+              transform="rotate(-25 399.2 1076.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="399.2" y="1074.0" text-anchor="middle"
+            textLength="47.8" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        CMake
+      </text>
+      <text x="399.2" y="1093.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        0.09%
+      </text>
+    </g>
+
+    <g class="bubble bubble-12" style="--delay:-8.4s">
+      <circle cx="472.9" cy="1076.0" r="30.8"
+              fill="#8b949e" stroke="#8b949e" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="472.9" cy="1076.0" r="29.8"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="464.2"
+               cy="1058.1"
+               rx="9.9"
+               ry="3.4"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 456.5 1060.9
+               Q 464.2 1052.0
+                 472.3 1059.7"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="490.1"
+              cy="1063.7"
+              r="1.2"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-12)">
+        <rect class="sweep"
+              x="426.6"
+              y="1039.0"
+              width="92.5"
+              height="74.0"
+              fill="url(#shineBand)"
+              transform="rotate(-25 472.9 1076.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="472.9" y="1074.0" text-anchor="middle"
+            textLength="47.8" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        PowerShell
+      </text>
+      <text x="472.9" y="1093.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        0.08%
+      </text>
+    </g>
+
+    <g class="bubble bubble-13" style="--delay:-9.1s">
+      <circle cx="546.5" cy="1076.0" r="30.8"
+              fill="#8b949e" stroke="#8b949e" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="546.5" cy="1076.0" r="29.8"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="537.8"
+               cy="1058.2"
+               rx="9.8"
+               ry="3.4"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 530.1 1060.9
+               Q 537.8 1052.0
+                 545.8 1059.7"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="563.7"
+              cy="1063.7"
+              r="1.2"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-13)">
+        <rect class="sweep"
+              x="500.3"
+              y="1039.1"
+              width="92.3"
+              height="73.9"
+              fill="url(#shineBand)"
+              transform="rotate(-25 546.5 1076.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="546.5" y="1074.0" text-anchor="middle"
+            textLength="47.7" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        C
+      </text>
+      <text x="546.5" y="1093.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        0.07%
+      </text>
+    </g>
+
+    <g class="bubble bubble-14" style="--delay:-9.8s">
+      <circle cx="619.9" cy="1076.0" r="30.7"
+              fill="#701516" stroke="#701516" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="619.9" cy="1076.0" r="29.7"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="611.3"
+               cy="1058.2"
+               rx="9.8"
+               ry="3.4"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 603.6 1061.0
+               Q 611.3 1052.1
+                 619.3 1059.7"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="637.1"
+              cy="1063.7"
+              r="1.2"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-14)">
+        <rect class="sweep"
+              x="573.9"
+              y="1039.2"
+              width="92.0"
+              height="73.6"
+              fill="url(#shineBand)"
+              transform="rotate(-25 619.9 1076.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="619.9" y="1074.0" text-anchor="middle"
+            textLength="47.5" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        Ruby
+      </text>
+      <text x="619.9" y="1093.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        0.06%
+      </text>
+    </g>
+
+    <g class="bubble bubble-15" style="--delay:-10.5s">
+      <circle cx="70.1" cy="2116.0" r="30.5"
+              fill="#8b949e" stroke="#8b949e" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="70.1" cy="2116.0" r="29.5"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="61.5"
+               cy="2098.3"
+               rx="9.7"
+               ry="3.3"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 53.9 2101.1
+               Q 61.5 2092.2
+                 69.5 2099.9"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="87.1"
+              cy="2103.8"
+              r="1.2"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-15)">
+        <rect class="sweep"
+              x="24.4"
+              y="2079.5"
+              width="91.4"
+              height="73.1"
+              fill="url(#shineBand)"
+              transform="rotate(-25 70.1 2116.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="70.1" y="2114.0" text-anchor="middle"
+            textLength="47.2" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        Dockerfile
+      </text>
+      <text x="70.1" y="2133.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        0.03%
+      </text>
+    </g>
+
+    <g class="bubble bubble-16" style="--delay:-11.2s">
+      <circle cx="142.9" cy="2116.0" r="30.4"
+              fill="#DA5B0B" stroke="#DA5B0B" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="142.9" cy="2116.0" r="29.4"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="134.4"
+               cy="2098.4"
+               rx="9.7"
+               ry="3.3"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 126.8 2101.1
+               Q 134.4 2092.3
+                 142.3 2099.9"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="160.0"
+              cy="2103.8"
+              r="1.2"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-16)">
+        <rect class="sweep"
+              x="97.3"
+              y="2079.5"
+              width="91.2"
+              height="73.0"
+              fill="url(#shineBand)"
+              transform="rotate(-25 142.9 2116.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="142.9" y="2114.0" text-anchor="middle"
+            textLength="47.1" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        Jupyter Notebook
+      </text>
+      <text x="142.9" y="2133.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        0.02%
+      </text>
+    </g>
+
+    <g class="bubble bubble-17" style="--delay:-11.9s">
+      <circle cx="215.7" cy="2116.0" r="30.3"
+              fill="#8b949e" stroke="#8b949e" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="215.7" cy="2116.0" r="29.3"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="207.2"
+               cy="2098.4"
+               rx="9.7"
+               ry="3.3"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 199.6 2101.1
+               Q 207.2 2092.3
+                 215.1 2099.9"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="232.7"
+              cy="2103.9"
+              r="1.2"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-17)">
+        <rect class="sweep"
+              x="170.2"
+              y="2079.6"
+              width="91.0"
+              height="72.8"
+              fill="url(#shineBand)"
+              transform="rotate(-25 215.7 2116.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="215.7" y="2114.0" text-anchor="middle"
+            textLength="47.0" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        Assembly
+      </text>
+      <text x="215.7" y="2133.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        0.01%
+      </text>
+    </g>
+
+    <g class="bubble bubble-18" style="--delay:-12.6s">
+      <circle cx="288.3" cy="2116.0" r="30.3"
+              fill="#8b949e" stroke="#8b949e" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="288.3" cy="2116.0" r="29.3"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="279.8"
+               cy="2098.5"
+               rx="9.7"
+               ry="3.3"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 272.2 2101.2
+               Q 279.8 2092.4
+                 287.7 2100.0"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="305.2"
+              cy="2103.9"
+              r="1.2"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-18)">
+        <rect class="sweep"
+              x="242.9"
+              y="2079.7"
+              width="90.8"
+              height="72.6"
+              fill="url(#shineBand)"
+              transform="rotate(-25 288.3 2116.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="288.3" y="2114.0" text-anchor="middle"
+            textLength="46.9" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        Smarty
+      </text>
+      <text x="288.3" y="2133.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        0.01%
+      </text>
+    </g>
+
+    <g class="bubble bubble-19" style="--delay:-13.3s">
+      <circle cx="360.8" cy="2116.0" r="30.2"
+              fill="#8b949e" stroke="#8b949e" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="360.8" cy="2116.0" r="29.2"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="352.3"
+               cy="2098.5"
+               rx="9.7"
+               ry="3.3"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 344.7 2101.2
+               Q 352.3 2092.4
+                 360.2 2100.0"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="377.7"
+              cy="2103.9"
+              r="1.2"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-19)">
+        <rect class="sweep"
+              x="315.4"
+              y="2079.7"
+              width="90.7"
+              height="72.6"
+              fill="url(#shineBand)"
+              transform="rotate(-25 360.8 2116.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="360.8" y="2114.0" text-anchor="middle"
+            textLength="46.9" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        Just
+      </text>
+      <text x="360.8" y="2133.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        0.01%
+      </text>
+    </g>
+
+    <g class="bubble bubble-20" style="--delay:-14.0s">
+      <circle cx="433.2" cy="2116.0" r="30.2"
+              fill="#8b949e" stroke="#8b949e" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="433.2" cy="2116.0" r="29.2"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="424.8"
+               cy="2098.5"
+               rx="9.7"
+               ry="3.3"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 417.2 2101.2
+               Q 424.8 2092.4
+                 432.6 2100.0"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="450.1"
+              cy="2103.9"
+              r="1.2"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-20)">
+        <rect class="sweep"
+              x="387.9"
+              y="2079.8"
+              width="90.6"
+              height="72.5"
+              fill="url(#shineBand)"
+              transform="rotate(-25 433.2 2116.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="433.2" y="2114.0" text-anchor="middle"
+            textLength="46.8" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        Nix
+      </text>
+      <text x="433.2" y="2133.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        0.00%
+      </text>
+    </g>
+
+    <g class="bubble bubble-21" style="--delay:-14.7s">
+      <circle cx="505.6" cy="2116.0" r="30.2"
+              fill="#d29922" stroke="#d29922" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="505.6" cy="2116.0" r="29.2"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="497.2"
+               cy="2098.5"
+               rx="9.7"
+               ry="3.3"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 489.6 2101.2
+               Q 497.2 2092.4
+                 505.0 2100.0"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="522.5"
+              cy="2103.9"
+              r="1.2"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-21)">
+        <rect class="sweep"
+              x="460.3"
+              y="2079.8"
+              width="90.6"
+              height="72.5"
+              fill="url(#shineBand)"
+              transform="rotate(-25 505.6 2116.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="505.6" y="2114.0" text-anchor="middle"
+            textLength="46.8" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        Java
+      </text>
+      <text x="505.6" y="2133.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        0.00%
+      </text>
+    </g>
+
+    <g class="bubble bubble-22" style="--delay:-15.4s">
+      <circle cx="578.0" cy="2116.0" r="30.2"
+              fill="#8b949e" stroke="#8b949e" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="578.0" cy="2116.0" r="29.2"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="569.5"
+               cy="2098.5"
+               rx="9.7"
+               ry="3.3"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 562.0 2101.2
+               Q 569.5 2092.5
+                 577.4 2100.0"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="594.9"
+              cy="2103.9"
+              r="1.2"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-22)">
+        <rect class="sweep"
+              x="532.7"
+              y="2079.8"
+              width="90.5"
+              height="72.4"
+              fill="url(#shineBand)"
+              transform="rotate(-25 578.0 2116.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="578.0" y="2114.0" text-anchor="middle"
+            textLength="46.8" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        Makefile
+      </text>
+      <text x="578.0" y="2133.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        0.00%
+      </text>
+    </g>
+
+    <g class="bubble bubble-23" style="--delay:-16.1s">
+      <circle cx="650.3" cy="2116.0" r="30.1"
+              fill="#8b949e" stroke="#8b949e" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="650.3" cy="2116.0" r="29.1"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="641.8"
+               cy="2098.5"
+               rx="9.6"
+               ry="3.3"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 634.3 2101.2
+               Q 641.8 2092.5
+                 649.7 2100.0"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="667.1"
+              cy="2104.0"
+              r="1.2"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-23)">
+        <rect class="sweep"
+              x="605.1"
+              y="2079.9"
+              width="90.3"
+              height="72.3"
+              fill="url(#shineBand)"
+              transform="rotate(-25 650.3 2116.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="650.3" y="2114.0" text-anchor="middle"
+            textLength="46.7" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        C#
+      </text>
+      <text x="650.3" y="2133.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        0.00%
+      </text>
+    </g>
+
+    <g class="bubble bubble-24" style="--delay:-16.8s">
+      <circle cx="324.0" cy="3286.0" r="30.1"
+              fill="#8b949e" stroke="#8b949e" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="324.0" cy="3286.0" r="29.1"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="315.6"
+               cy="3268.6"
+               rx="9.6"
+               ry="3.3"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 308.1 3271.3
+               Q 315.6 3262.6
+                 323.4 3270.1"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="340.8"
+              cy="3274.0"
+              r="1.2"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-24)">
+        <rect class="sweep"
+              x="278.9"
+              y="3249.9"
+              width="90.2"
+              height="72.1"
+              fill="url(#shineBand)"
+              transform="rotate(-25 324.0 3286.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="324.0" y="3284.0" text-anchor="middle"
+            textLength="46.6" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        Batchfile
+      </text>
+      <text x="324.0" y="3303.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        0.00%
+      </text>
+    </g>
+
+    <g class="bubble bubble-25" style="--delay:-17.5s">
+      <circle cx="396.1" cy="3286.0" r="30.0"
+              fill="#8b949e" stroke="#8b949e" stroke-width="1.5"
+              filter="url(#shadow)"/>
+      <circle cx="396.1" cy="3286.0" r="29.0"
+              fill="url(#gloss)" pointer-events="none"/>
+      <ellipse cx="387.7"
+               cy="3268.6"
+               rx="9.6"
+               ry="3.3"
+               fill="#ffffff" opacity=".40"
+               filter="url(#softGlow)" pointer-events="none"/>
+      <path d="M 380.1 3271.3
+               Q 387.7 3262.6
+                 395.5 3270.1"
+            fill="none" stroke="#ffffff" stroke-opacity=".68"
+            stroke-width="1.0"
+            stroke-linecap="round" pointer-events="none"/>
+      <circle class="spark"
+              cx="412.9"
+              cy="3274.0"
+              r="1.2"
+              fill="#ffffff" filter="url(#softGlow)"
+              pointer-events="none"/>
+      <g clip-path="url(#clip-25)">
+        <rect class="sweep"
+              x="351.0"
+              y="3250.0"
+              width="90.0"
+              height="72.0"
+              fill="url(#shineBand)"
+              transform="rotate(-25 396.1 3286.0)"
+              pointer-events="none"/>
+      </g>
+      <text x="396.1" y="3284.0" text-anchor="middle"
+            textLength="46.5" lengthAdjust="spacingAndGlyphs"
+            fill="#ffffff" font-size="9" font-weight="700">
+        Procfile
+      </text>
+      <text x="396.1" y="3303.0" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        0.00%
+      </text>
+    </g>
+
+
+  <text x="688" y="3357" text-anchor="end"
+        fill="#8b949e" font-size="9">
+    UPDATED 2026-10-12 05:37 WIB
+  </text>
 </svg>
