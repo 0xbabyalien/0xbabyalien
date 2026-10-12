@@ -44,7 +44,7 @@ COLORS = {
 
 HEADERS = {
     "Accept": "application/vnd.github+json",
-    "X-GitHub-Api-Version": "2022-11-28",
+    "X-GitHub-Api-Version": "202-11-28",
     "User-Agent": "github-language-stats",
 }
 
@@ -367,7 +367,7 @@ def make_global_animation_css(bubbles):
 def build_svg(username, repositories, language_totals):
     if not language_totals:
         raise SystemExit(
-            f"No language data found for {username}'s non-fork public repositories."
+            f"No language data found for {username}'s non-fork repositories."
         )
 
     total_bytes = sum(language_totals.values())
@@ -404,8 +404,8 @@ def build_svg(username, repositories, language_totals):
         bubble_groups.append(make_bubble(index, item, total_bytes))
 
     updated = datetime.now(
-        ZoneInfo("Asia/Jakarta")
-    ).strftime("%Y-%m-%d %H:%M WIB")
+        ZoneInfo("Singapore")
+    ).strftime("%Y-%m-%d %H:%M SGT")
 
     animation_css = make_global_animation_css(bubbles)
 
