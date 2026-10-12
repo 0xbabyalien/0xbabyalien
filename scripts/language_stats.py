@@ -4,10 +4,9 @@ import os
 import random
 import urllib.error
 import urllib.request
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from html import escape
 from pathlib import Path
-from zoneinfo import ZoneInfo
 
 USERNAME = os.environ.get("GITHUB_USERNAME", "0xbabyalien")
 OUTPUT = Path("assets/language-stats.svg")
@@ -44,7 +43,7 @@ COLORS = {
 
 HEADERS = {
     "Accept": "application/vnd.github+json",
-    "X-GitHub-Api-Version": "202-11-28",
+    "X-GitHub-Api-Version": "2022-11-28",
     "User-Agent": "github-language-stats",
 }
 
@@ -304,14 +303,15 @@ def make_bubble(index, item, total_bytes):
               pointer-events="none"/>
 
       <g clip-path="url(#clip-{index})">
-        <rect class="sweep"
-              x="{cx - radius * 1.5:.2f}"
-              y="{cy - radius * 1.2:.2f}"
-              width="{radius * 3:.2f}"
-              height="{radius * 2.4:.2f}"
-              fill="url(#shineBand)"
-              transform="rotate(-25 {cx:.2f} {cy:.2f})"
-              pointer-events="none"/>
+        <g transform="rotate(-25 {cx:.2f} {cy:.2f})">
+          <rect class="sweep"
+                x="{cx - radius * 1.5:.2f}"
+                y="{cy - radius * 1.2:.2f}"
+                width="{radius * 3:.2f}"
+                height="{radius * 2.4:.2f}"
+                fill="url(#shineBand)"
+                pointer-events="none"/>
+        </g>
       </g>
 
       <text x="{cx:.2f}" y="{cy - 2:.2f}" text-anchor="middle"
@@ -403,9 +403,8 @@ def build_svg(username, repositories, language_totals):
         )
         bubble_groups.append(make_bubble(index, item, total_bytes))
 
-    updated = datetime.now(
-        ZoneInfo("Singapore")
-    ).strftime("%Y-%m-%d %H:%M SGT")
+    sgt_timezone = timezone(timedelta(hours=8))
+    updated = datetime.now(sgt_timezone).strftime("%Y-%m-%d %H:%M SGT")
 
     animation_css = make_global_animation_css(bubbles)
 
