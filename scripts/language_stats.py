@@ -15,7 +15,7 @@ TOKEN = os.environ.get("GH_STATS_TOKEN") or os.environ.get("GITHUB_TOKEN")
 SVG_WIDTH = 720
 SIDE_MARGIN = 22
 TOP = 112
-PACKING_GAP = 4
+PACKING_GAP = 6
 MIN_RADIUS = 24
 MAX_RADIUS = 53
 
@@ -329,31 +329,54 @@ def make_bubble(index, item, total_bytes):
 
 
 def make_global_animation_css(bubbles):
-    return """
-      .bubble-container {
-        animation: float-cluster 6s ease-in-out infinite alternate;
-        transform-box: fill-box;
-        transform-origin: center;
-      }
+    rules = []
 
-      @keyframes float-cluster {
-        0% {
-          transform: translate(0px, 0px) rotate(0deg) scale(1);
-        }
-        25% {
-          transform: translate(18px, -15px) rotate(1.2deg) scale(1.015);
-        }
-        50% {
-          transform: translate(-15px, 20px) rotate(-1.5deg) scale(0.985);
-        }
-        75% {
-          transform: translate(22px, 12px) rotate(1deg) scale(1.01);
-        }
-        100% {
-          transform: translate(-18px, -18px) rotate(-1deg) scale(1);
-        }
-      }
-    """
+    for index, item in enumerate(bubbles):
+        rng = random.Random(f"{item['language']}-{index}")
+
+        r1 = rng.uniform(4.0, 8.0)
+        r2 = rng.uniform(4.0, 8.0)
+        
+        dir_x = 1 if rng.random() > 0.5 else -1
+        dir_y = 1 if rng.random() > 0.5 else -1
+
+        dx1 = round(dir_x * r1, 2)
+        dy1 = round(dir_y * (r2 * 0.6), 2)
+        
+        dx2 = round(-dir_x * (r1 * 0.5), 2)
+        dy2 = round(dir_y * r2, 2)
+
+        dx3 = round(-dir_x * r1, 2)
+        dy3 = round(-dir_y * (r2 * 0.7), 2)
+
+        duration = round(rng.uniform(6.0, 11.0), 2)
+        delay = round(-rng.uniform(0.0, duration), 2)
+
+        rules.append(
+            f"""
+      .bubble-{index} {{
+        animation: float-indiv-{index} {duration}s ease-in-out infinite;
+        animation-delay: {delay}s;
+      }}
+
+      @keyframes float-indiv-{index} {{
+        0%, 100% {{
+          transform: translate(0px, 0px);
+        }}
+        25% {{
+          transform: translate({dx1}px, {dy1}px);
+        }}
+        50% {{
+          transform: translate({dx2}px, {dy2}px);
+        }}
+        75% {{
+          transform: translate({dx3}px, {dy3}px);
+        }}
+      }}
+      """
+        )
+
+    return "\n".join(rules)
 
 
 def build_svg(username, repositories, language_totals):
@@ -494,7 +517,7 @@ def build_svg(username, repositories, language_totals):
       }}
 
       @media (prefers-reduced-motion: reduce) {{
-        .bubble, .bubble-outline, .sweep, .spark, .bubble-container {{
+        .bubble, .bubble-outline, .sweep, .spark {{
           animation: none !important;
         }}
         .bubble-outline {{
@@ -524,9 +547,7 @@ def build_svg(username, repositories, language_totals):
     {escape(username)} · {len(repositories)} non-fork public repositories · {len(languages)} languages
   </text>
 
-  <g class="bubble-container">
-    {''.join(bubble_groups)}
-  </g>
+  {''.join(bubble_groups)}
 
   <text x="{SVG_WIDTH - 32}" y="{svg_height - 18}"
         text-anchor="end" fill="#8b949e" font-size="9">
