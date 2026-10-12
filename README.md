@@ -216,7 +216,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Being kind is more important than being right.</font><br/>— <font color="#808080">David Brinkley</font></center>
+<center><font color="#0c7ec9">The man who does not value himself, cannot value anything or anyone.</font><br/>— <font color="#808080">Ayn Rand</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
