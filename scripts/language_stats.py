@@ -1,8 +1,8 @@
-
 import json
 import math
 import os
 import random
+import urllib.error
 import urllib.request
 from datetime import datetime
 from html import escape
@@ -13,9 +13,39 @@ USERNAME = os.environ.get("GITHUB_USERNAME", "0xbabyalien")
 OUTPUT = Path("assets/language-stats.svg")
 TOKEN = os.environ.get("GH_STATS_TOKEN") or os.environ.get("GITHUB_TOKEN")
 
+SVG_WIDTH = 720
+SIDE_MARGIN = 22
+TOP = 112
+PACKING_GAP = 4
+MIN_RADIUS = 24
+MAX_RADIUS = 53
+
+COLORS = {
+    "HTML": "#e34c26",
+    "CSS": "#a371f7",
+    "JavaScript": "#f1e05a",
+    "TypeScript": "#3178c6",
+    "Python": "#58a6ff",
+    "Java": "#d29922",
+    "C++": "#f34b7d",
+    "C#": "#8b949e",
+    "C": "#8b949e",
+    "PHP": "#4F5D95",
+    "Shell": "#89e051",
+    "Go": "#00ADD8",
+    "Rust": "#dea584",
+    "Ruby": "#701516",
+    "Dart": "#00B4AB",
+    "Kotlin": "#A97BFF",
+    "Swift": "#F05138",
+    "Vue": "#41B883",
+    "Jupyter Notebook": "#DA5B0B",
+}
+
 HEADERS = {
     "Accept": "application/vnd.github+json",
     "X-GitHub-Api-Version": "2022-11-28",
+    "User-Agent": "github-language-stats",
 }
 
 if TOKEN:
@@ -24,8 +54,18 @@ if TOKEN:
 
 def github_get(url):
     request = urllib.request.Request(url, headers=HEADERS)
-    with urllib.request.urlopen(request, timeout=30) as response:
-        return json.load(response)
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            return json.load(response)
+    except urllib.error.HTTPError as error:
+        details = error.read().decode("utf-8", errors="replace")
+        raise RuntimeError(
+            f"GitHub API returned HTTP {error.code} for {url}: {details}"
+        ) from error
+    except urllib.error.URLError as error:
+        raise RuntimeError(
+            f"Could not connect to GitHub API: {error.reason}"
+        ) from error
 
 
 def get_all_public_repositories(username):
@@ -35,14 +75,18 @@ def get_all_public_repositories(username):
     while True:
         url = (
             f"https://api.github.com/users/{username}/repos"
-            f"?type=owner&per_page=100&page={page}"
+            f"?type=owner&sort=updated&per_page=100&page={page}"
         )
         batch = github_get(url)
 
         if not batch:
             break
 
-        repositories.extend(batch)
+        repositories.extend(
+            repository
+            for repository in batch
+            if not repository.get("fork", False)
+        )
         page += 1
 
     return repositories
@@ -137,7 +181,9 @@ def pack_circles(language_data):
 
     for item in language_data:
         share = item["bytes"] / largest_value
-        item["radius"] = 24 + (53 - 24) * math.sqrt(share)
+        item["radius"] = MIN_RADIUS + (
+            MAX_RADIUS - MIN_RADIUS
+        ) * math.sqrt(share)
 
     ordered = sorted(
         language_data,
@@ -145,8 +191,8 @@ def pack_circles(language_data):
         reverse=True,
     )
 
-    pack_width = 720 - 44
-    gap = 4
+    pack_width = SVG_WIDTH - 2 * SIDE_MARGIN
+    gap = PACKING_GAP
     height = max(230, int(math.sqrt(len(ordered)) * 190))
     placed = None
 
@@ -172,10 +218,10 @@ def pack_circles(language_data):
 
     cluster_width = max_x - min_x
     horizontal_shift = (pack_width - cluster_width) / 2 - min_x
-    vertical_shift = 112 - min_y
+    vertical_shift = TOP - min_y
 
     for item in placed:
-        item["x"] += horizontal_shift + 22
+        item["x"] += horizontal_shift + SIDE_MARGIN
         item["y"] += vertical_shift
 
     final_bottom = max(
@@ -186,7 +232,7 @@ def pack_circles(language_data):
     for index, first in enumerate(placed):
         if (
             first["x"] - first["radius"] < 8
-            or first["x"] + first["radius"] > 712
+            or first["x"] + first["radius"] > SVG_WIDTH - 8
             or first["y"] - first["radius"] < 8
             or first["y"] + first["radius"] > svg_height - 8
         ):
@@ -199,7 +245,6 @@ def pack_circles(language_data):
                 second["x"] - first["x"],
                 second["y"] - first["y"],
             )
-
             if distance < first["radius"] + second["radius"] + gap:
                 raise RuntimeError("Bubble overlap detected.")
 
@@ -212,30 +257,7 @@ def make_bubble(index, item, total_bytes):
     cx = item["x"]
     cy = item["y"]
     percentage = item["bytes"] / total_bytes * 100
-
-    colors = {
-        "HTML": "#e34c26",
-        "CSS": "#a371f7",
-        "JavaScript": "#f1e05a",
-        "TypeScript": "#3178c6",
-        "Python": "#58a6ff",
-        "Java": "#d29922",
-        "C++": "#f34b7d",
-        "C#": "#8b949e",
-        "C": "#8b949e",
-        "PHP": "#4F5D95",
-        "Shell": "#89e051",
-        "Go": "#00ADD8",
-        "Rust": "#dea584",
-        "Ruby": "#701516",
-        "Dart": "#00B4AB",
-        "Kotlin": "#A97BFF",
-        "Swift": "#F05138",
-        "Vue": "#41B883",
-        "Jupyter Notebook": "#DA5B0B",
-    }
-
-    fill_color = colors.get(language, "#8b949e")
+    fill_color = COLORS.get(language, "#8b949e")
 
     if radius >= 46:
         label_size = 12
@@ -345,7 +367,7 @@ def make_global_animation_css(bubbles):
 def build_svg(username, repositories, language_totals):
     if not language_totals:
         raise SystemExit(
-            f"No language data found for {username}'s public repositories."
+            f"No language data found for {username}'s non-fork public repositories."
         )
 
     total_bytes = sum(language_totals.values())
@@ -379,7 +401,6 @@ def build_svg(username, repositories, language_totals):
             f'<circle cx="{cx:.2f}" cy="{cy:.2f}" r="{radius:.2f}"/>'
             f"</clipPath>"
         )
-
         bubble_groups.append(make_bubble(index, item, total_bytes))
 
     updated = datetime.now(
@@ -389,12 +410,12 @@ def build_svg(username, repositories, language_totals):
     animation_css = make_global_animation_css(bubbles)
 
     return f"""<svg xmlns="http://www.w3.org/2000/svg"
-     width="720" height="{svg_height}"
-     viewBox="0 0 720 {svg_height}"
+     width="{SVG_WIDTH}" height="{svg_height}"
+     viewBox="0 0 {SVG_WIDTH} {svg_height}"
      role="img" aria-labelledby="title desc">
   <title id="title">Repository Language Bubbles</title>
   <desc id="desc">
-    Combined language statistics for {escape(username)}'s public repositories
+    Combined language statistics for {escape(username)}'s non-fork public repositories
   </desc>
 
   <defs>
@@ -493,17 +514,14 @@ def build_svg(username, repositories, language_totals):
         .bubble, .bubble-outline, .sweep, .spark {{
           animation: none !important;
         }}
-
         .bubble-outline {{
           stroke: #0ad;
           stroke-width: 1.5;
           stroke-opacity: .95;
         }}
-
         .sweep {{
           display: none;
         }}
-
         .spark {{
           opacity: .5;
         }}
@@ -511,7 +529,7 @@ def build_svg(username, repositories, language_totals):
     </style>
   </defs>
 
-  <rect x="8" y="8" width="704"
+  <rect x="8" y="8" width="{SVG_WIDTH - 16}"
         height="{svg_height - 16}" rx="22"
         fill="url(#bg)" stroke="#30363d"/>
 
@@ -521,12 +539,12 @@ def build_svg(username, repositories, language_totals):
   </text>
 
   <text x="32" y="62" fill="#8b949e" font-size="11">
-    {escape(username)} · {len(repositories)} public repositories · {len(languages)} languages
+    {escape(username)} · {len(repositories)} non-fork public repositories · {len(languages)} languages
   </text>
 
   {''.join(bubble_groups)}
 
-  <text x="688" y="{svg_height - 18}"
+  <text x="{SVG_WIDTH - 32}" y="{svg_height - 18}"
         text-anchor="end" fill="#8b949e" font-size="9">
     UPDATED {updated}
   </text>
@@ -534,14 +552,28 @@ def build_svg(username, repositories, language_totals):
 """
 
 
-repositories = get_all_public_repositories(USERNAME)
-language_totals = get_language_totals(repositories)
-svg_content = build_svg(USERNAME, repositories, language_totals)
+def main():
+    repositories = get_all_public_repositories(USERNAME)
 
-OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-OUTPUT.write_text(svg_content, encoding="utf-8")
+    print(
+        f"Found {len(repositories)} non-fork public repositories "
+        f"for {USERNAME}."
+    )
 
-print(
-    f"Updated {OUTPUT} with {len(language_totals)} languages "
-    f"from {len(repositories)} public repositories."
-)
+    language_totals = get_language_totals(repositories)
+    svg_content = build_svg(USERNAME, repositories, language_totals)
+
+    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT.write_text(svg_content, encoding="utf-8")
+
+    print(
+        f"Updated {OUTPUT} with {len(language_totals)} languages "
+        f"from {len(repositories)} non-fork public repositories."
+    )
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except (RuntimeError, urllib.error.URLError, json.JSONDecodeError) as error:
+        raise SystemExit(f"Error: {error}") from error
