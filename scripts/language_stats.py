@@ -275,7 +275,6 @@ def make_bubble(index, item, total_bytes):
       <circle class="bubble-outline"
               cx="{cx:.2f}" cy="{cy:.2f}" r="{radius:.2f}"
               fill="{fill_color}" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
               filter="url(#shadow)"/>
 
       <circle cx="{cx:.2f}" cy="{cy:.2f}" r="{radius - 1:.2f}"
@@ -330,38 +329,31 @@ def make_bubble(index, item, total_bytes):
 
 
 def make_global_animation_css(bubbles):
-    rules = []
+    return """
+      .bubble-container {
+        animation: float-cluster 6s ease-in-out infinite alternate;
+        transform-box: fill-box;
+        transform-origin: center;
+      }
 
-    for index, item in enumerate(bubbles):
-        rng = random.Random(f"{item['language']}-{index}")
-
-        dx1 = rng.randint(-2, 2)
-        dy1 = rng.randint(-2, 2)
-        dx2 = rng.randint(-3, 3)
-        dy2 = rng.randint(-3, 3)
-        dx3 = rng.randint(-2, 2)
-        dy3 = rng.randint(-2, 2)
-        duration = rng.randint(10, 17)
-        delay = -rng.uniform(0, duration)
-
-        rules.append(
-            f"""
-      .bubble-{index} {{
-        animation-name: drift-{index};
-        animation-duration: {duration}s;
-        animation-delay: {delay:.2f}s;
-      }}
-
-      @keyframes drift-{index} {{
-        0%, 100% {{ transform: translate(0, 0); }}
-        28% {{ transform: translate({dx1}px, {dy1}px); }}
-        62% {{ transform: translate({dx2}px, {dy2}px); }}
-        84% {{ transform: translate({dx3}px, {dy3}px); }}
-      }}
-      """
-        )
-
-    return "\n".join(rules)
+      @keyframes float-cluster {
+        0% {
+          transform: translate(0px, 0px) rotate(0deg) scale(1);
+        }
+        25% {
+          transform: translate(18px, -15px) rotate(1.2deg) scale(1.015);
+        }
+        50% {
+          transform: translate(-15px, 20px) rotate(-1.5deg) scale(0.985);
+        }
+        75% {
+          transform: translate(22px, 12px) rotate(1deg) scale(1.01);
+        }
+        100% {
+          transform: translate(-18px, -18px) rotate(-1deg) scale(1);
+        }
+      }
+    """
 
 
 def build_svg(username, repositories, language_totals):
@@ -418,11 +410,6 @@ def build_svg(username, repositories, language_totals):
   </desc>
 
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#171e2b"/>
-      <stop offset="1" stop-color="#0b1018"/>
-    </linearGradient>
-
     <linearGradient id="shineBand" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
       <stop offset=".42" stop-color="#ffffff" stop-opacity="0"/>
@@ -465,21 +452,18 @@ def build_svg(username, repositories, language_totals):
       }}
 
       .bubble-outline {{
-        stroke: #0ad;
-        stroke-width: 1.5;
-        animation: outline-pulse 2s ease-in-out infinite alternate;
+        stroke: #a819bb;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 10 10;
+        stroke-dashoffset: 0;
+        animation: walk 0.8s linear infinite;
       }}
 
-      @keyframes outline-pulse {{
-        from {{
-          stroke: #0ad;
-          stroke-width: 1.5;
-          stroke-opacity: .95;
-        }}
+      @keyframes walk {{
         to {{
-          stroke: #a819bb;
-          stroke-width: 1.8;
-          stroke-opacity: .9;
+          stroke-dashoffset: -20;
         }}
       }}
 
@@ -510,13 +494,12 @@ def build_svg(username, repositories, language_totals):
       }}
 
       @media (prefers-reduced-motion: reduce) {{
-        .bubble, .bubble-outline, .sweep, .spark {{
+        .bubble, .bubble-outline, .sweep, .spark, .bubble-container {{
           animation: none !important;
         }}
         .bubble-outline {{
-          stroke: #0ad;
-          stroke-width: 1.5;
-          stroke-opacity: .95;
+          stroke: #a819bb;
+          stroke-width: 2;
         }}
         .sweep {{
           display: none;
@@ -530,7 +513,7 @@ def build_svg(username, repositories, language_totals):
 
   <rect x="8" y="8" width="{SVG_WIDTH - 16}"
         height="{svg_height - 16}" rx="22"
-        fill="url(#bg)" stroke="#30363d"/>
+        fill="#0d1117" stroke="#30363d"/>
 
   <text x="32" y="42" fill="#f0f6fc"
         font-size="18" font-weight="700">
@@ -541,7 +524,9 @@ def build_svg(username, repositories, language_totals):
     {escape(username)} · {len(repositories)} non-fork public repositories · {len(languages)} languages
   </text>
 
-  {''.join(bubble_groups)}
+  <g class="bubble-container">
+    {''.join(bubble_groups)}
+  </g>
 
   <text x="{SVG_WIDTH - 32}" y="{svg_height - 18}"
         text-anchor="end" fill="#8b949e" font-size="9">
