@@ -289,14 +289,15 @@
               pointer-events="none"/>
 
       <g clip-path="url(#clip-0)">
-        <rect class="sweep"
-              x="273.03"
-              y="154.79"
-              width="159.00"
-              height="127.20"
-              fill="url(#shineBand)"
-              transform="rotate(-25 352.53 218.39)"
-              pointer-events="none"/>
+        <g transform="rotate(-25 352.53 218.39)">
+          <rect class="sweep"
+                x="273.03"
+                y="154.79"
+                width="159.00"
+                height="127.20"
+                fill="url(#shineBand)"
+                pointer-events="none"/>
+        </g>
       </g>
 
       <text x="352.53" y="216.39" text-anchor="middle"
@@ -344,14 +345,15 @@
               pointer-events="none"/>
 
       <g clip-path="url(#clip-1)">
-        <rect class="sweep"
-              x="393.31"
-              y="175.01"
-              width="108.44"
-              height="86.75"
-              fill="url(#shineBand)"
-              transform="rotate(-25 447.53 218.39)"
-              pointer-events="none"/>
+        <g transform="rotate(-25 447.53 218.39)">
+          <rect class="sweep"
+                x="393.31"
+                y="175.01"
+                width="108.44"
+                height="86.75"
+                fill="url(#shineBand)"
+                pointer-events="none"/>
+        </g>
       </g>
 
       <text x="447.53" y="216.39" text-anchor="middle"
@@ -399,14 +401,15 @@
               pointer-events="none"/>
 
       <g clip-path="url(#clip-2)">
-        <rect class="sweep"
-              x="362.95"
-              y="245.14"
-              width="107.85"
-              height="86.28"
-              fill="url(#shineBand)"
-              transform="rotate(-25 416.87 288.28)"
-              pointer-events="none"/>
+        <g transform="rotate(-25 416.87 288.28)">
+          <rect class="sweep"
+                x="362.95"
+                y="245.14"
+                width="107.85"
+                height="86.28"
+                fill="url(#shineBand)"
+                pointer-events="none"/>
+        </g>
       </g>
 
       <text x="416.87" y="286.28" text-anchor="middle"
@@ -454,14 +457,15 @@
               pointer-events="none"/>
 
       <g clip-path="url(#clip-3)">
-        <rect class="sweep"
-              x="297.27"
-              y="268.70"
-              width="98.75"
-              height="79.00"
-              fill="url(#shineBand)"
-              transform="rotate(-25 346.64 308.19)"
-              pointer-events="none"/>
+        <g transform="rotate(-25 346.64 308.19)">
+          <rect class="sweep"
+                x="297.27"
+                y="268.70"
+                width="98.75"
+                height="79.00"
+                fill="url(#shineBand)"
+                pointer-events="none"/>
+        </g>
       </g>
 
       <text x="346.64" y="306.19" text-anchor="middle"
@@ -494,7 +498,7 @@
                fill="#ffffff" opacity=".40"
                filter="url(#softGlow)" pointer-events="none"/>
 
-      <path d="M 269.25 263.42
+      <path d="M 269.24 263.42
                Q 276.92 254.52
                  284.90 262.19"
             fill="none" stroke="#ffffff" stroke-opacity=".68"
@@ -502,21 +506,22 @@
             stroke-linecap="round" pointer-events="none"/>
 
       <circle class="spark"
-              cx="302.70"
-              cy="266.19"
+              cx="302.71"
+              cy="266.18"
               r="1.20"
               fill="#ffffff" filter="url(#softGlow)"
               pointer-events="none"/>
 
       <g clip-path="url(#clip-4)">
-        <rect class="sweep"
-              x="239.47"
-              y="241.63"
-              width="92.09"
-              height="73.67"
-              fill="url(#shineBand)"
-              transform="rotate(-25 285.51 278.46)"
-              pointer-events="none"/>
+        <g transform="rotate(-25 285.51 278.46)">
+          <rect class="sweep"
+                x="239.47"
+                y="241.62"
+                width="92.10"
+                height="73.68"
+                fill="url(#shineBand)"
+                pointer-events="none"/>
+        </g>
       </g>
 
       <text x="285.51" y="276.46" text-anchor="middle"
@@ -528,7 +533,7 @@
 
       <text x="285.51" y="293.46" text-anchor="middle"
             fill="#ffffff" font-size="8" font-weight="700">
-        3.49%
+        3.50%
       </text>
     </g>
     
@@ -564,14 +569,15 @@
               pointer-events="none"/>
 
       <g clip-path="url(#clip-5)">
-        <rect class="sweep"
-              x="221.97"
-              y="183.94"
-              width="86.11"
-              height="68.89"
-              fill="url(#shineBand)"
-              transform="rotate(-25 265.03 218.39)"
-              pointer-events="none"/>
+        <g transform="rotate(-25 265.03 218.39)">
+          <rect class="sweep"
+                x="221.97"
+                y="183.94"
+                width="86.11"
+                height="68.89"
+                fill="url(#shineBand)"
+                pointer-events="none"/>
+        </g>
       </g>
 
       <text x="265.03" y="216.39" text-anchor="middle"
@@ -619,14 +625,15 @@
               pointer-events="none"/>
 
       <g clip-path="url(#clip-6)">
-        <rect class="sweep"
-              x="251.39"
-              y="134.58"
-              width="76.31"
-              height="61.05"
-              fill="url(#shineBand)"
-              transform="rotate(-25 289.54 165.11)"
-              pointer-events="none"/>
+        <g transform="rotate(-25 289.54 165.11)">
+          <rect class="sweep"
+                x="251.39"
+                y="134.58"
+                width="76.31"
+                height="61.05"
+                fill="url(#shineBand)"
+                pointer-events="none"/>
+        </g>
       </g>
 
       <text x="289.54" y="163.11" text-anchor="middle"
@@ -674,14 +681,15 @@
               pointer-events="none"/>
 
       <g clip-path="url(#clip-7)">
-        <rect class="sweep"
-              x="298.85"
-              y="106.92"
-              width="76.14"
-              height="60.91"
-              fill="url(#shineBand)"
-              transform="rotate(-25 336.92 137.38)"
-              pointer-events="none"/>
+        <g transform="rotate(-25 336.92 137.38)">
+          <rect class="sweep"
+                x="298.85"
+                y="106.92"
+                width="76.14"
+                height="60.91"
+                fill="url(#shineBand)"
+                pointer-events="none"/>
+        </g>
       </g>
 
       <text x="336.92" y="135.38" text-anchor="middle"
@@ -729,14 +737,15 @@
               pointer-events="none"/>
 
       <g clip-path="url(#clip-8)">
-        <rect class="sweep"
-              x="353.36"
-              y="115.24"
-              width="75.68"
-              height="60.54"
-              fill="url(#shineBand)"
-              transform="rotate(-25 391.20 145.51)"
-              pointer-events="none"/>
+        <g transform="rotate(-25 391.20 145.51)">
+          <rect class="sweep"
+                x="353.36"
+                y="115.24"
+                width="75.68"
+                height="60.54"
+                fill="url(#shineBand)"
+                pointer-events="none"/>
+        </g>
       </g>
 
       <text x="391.20" y="143.51" text-anchor="middle"
@@ -755,6 +764,6 @@
 
   <text x="688" y="372"
         text-anchor="end" fill="#8b949e" font-size="9">
-    UPDATED 2026-10-12 07:24 WIB
+    UPDATED 2026-10-12 08:46 SGT
   </text>
 </svg>
