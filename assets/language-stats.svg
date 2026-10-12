@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg"
-     width="720" height="507"
-     viewBox="0 0 720 507"
+     width="720" height="390"
+     viewBox="0 0 720 390"
      role="img" aria-labelledby="title desc">
   <title id="title">Repository Language Bubbles</title>
   <desc id="desc">
-    Combined language statistics for 0xbabyalien's public repositories
+    Combined language statistics for 0xbabyalien's non-fork public repositories
   </desc>
 
   <defs>
@@ -40,7 +40,7 @@
       </feMerge>
     </filter>
 
-    <clipPath id="clip-0"><circle cx="358.83" cy="284.10" r="53.00"/></clipPath><clipPath id="clip-1"><circle cx="451.33" cy="284.10" r="34.79"/></clipPath><clipPath id="clip-2"><circle cx="422.84" cy="350.88" r="33.47"/></clipPath><clipPath id="clip-3"><circle cx="356.87" cy="374.08" r="31.58"/></clipPath><clipPath id="clip-4"><circle cx="297.66" cy="346.66" r="29.47"/></clipPath><clipPath id="clip-5"><circle cx="274.04" cy="289.98" r="27.20"/></clipPath><clipPath id="clip-6"><circle cx="290.41" cy="233.66" r="26.85"/></clipPath><clipPath id="clip-7"><circle cx="338.42" cy="201.59" r="26.18"/></clipPath><clipPath id="clip-8"><circle cx="394.95" cy="207.15" r="25.88"/></clipPath><clipPath id="clip-9"><circle cx="449.27" cy="217.18" r="25.30"/></clipPath><clipPath id="clip-10"><circle cx="239.49" cy="335.65" r="25.24"/></clipPath><clipPath id="clip-11"><circle cx="288.41" cy="177.81" r="25.02"/></clipPath><clipPath id="clip-12"><circle cx="371.57" cy="157.24" r="24.99"/></clipPath><clipPath id="clip-13"><circle cx="236.47" cy="248.26" r="24.93"/></clipPath><clipPath id="clip-14"><circle cx="304.52" cy="404.95" r="24.80"/></clipPath><clipPath id="clip-15"><circle cx="405.93" cy="410.62" r="24.55"/></clipPath><clipPath id="clip-16"><circle cx="485.49" cy="337.62" r="24.50"/></clipPath><clipPath id="clip-17"><circle cx="425.69" cy="161.09" r="24.40"/></clipPath><clipPath id="clip-18"><circle cx="253.84" cy="387.70" r="24.30"/></clipPath><clipPath id="clip-19"><circle cx="498.87" cy="237.77" r="24.30"/></clipPath><clipPath id="clip-20"><circle cx="357.85" cy="434.09" r="24.24"/></clipPath><clipPath id="clip-21"><circle cx="206.59" cy="292.93" r="24.24"/></clipPath><clipPath id="clip-22"><circle cx="238.06" cy="195.14" r="24.21"/></clipPath><clipPath id="clip-23"><circle cx="321.90" cy="136.14" r="24.14"/></clipPath><clipPath id="clip-24"><circle cx="513.58" cy="292.93" r="24.07"/></clipPath><clipPath id="clip-25"><circle cx="473.18" cy="388.73" r="24.02"/></clipPath>
+    <clipPath id="clip-0"><circle cx="352.53" cy="218.39" r="53.00"/></clipPath><clipPath id="clip-1"><circle cx="447.53" cy="218.39" r="36.15"/></clipPath><clipPath id="clip-2"><circle cx="416.87" cy="288.28" r="35.95"/></clipPath><clipPath id="clip-3"><circle cx="346.64" cy="308.19" r="32.92"/></clipPath><clipPath id="clip-4"><circle cx="285.51" cy="278.46" r="30.70"/></clipPath><clipPath id="clip-5"><circle cx="265.03" cy="218.39" r="28.70"/></clipPath><clipPath id="clip-6"><circle cx="289.54" cy="165.11" r="25.44"/></clipPath><clipPath id="clip-7"><circle cx="336.92" cy="137.38" r="25.38"/></clipPath><clipPath id="clip-8"><circle cx="391.20" cy="145.51" r="25.23"/></clipPath>
 
     <style>
       text {
@@ -76,57 +76,57 @@
       
       .bubble-0 {
         animation-name: drift-0;
-        animation-duration: 15s;
-        animation-delay: -11.46s;
+        animation-duration: 13s;
+        animation-delay: -8.72s;
       }
 
       @keyframes drift-0 {
         0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(0px, 0px); }
-        62% { transform: translate(-3px, 2px); }
-        84% { transform: translate(1px, 2px); }
+        28% { transform: translate(2px, -1px); }
+        62% { transform: translate(-3px, 1px); }
+        84% { transform: translate(-2px, 2px); }
       }
       
 
       .bubble-1 {
         animation-name: drift-1;
-        animation-duration: 16s;
-        animation-delay: -4.92s;
+        animation-duration: 15s;
+        animation-delay: -10.86s;
       }
 
       @keyframes drift-1 {
         0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(-1px, -1px); }
-        62% { transform: translate(2px, 1px); }
-        84% { transform: translate(0px, 0px); }
+        28% { transform: translate(2px, 0px); }
+        62% { transform: translate(-1px, 0px); }
+        84% { transform: translate(-1px, 0px); }
       }
       
 
       .bubble-2 {
         animation-name: drift-2;
-        animation-duration: 12s;
-        animation-delay: -7.83s;
+        animation-duration: 16s;
+        animation-delay: -2.33s;
       }
 
       @keyframes drift-2 {
         0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(-1px, -1px); }
-        62% { transform: translate(2px, 0px); }
-        84% { transform: translate(-2px, -1px); }
+        28% { transform: translate(-1px, 1px); }
+        62% { transform: translate(-2px, 1px); }
+        84% { transform: translate(-2px, -2px); }
       }
       
 
       .bubble-3 {
         animation-name: drift-3;
-        animation-duration: 11s;
-        animation-delay: -4.31s;
+        animation-duration: 10s;
+        animation-delay: -8.85s;
       }
 
       @keyframes drift-3 {
         0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(2px, 1px); }
-        62% { transform: translate(2px, -2px); }
-        84% { transform: translate(-1px, -1px); }
+        28% { transform: translate(2px, -2px); }
+        62% { transform: translate(-1px, -1px); }
+        84% { transform: translate(2px, -1px); }
       }
       
 
@@ -146,29 +146,29 @@
 
       .bubble-5 {
         animation-name: drift-5;
-        animation-duration: 11s;
-        animation-delay: -10.61s;
+        animation-duration: 10s;
+        animation-delay: -8.21s;
       }
 
       @keyframes drift-5 {
         0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(2px, -1px); }
-        62% { transform: translate(-3px, 1px); }
-        84% { transform: translate(2px, -2px); }
+        28% { transform: translate(2px, -2px); }
+        62% { transform: translate(0px, -1px); }
+        84% { transform: translate(0px, -2px); }
       }
       
 
       .bubble-6 {
         animation-name: drift-6;
-        animation-duration: 13s;
-        animation-delay: -3.06s;
+        animation-duration: 17s;
+        animation-delay: -0.86s;
       }
 
       @keyframes drift-6 {
         0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(-1px, 1px); }
-        62% { transform: translate(-2px, -3px); }
-        84% { transform: translate(-2px, 0px); }
+        28% { transform: translate(0px, -1px); }
+        62% { transform: translate(0px, -1px); }
+        84% { transform: translate(0px, -2px); }
       }
       
 
@@ -188,253 +188,15 @@
 
       .bubble-8 {
         animation-name: drift-8;
-        animation-duration: 17s;
-        animation-delay: -4.73s;
+        animation-duration: 14s;
+        animation-delay: -8.43s;
       }
 
       @keyframes drift-8 {
         0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(2px, 2px); }
-        62% { transform: translate(-2px, 2px); }
-        84% { transform: translate(0px, 1px); }
-      }
-      
-
-      .bubble-9 {
-        animation-name: drift-9;
-        animation-duration: 16s;
-        animation-delay: -10.09s;
-      }
-
-      @keyframes drift-9 {
-        0%, 100% { transform: translate(0, 0); }
         28% { transform: translate(-2px, 2px); }
-        62% { transform: translate(3px, 3px); }
-        84% { transform: translate(2px, -1px); }
-      }
-      
-
-      .bubble-10 {
-        animation-name: drift-10;
-        animation-duration: 16s;
-        animation-delay: -15.76s;
-      }
-
-      @keyframes drift-10 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(-1px, 2px); }
-        62% { transform: translate(-1px, -1px); }
-        84% { transform: translate(1px, -1px); }
-      }
-      
-
-      .bubble-11 {
-        animation-name: drift-11;
-        animation-duration: 14s;
-        animation-delay: -9.27s;
-      }
-
-      @keyframes drift-11 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(-1px, 1px); }
-        62% { transform: translate(3px, -3px); }
-        84% { transform: translate(2px, 0px); }
-      }
-      
-
-      .bubble-12 {
-        animation-name: drift-12;
-        animation-duration: 10s;
-        animation-delay: -0.94s;
-      }
-
-      @keyframes drift-12 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(0px, 1px); }
-        62% { transform: translate(1px, 0px); }
-        84% { transform: translate(1px, -1px); }
-      }
-      
-
-      .bubble-13 {
-        animation-name: drift-13;
-        animation-duration: 13s;
-        animation-delay: -10.61s;
-      }
-
-      @keyframes drift-13 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(-2px, 2px); }
-        62% { transform: translate(-3px, 0px); }
-        84% { transform: translate(2px, 0px); }
-      }
-      
-
-      .bubble-14 {
-        animation-name: drift-14;
-        animation-duration: 14s;
-        animation-delay: -2.52s;
-      }
-
-      @keyframes drift-14 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(-1px, -1px); }
-        62% { transform: translate(-3px, -3px); }
-        84% { transform: translate(1px, 2px); }
-      }
-      
-
-      .bubble-15 {
-        animation-name: drift-15;
-        animation-duration: 14s;
-        animation-delay: -0.77s;
-      }
-
-      @keyframes drift-15 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(2px, -2px); }
-        62% { transform: translate(-3px, 2px); }
-        84% { transform: translate(-2px, 2px); }
-      }
-      
-
-      .bubble-16 {
-        animation-name: drift-16;
-        animation-duration: 12s;
-        animation-delay: -11.92s;
-      }
-
-      @keyframes drift-16 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(1px, 1px); }
-        62% { transform: translate(1px, 0px); }
-        84% { transform: translate(2px, 0px); }
-      }
-      
-
-      .bubble-17 {
-        animation-name: drift-17;
-        animation-duration: 14s;
-        animation-delay: -0.51s;
-      }
-
-      @keyframes drift-17 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(-2px, 0px); }
-        62% { transform: translate(1px, 1px); }
-        84% { transform: translate(-2px, -1px); }
-      }
-      
-
-      .bubble-18 {
-        animation-name: drift-18;
-        animation-duration: 15s;
-        animation-delay: -9.38s;
-      }
-
-      @keyframes drift-18 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(-2px, -2px); }
-        62% { transform: translate(0px, -3px); }
-        84% { transform: translate(2px, 0px); }
-      }
-      
-
-      .bubble-19 {
-        animation-name: drift-19;
-        animation-duration: 15s;
-        animation-delay: -14.05s;
-      }
-
-      @keyframes drift-19 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(2px, 2px); }
-        62% { transform: translate(-2px, 0px); }
-        84% { transform: translate(2px, 1px); }
-      }
-      
-
-      .bubble-20 {
-        animation-name: drift-20;
-        animation-duration: 12s;
-        animation-delay: -5.92s;
-      }
-
-      @keyframes drift-20 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(2px, 1px); }
         62% { transform: translate(2px, -1px); }
-        84% { transform: translate(-1px, 1px); }
-      }
-      
-
-      .bubble-21 {
-        animation-name: drift-21;
-        animation-duration: 12s;
-        animation-delay: -11.57s;
-      }
-
-      @keyframes drift-21 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(1px, 1px); }
-        62% { transform: translate(1px, -2px); }
-        84% { transform: translate(2px, -1px); }
-      }
-      
-
-      .bubble-22 {
-        animation-name: drift-22;
-        animation-duration: 12s;
-        animation-delay: -2.55s;
-      }
-
-      @keyframes drift-22 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(1px, 1px); }
-        62% { transform: translate(3px, -3px); }
-        84% { transform: translate(1px, 1px); }
-      }
-      
-
-      .bubble-23 {
-        animation-name: drift-23;
-        animation-duration: 14s;
-        animation-delay: -1.77s;
-      }
-
-      @keyframes drift-23 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(-1px, 2px); }
-        62% { transform: translate(1px, -2px); }
-        84% { transform: translate(-1px, -1px); }
-      }
-      
-
-      .bubble-24 {
-        animation-name: drift-24;
-        animation-duration: 15s;
-        animation-delay: -10.69s;
-      }
-
-      @keyframes drift-24 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(-2px, 0px); }
-        62% { transform: translate(1px, 3px); }
-        84% { transform: translate(-2px, 0px); }
-      }
-      
-
-      .bubble-25 {
-        animation-name: drift-25;
-        animation-duration: 17s;
-        animation-delay: -9.18s;
-      }
-
-      @keyframes drift-25 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(1px, -2px); }
-        62% { transform: translate(1px, -1px); }
-        84% { transform: translate(2px, -1px); }
+        84% { transform: translate(-1px, -2px); }
       }
       
 
@@ -466,17 +228,14 @@
         .bubble, .bubble-outline, .sweep, .spark {
           animation: none !important;
         }
-
         .bubble-outline {
           stroke: #0ad;
           stroke-width: 1.5;
           stroke-opacity: .95;
         }
-
         .sweep {
           display: none;
         }
-
         .spark {
           opacity: .5;
         }
@@ -485,7 +244,7 @@
   </defs>
 
   <rect x="8" y="8" width="704"
-        height="491" rx="22"
+        height="374" rx="22"
         fill="url(#bg)" stroke="#30363d"/>
 
   <text x="32" y="42" fill="#f0f6fc"
@@ -494,1443 +253,508 @@
   </text>
 
   <text x="32" y="62" fill="#8b949e" font-size="11">
-    0xbabyalien · 10 public repositories · 26 languages
+    0xbabyalien · 5 non-fork public repositories · 9 languages
   </text>
 
   
     <g class="bubble bubble-0">
       <circle class="bubble-outline"
-              cx="358.83" cy="284.10" r="53.00"
-              fill="#dea584" fill-opacity=".96"
+              cx="352.53" cy="218.39" r="53.00"
+              fill="#e34c26" fill-opacity=".96"
               stroke="#0ad" stroke-width="1.5"
               filter="url(#shadow)"/>
 
-      <circle cx="358.83" cy="284.10" r="52.00"
+      <circle cx="352.53" cy="218.39" r="52.00"
               fill="url(#gloss)" pointer-events="none"/>
 
-      <ellipse cx="343.99"
-               cy="253.36"
+      <ellipse cx="337.69"
+               cy="187.65"
                rx="16.96"
                ry="5.83"
                fill="#ffffff" opacity=".40"
                filter="url(#softGlow)" pointer-events="none"/>
 
-      <path d="M 330.74 258.13
-               Q 343.99 242.76
-                 357.77 256.01"
+      <path d="M 324.44 192.42
+               Q 337.69 177.05
+                 351.47 190.30"
             fill="none" stroke="#ffffff" stroke-opacity=".68"
             stroke-width="1.33"
             stroke-linecap="round" pointer-events="none"/>
 
       <circle class="spark"
-              cx="388.51"
-              cy="262.90"
+              cx="382.21"
+              cy="197.19"
               r="1.86"
               fill="#ffffff" filter="url(#softGlow)"
               pointer-events="none"/>
 
       <g clip-path="url(#clip-0)">
         <rect class="sweep"
-              x="279.33"
-              y="220.50"
+              x="273.03"
+              y="154.79"
               width="159.00"
               height="127.20"
               fill="url(#shineBand)"
-              transform="rotate(-25 358.83 284.10)"
+              transform="rotate(-25 352.53 218.39)"
               pointer-events="none"/>
       </g>
 
-      <text x="358.83" y="282.10" text-anchor="middle"
+      <text x="352.53" y="216.39" text-anchor="middle"
             textLength="82.15"
             lengthAdjust="spacingAndGlyphs"
             fill="#ffffff" font-size="12" font-weight="700">
-        Rust
+        HTML
       </text>
 
-      <text x="358.83" y="299.10" text-anchor="middle"
+      <text x="352.53" y="233.39" text-anchor="middle"
             fill="#ffffff" font-size="10" font-weight="700">
-        71.94%
+        65.54%
       </text>
     </g>
     
     <g class="bubble bubble-1">
       <circle class="bubble-outline"
-              cx="451.33" cy="284.10" r="34.79"
-              fill="#8b949e" fill-opacity=".96"
+              cx="447.53" cy="218.39" r="36.15"
+              fill="#a371f7" fill-opacity=".96"
               stroke="#0ad" stroke-width="1.5"
               filter="url(#shadow)"/>
 
-      <circle cx="451.33" cy="284.10" r="33.79"
+      <circle cx="447.53" cy="218.39" r="35.15"
               fill="url(#gloss)" pointer-events="none"/>
 
-      <ellipse cx="441.59"
-               cy="263.92"
-               rx="11.13"
-               ry="3.83"
+      <ellipse cx="437.41"
+               cy="197.42"
+               rx="11.57"
+               ry="3.98"
                fill="#ffffff" opacity=".40"
                filter="url(#softGlow)" pointer-events="none"/>
 
-      <path d="M 432.89 267.05
-               Q 441.59 256.96
-                 450.64 265.66"
+      <path d="M 428.37 200.68
+               Q 437.41 190.19
+                 446.81 199.23"
             fill="none" stroke="#ffffff" stroke-opacity=".68"
             stroke-width="1.00"
             stroke-linecap="round" pointer-events="none"/>
 
       <circle class="spark"
-              cx="470.82"
-              cy="270.18"
-              r="1.22"
+              cx="467.77"
+              cy="203.93"
+              r="1.27"
               fill="#ffffff" filter="url(#softGlow)"
               pointer-events="none"/>
 
       <g clip-path="url(#clip-1)">
         <rect class="sweep"
-              x="399.14"
-              y="242.34"
-              width="104.38"
-              height="83.51"
+              x="393.31"
+              y="175.01"
+              width="108.44"
+              height="86.75"
               fill="url(#shineBand)"
-              transform="rotate(-25 451.33 284.10)"
+              transform="rotate(-25 447.53 218.39)"
               pointer-events="none"/>
       </g>
 
-      <text x="451.33" y="282.10" text-anchor="middle"
-            textLength="53.93"
+      <text x="447.53" y="216.39" text-anchor="middle"
+            textLength="56.02"
             lengthAdjust="spacingAndGlyphs"
             fill="#ffffff" font-size="10" font-weight="700">
-        Solidity
+        CSS
       </text>
 
-      <text x="451.33" y="299.10" text-anchor="middle"
+      <text x="447.53" y="233.39" text-anchor="middle"
             fill="#ffffff" font-size="9" font-weight="700">
-        9.97%
+        11.49%
       </text>
     </g>
     
     <g class="bubble bubble-2">
       <circle class="bubble-outline"
-              cx="422.84" cy="350.88" r="33.47"
-              fill="#f34b7d" fill-opacity=".96"
+              cx="416.87" cy="288.28" r="35.95"
+              fill="#f1e05a" fill-opacity=".96"
               stroke="#0ad" stroke-width="1.5"
               filter="url(#shadow)"/>
 
-      <circle cx="422.84" cy="350.88" r="32.47"
+      <circle cx="416.87" cy="288.28" r="34.95"
               fill="url(#gloss)" pointer-events="none"/>
 
-      <ellipse cx="413.46"
-               cy="331.46"
-               rx="10.71"
-               ry="3.68"
+      <ellipse cx="406.80"
+               cy="267.43"
+               rx="11.50"
+               ry="3.95"
                fill="#ffffff" opacity=".40"
                filter="url(#softGlow)" pointer-events="none"/>
 
-      <path d="M 405.10 334.48
-               Q 413.46 324.77
-                 422.17 333.14"
+      <path d="M 397.82 270.67
+               Q 406.80 260.24
+                 416.15 269.23"
             fill="none" stroke="#ffffff" stroke-opacity=".68"
             stroke-width="1.00"
             stroke-linecap="round" pointer-events="none"/>
 
       <circle class="spark"
-              cx="441.58"
-              cy="337.49"
-              r="1.20"
+              cx="437.00"
+              cy="273.90"
+              r="1.26"
               fill="#ffffff" filter="url(#softGlow)"
               pointer-events="none"/>
 
       <g clip-path="url(#clip-2)">
         <rect class="sweep"
-              x="372.63"
-              y="310.71"
-              width="100.41"
-              height="80.33"
+              x="362.95"
+              y="245.14"
+              width="107.85"
+              height="86.28"
               fill="url(#shineBand)"
-              transform="rotate(-25 422.84 350.88)"
+              transform="rotate(-25 416.87 288.28)"
               pointer-events="none"/>
       </g>
 
-      <text x="422.84" y="348.88" text-anchor="middle"
-            textLength="51.88"
+      <text x="416.87" y="286.28" text-anchor="middle"
+            textLength="55.72"
             lengthAdjust="spacingAndGlyphs"
-            fill="#ffffff" font-size="8" font-weight="700">
-        C++
+            fill="#ffffff" font-size="10" font-weight="700">
+        JavaScript
       </text>
 
-      <text x="422.84" y="365.88" text-anchor="middle"
-            fill="#ffffff" font-size="8" font-weight="700">
-        7.67%
+      <text x="416.87" y="303.28" text-anchor="middle"
+            fill="#ffffff" font-size="9" font-weight="700">
+        11.13%
       </text>
     </g>
     
     <g class="bubble bubble-3">
       <circle class="bubble-outline"
-              cx="356.87" cy="374.08" r="31.58"
-              fill="#f1e05a" fill-opacity=".96"
+              cx="346.64" cy="308.19" r="32.92"
+              fill="#3178c6" fill-opacity=".96"
               stroke="#0ad" stroke-width="1.5"
               filter="url(#shadow)"/>
 
-      <circle cx="356.87" cy="374.08" r="30.58"
+      <circle cx="346.64" cy="308.19" r="31.92"
               fill="url(#gloss)" pointer-events="none"/>
 
-      <ellipse cx="348.03"
-               cy="355.76"
-               rx="10.11"
-               ry="3.47"
+      <ellipse cx="337.43"
+               cy="289.10"
+               rx="10.53"
+               ry="3.62"
                fill="#ffffff" opacity=".40"
                filter="url(#softGlow)" pointer-events="none"/>
 
-      <path d="M 340.13 358.60
-               Q 348.03 349.44
-                 356.24 357.34"
+      <path d="M 329.20 292.07
+               Q 337.43 282.52
+                 345.98 290.75"
             fill="none" stroke="#ffffff" stroke-opacity=".68"
             stroke-width="1.00"
             stroke-linecap="round" pointer-events="none"/>
 
       <circle class="spark"
-              cx="374.55"
-              cy="361.44"
+              cx="365.08"
+              cy="295.03"
               r="1.20"
               fill="#ffffff" filter="url(#softGlow)"
               pointer-events="none"/>
 
       <g clip-path="url(#clip-3)">
         <rect class="sweep"
-              x="309.50"
-              y="336.18"
-              width="94.74"
-              height="75.79"
+              x="297.27"
+              y="268.70"
+              width="98.75"
+              height="79.00"
               fill="url(#shineBand)"
-              transform="rotate(-25 356.87 374.08)"
+              transform="rotate(-25 346.64 308.19)"
               pointer-events="none"/>
       </g>
 
-      <text x="356.87" y="372.08" text-anchor="middle"
-            textLength="48.95"
+      <text x="346.64" y="306.19" text-anchor="middle"
+            textLength="51.02"
             lengthAdjust="spacingAndGlyphs"
             fill="#ffffff" font-size="8" font-weight="700">
-        JavaScript
+        TypeScript
       </text>
 
-      <text x="356.87" y="389.08" text-anchor="middle"
+      <text x="346.64" y="323.19" text-anchor="middle"
             fill="#ffffff" font-size="8" font-weight="700">
-        4.91%
+        6.20%
       </text>
     </g>
     
     <g class="bubble bubble-4">
       <circle class="bubble-outline"
-              cx="297.66" cy="346.66" r="29.47"
+              cx="285.51" cy="278.46" r="30.70"
               fill="#58a6ff" fill-opacity=".96"
               stroke="#0ad" stroke-width="1.5"
               filter="url(#shadow)"/>
 
-      <circle cx="297.66" cy="346.66" r="28.47"
+      <circle cx="285.51" cy="278.46" r="29.70"
               fill="url(#gloss)" pointer-events="none"/>
 
-      <ellipse cx="289.41"
-               cy="329.57"
-               rx="9.43"
-               ry="3.24"
+      <ellipse cx="276.92"
+               cy="260.66"
+               rx="9.82"
+               ry="3.38"
                fill="#ffffff" opacity=".40"
                filter="url(#softGlow)" pointer-events="none"/>
 
-      <path d="M 282.04 332.22
-               Q 289.41 323.67
-                 297.07 331.04"
+      <path d="M 269.25 263.42
+               Q 276.92 254.52
+                 284.90 262.19"
             fill="none" stroke="#ffffff" stroke-opacity=".68"
             stroke-width="1.00"
             stroke-linecap="round" pointer-events="none"/>
 
       <circle class="spark"
-              cx="314.16"
-              cy="334.87"
+              cx="302.70"
+              cy="266.19"
               r="1.20"
               fill="#ffffff" filter="url(#softGlow)"
               pointer-events="none"/>
 
       <g clip-path="url(#clip-4)">
         <rect class="sweep"
-              x="253.46"
-              y="311.30"
-              width="88.40"
-              height="70.72"
+              x="239.47"
+              y="241.63"
+              width="92.09"
+              height="73.67"
               fill="url(#shineBand)"
-              transform="rotate(-25 297.66 346.66)"
+              transform="rotate(-25 285.51 278.46)"
               pointer-events="none"/>
       </g>
 
-      <text x="297.66" y="344.66" text-anchor="middle"
-            textLength="45.67"
+      <text x="285.51" y="276.46" text-anchor="middle"
+            textLength="47.58"
             lengthAdjust="spacingAndGlyphs"
             fill="#ffffff" font-size="8" font-weight="700">
         Python
       </text>
 
-      <text x="297.66" y="361.66" text-anchor="middle"
+      <text x="285.51" y="293.46" text-anchor="middle"
             fill="#ffffff" font-size="8" font-weight="700">
-        2.56%
+        3.49%
       </text>
     </g>
     
     <g class="bubble bubble-5">
       <circle class="bubble-outline"
-              cx="274.04" cy="289.98" r="27.20"
-              fill="#8b949e" fill-opacity=".96"
+              cx="265.03" cy="218.39" r="28.70"
+              fill="#f34b7d" fill-opacity=".96"
               stroke="#0ad" stroke-width="1.5"
               filter="url(#shadow)"/>
 
-      <circle cx="274.04" cy="289.98" r="26.20"
+      <circle cx="265.03" cy="218.39" r="27.70"
               fill="url(#gloss)" pointer-events="none"/>
 
-      <ellipse cx="266.42"
-               cy="274.21"
-               rx="8.70"
-               ry="3.00"
+      <ellipse cx="256.99"
+               cy="201.74"
+               rx="9.19"
+               ry="3.16"
                fill="#ffffff" opacity=".40"
                filter="url(#softGlow)" pointer-events="none"/>
 
-      <path d="M 259.62 276.65
-               Q 266.42 268.77
-                 273.49 275.57"
+      <path d="M 249.82 204.32
+               Q 256.99 196.00
+                 264.46 203.17"
             fill="none" stroke="#ffffff" stroke-opacity=".68"
             stroke-width="1.00"
             stroke-linecap="round" pointer-events="none"/>
 
       <circle class="spark"
-              cx="289.27"
-              cy="279.10"
+              cx="281.10"
+              cy="206.91"
               r="1.20"
               fill="#ffffff" filter="url(#softGlow)"
               pointer-events="none"/>
 
       <g clip-path="url(#clip-5)">
         <rect class="sweep"
-              x="233.23"
-              y="257.34"
-              width="81.61"
-              height="65.28"
+              x="221.97"
+              y="183.94"
+              width="86.11"
+              height="68.89"
               fill="url(#shineBand)"
-              transform="rotate(-25 274.04 289.98)"
+              transform="rotate(-25 265.03 218.39)"
               pointer-events="none"/>
       </g>
 
-      <text x="274.04" y="287.98" text-anchor="middle"
-            textLength="42.16"
+      <text x="265.03" y="216.39" text-anchor="middle"
+            textLength="44.49"
             lengthAdjust="spacingAndGlyphs"
             fill="#ffffff" font-size="8" font-weight="700">
-        Yul
+        C++
       </text>
 
-      <text x="274.04" y="304.98" text-anchor="middle"
+      <text x="265.03" y="233.39" text-anchor="middle"
             fill="#ffffff" font-size="8" font-weight="700">
-        0.88%
+        1.72%
       </text>
     </g>
     
     <g class="bubble bubble-6">
       <circle class="bubble-outline"
-              cx="290.41" cy="233.66" r="26.85"
-              fill="#e34c26" fill-opacity=".96"
+              cx="289.54" cy="165.11" r="25.44"
+              fill="#8b949e" fill-opacity=".96"
               stroke="#0ad" stroke-width="1.5"
               filter="url(#shadow)"/>
 
-      <circle cx="290.41" cy="233.66" r="25.85"
+      <circle cx="289.54" cy="165.11" r="24.44"
               fill="url(#gloss)" pointer-events="none"/>
 
-      <ellipse cx="282.90"
-               cy="218.09"
-               rx="8.59"
+      <ellipse cx="282.42"
+               cy="150.35"
+               rx="8.14"
                ry="3.00"
                fill="#ffffff" opacity=".40"
                filter="url(#softGlow)" pointer-events="none"/>
 
-      <path d="M 276.18 220.50
-               Q 282.90 212.72
-                 289.88 219.43"
+      <path d="M 276.06 152.64
+               Q 282.42 145.27
+                 289.03 151.63"
             fill="none" stroke="#ffffff" stroke-opacity=".68"
             stroke-width="1.00"
             stroke-linecap="round" pointer-events="none"/>
 
       <circle class="spark"
-              cx="305.45"
-              cy="222.92"
+              cx="303.79"
+              cy="154.93"
               r="1.20"
               fill="#ffffff" filter="url(#softGlow)"
               pointer-events="none"/>
 
       <g clip-path="url(#clip-6)">
         <rect class="sweep"
-              x="250.14"
-              y="201.44"
-              width="80.55"
-              height="64.44"
+              x="251.39"
+              y="134.58"
+              width="76.31"
+              height="61.05"
               fill="url(#shineBand)"
-              transform="rotate(-25 290.41 233.66)"
+              transform="rotate(-25 289.54 165.11)"
               pointer-events="none"/>
       </g>
 
-      <text x="290.41" y="231.66" text-anchor="middle"
-            textLength="41.62"
+      <text x="289.54" y="163.11" text-anchor="middle"
+            textLength="39.43"
             lengthAdjust="spacingAndGlyphs"
             fill="#ffffff" font-size="8" font-weight="700">
-        HTML
+        C#
       </text>
 
-      <text x="290.41" y="248.66" text-anchor="middle"
+      <text x="289.54" y="180.11" text-anchor="middle"
             fill="#ffffff" font-size="8" font-weight="700">
-        0.69%
+        0.16%
       </text>
     </g>
     
     <g class="bubble bubble-7">
       <circle class="bubble-outline"
-              cx="338.42" cy="201.59" r="26.18"
+              cx="336.92" cy="137.38" r="25.38"
               fill="#89e051" fill-opacity=".96"
               stroke="#0ad" stroke-width="1.5"
               filter="url(#shadow)"/>
 
-      <circle cx="338.42" cy="201.59" r="25.18"
+      <circle cx="336.92" cy="137.38" r="24.38"
               fill="url(#gloss)" pointer-events="none"/>
 
-      <ellipse cx="331.09"
-               cy="186.40"
-               rx="8.38"
+      <ellipse cx="329.81"
+               cy="122.66"
+               rx="8.12"
                ry="3.00"
                fill="#ffffff" opacity=".40"
                filter="url(#softGlow)" pointer-events="none"/>
 
-      <path d="M 324.54 188.76
-               Q 331.09 181.16
-                 337.89 187.71"
+      <path d="M 323.47 124.94
+               Q 329.81 117.58
+                 336.41 123.93"
             fill="none" stroke="#ffffff" stroke-opacity=".68"
             stroke-width="1.00"
             stroke-linecap="round" pointer-events="none"/>
 
       <circle class="spark"
-              cx="353.08"
-              cy="191.11"
+              cx="351.13"
+              cy="127.23"
               r="1.20"
               fill="#ffffff" filter="url(#softGlow)"
               pointer-events="none"/>
 
       <g clip-path="url(#clip-7)">
         <rect class="sweep"
-              x="299.14"
-              y="170.17"
-              width="78.55"
-              height="62.84"
+              x="298.85"
+              y="106.92"
+              width="76.14"
+              height="60.91"
               fill="url(#shineBand)"
-              transform="rotate(-25 338.42 201.59)"
+              transform="rotate(-25 336.92 137.38)"
               pointer-events="none"/>
       </g>
 
-      <text x="338.42" y="199.59" text-anchor="middle"
-            textLength="40.58"
+      <text x="336.92" y="135.38" text-anchor="middle"
+            textLength="39.34"
             lengthAdjust="spacingAndGlyphs"
             fill="#ffffff" font-size="8" font-weight="700">
         Shell
       </text>
 
-      <text x="338.42" y="216.59" text-anchor="middle"
+      <text x="336.92" y="152.38" text-anchor="middle"
             fill="#ffffff" font-size="8" font-weight="700">
-        0.41%
+        0.15%
       </text>
     </g>
     
     <g class="bubble bubble-8">
       <circle class="bubble-outline"
-              cx="394.95" cy="207.15" r="25.88"
-              fill="#3178c6" fill-opacity=".96"
+              cx="391.20" cy="145.51" r="25.23"
+              fill="#d29922" fill-opacity=".96"
               stroke="#0ad" stroke-width="1.5"
               filter="url(#shadow)"/>
 
-      <circle cx="394.95" cy="207.15" r="24.88"
+      <circle cx="391.20" cy="145.51" r="24.23"
               fill="url(#gloss)" pointer-events="none"/>
 
-      <ellipse cx="387.71"
-               cy="192.14"
-               rx="8.28"
+      <ellipse cx="384.14"
+               cy="130.88"
+               rx="8.07"
                ry="3.00"
                fill="#ffffff" opacity=".40"
                filter="url(#softGlow)" pointer-events="none"/>
 
-      <path d="M 381.24 194.47
-               Q 387.71 186.97
-                 394.44 193.44"
+      <path d="M 377.83 133.15
+               Q 384.14 125.84
+                 390.70 132.14"
             fill="none" stroke="#ffffff" stroke-opacity=".68"
             stroke-width="1.00"
             stroke-linecap="round" pointer-events="none"/>
 
       <circle class="spark"
-              cx="409.45"
-              cy="196.80"
+              cx="405.33"
+              cy="135.42"
               r="1.20"
               fill="#ffffff" filter="url(#softGlow)"
               pointer-events="none"/>
 
       <g clip-path="url(#clip-8)">
         <rect class="sweep"
-              x="356.13"
-              y="176.10"
-              width="77.64"
-              height="62.11"
+              x="353.36"
+              y="115.24"
+              width="75.68"
+              height="60.54"
               fill="url(#shineBand)"
-              transform="rotate(-25 394.95 207.15)"
+              transform="rotate(-25 391.20 145.51)"
               pointer-events="none"/>
       </g>
 
-      <text x="394.95" y="205.15" text-anchor="middle"
-            textLength="40.11"
-            lengthAdjust="spacingAndGlyphs"
-            fill="#ffffff" font-size="8" font-weight="700">
-        TypeScript
-      </text>
-
-      <text x="394.95" y="222.15" text-anchor="middle"
-            fill="#ffffff" font-size="8" font-weight="700">
-        0.30%
-      </text>
-    </g>
-    
-    <g class="bubble bubble-9">
-      <circle class="bubble-outline"
-              cx="449.27" cy="217.18" r="25.30"
-              fill="#a371f7" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
-              filter="url(#shadow)"/>
-
-      <circle cx="449.27" cy="217.18" r="24.30"
-              fill="url(#gloss)" pointer-events="none"/>
-
-      <ellipse cx="442.18"
-               cy="202.51"
-               rx="8.10"
-               ry="3.00"
-               fill="#ffffff" opacity=".40"
-               filter="url(#softGlow)" pointer-events="none"/>
-
-      <path d="M 435.86 204.78
-               Q 442.18 197.45
-                 448.76 203.77"
-            fill="none" stroke="#ffffff" stroke-opacity=".68"
-            stroke-width="1.00"
-            stroke-linecap="round" pointer-events="none"/>
-
-      <circle class="spark"
-              cx="463.43"
-              cy="207.06"
-              r="1.20"
-              fill="#ffffff" filter="url(#softGlow)"
-              pointer-events="none"/>
-
-      <g clip-path="url(#clip-9)">
-        <rect class="sweep"
-              x="411.32"
-              y="186.82"
-              width="75.89"
-              height="60.71"
-              fill="url(#shineBand)"
-              transform="rotate(-25 449.27 217.18)"
-              pointer-events="none"/>
-      </g>
-
-      <text x="449.27" y="215.18" text-anchor="middle"
-            textLength="39.21"
-            lengthAdjust="spacingAndGlyphs"
-            fill="#ffffff" font-size="8" font-weight="700">
-        CSS
-      </text>
-
-      <text x="449.27" y="232.18" text-anchor="middle"
-            fill="#ffffff" font-size="8" font-weight="700">
-        0.14%
-      </text>
-    </g>
-    
-    <g class="bubble bubble-10">
-      <circle class="bubble-outline"
-              cx="239.49" cy="335.65" r="25.24"
-              fill="#8b949e" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
-              filter="url(#shadow)"/>
-
-      <circle cx="239.49" cy="335.65" r="24.24"
-              fill="url(#gloss)" pointer-events="none"/>
-
-      <ellipse cx="232.43"
-               cy="321.01"
-               rx="8.08"
-               ry="3.00"
-               fill="#ffffff" opacity=".40"
-               filter="url(#softGlow)" pointer-events="none"/>
-
-      <path d="M 226.12 323.29
-               Q 232.43 315.97
-                 238.99 322.28"
-            fill="none" stroke="#ffffff" stroke-opacity=".68"
-            stroke-width="1.00"
-            stroke-linecap="round" pointer-events="none"/>
-
-      <circle class="spark"
-              cx="253.63"
-              cy="325.56"
-              r="1.20"
-              fill="#ffffff" filter="url(#softGlow)"
-              pointer-events="none"/>
-
-      <g clip-path="url(#clip-10)">
-        <rect class="sweep"
-              x="201.63"
-              y="305.36"
-              width="75.72"
-              height="60.58"
-              fill="url(#shineBand)"
-              transform="rotate(-25 239.49 335.65)"
-              pointer-events="none"/>
-      </g>
-
-      <text x="239.49" y="333.65" text-anchor="middle"
-            textLength="39.12"
-            lengthAdjust="spacingAndGlyphs"
-            fill="#ffffff" font-size="8" font-weight="700">
-        Starlark
-      </text>
-
-      <text x="239.49" y="350.65" text-anchor="middle"
-            fill="#ffffff" font-size="8" font-weight="700">
-        0.13%
-      </text>
-    </g>
-    
-    <g class="bubble bubble-11">
-      <circle class="bubble-outline"
-              cx="288.41" cy="177.81" r="25.02"
-              fill="#8b949e" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
-              filter="url(#shadow)"/>
-
-      <circle cx="288.41" cy="177.81" r="24.02"
-              fill="url(#gloss)" pointer-events="none"/>
-
-      <ellipse cx="281.40"
-               cy="163.30"
-               rx="8.01"
-               ry="3.00"
-               fill="#ffffff" opacity=".40"
-               filter="url(#softGlow)" pointer-events="none"/>
-
-      <path d="M 275.15 165.55
-               Q 281.40 158.30
-                 287.91 164.55"
-            fill="none" stroke="#ffffff" stroke-opacity=".68"
-            stroke-width="1.00"
-            stroke-linecap="round" pointer-events="none"/>
-
-      <circle class="spark"
-              cx="302.42"
-              cy="167.81"
-              r="1.20"
-              fill="#ffffff" filter="url(#softGlow)"
-              pointer-events="none"/>
-
-      <g clip-path="url(#clip-11)">
-        <rect class="sweep"
-              x="250.88"
-              y="147.79"
-              width="75.05"
-              height="60.04"
-              fill="url(#shineBand)"
-              transform="rotate(-25 288.41 177.81)"
-              pointer-events="none"/>
-      </g>
-
-      <text x="288.41" y="175.81" text-anchor="middle"
-            textLength="38.78"
-            lengthAdjust="spacingAndGlyphs"
-            fill="#ffffff" font-size="8" font-weight="700">
-        CMake
-      </text>
-
-      <text x="288.41" y="192.81" text-anchor="middle"
-            fill="#ffffff" font-size="8" font-weight="700">
-        0.09%
-      </text>
-    </g>
-    
-    <g class="bubble bubble-12">
-      <circle class="bubble-outline"
-              cx="371.57" cy="157.24" r="24.99"
-              fill="#8b949e" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
-              filter="url(#shadow)"/>
-
-      <circle cx="371.57" cy="157.24" r="23.99"
-              fill="url(#gloss)" pointer-events="none"/>
-
-      <ellipse cx="364.58"
-               cy="142.74"
-               rx="8.00"
-               ry="3.00"
-               fill="#ffffff" opacity=".40"
-               filter="url(#softGlow)" pointer-events="none"/>
-
-      <path d="M 358.33 144.99
-               Q 364.58 137.75
-                 371.07 143.99"
-            fill="none" stroke="#ffffff" stroke-opacity=".68"
-            stroke-width="1.00"
-            stroke-linecap="round" pointer-events="none"/>
-
-      <circle class="spark"
-              cx="385.57"
-              cy="147.24"
-              r="1.20"
-              fill="#ffffff" filter="url(#softGlow)"
-              pointer-events="none"/>
-
-      <g clip-path="url(#clip-12)">
-        <rect class="sweep"
-              x="334.09"
-              y="127.25"
-              width="74.96"
-              height="59.97"
-              fill="url(#shineBand)"
-              transform="rotate(-25 371.57 157.24)"
-              pointer-events="none"/>
-      </g>
-
-      <text x="371.57" y="155.24" text-anchor="middle"
-            textLength="38.73"
-            lengthAdjust="spacingAndGlyphs"
-            fill="#ffffff" font-size="8" font-weight="700">
-        PowerShell
-      </text>
-
-      <text x="371.57" y="172.24" text-anchor="middle"
-            fill="#ffffff" font-size="8" font-weight="700">
-        0.08%
-      </text>
-    </g>
-    
-    <g class="bubble bubble-13">
-      <circle class="bubble-outline"
-              cx="236.47" cy="248.26" r="24.93"
-              fill="#8b949e" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
-              filter="url(#shadow)"/>
-
-      <circle cx="236.47" cy="248.26" r="23.93"
-              fill="url(#gloss)" pointer-events="none"/>
-
-      <ellipse cx="229.49"
-               cy="233.80"
-               rx="7.98"
-               ry="3.00"
-               fill="#ffffff" opacity=".40"
-               filter="url(#softGlow)" pointer-events="none"/>
-
-      <path d="M 223.26 236.04
-               Q 229.49 228.81
-                 235.97 235.05"
-            fill="none" stroke="#ffffff" stroke-opacity=".68"
-            stroke-width="1.00"
-            stroke-linecap="round" pointer-events="none"/>
-
-      <circle class="spark"
-              cx="250.43"
-              cy="238.29"
-              r="1.20"
-              fill="#ffffff" filter="url(#softGlow)"
-              pointer-events="none"/>
-
-      <g clip-path="url(#clip-13)">
-        <rect class="sweep"
-              x="199.07"
-              y="218.34"
-              width="74.80"
-              height="59.84"
-              fill="url(#shineBand)"
-              transform="rotate(-25 236.47 248.26)"
-              pointer-events="none"/>
-      </g>
-
-      <text x="236.47" y="246.26" text-anchor="middle"
-            textLength="38.65"
-            lengthAdjust="spacingAndGlyphs"
-            fill="#ffffff" font-size="8" font-weight="700">
-        C
-      </text>
-
-      <text x="236.47" y="263.26" text-anchor="middle"
-            fill="#ffffff" font-size="8" font-weight="700">
-        0.07%
-      </text>
-    </g>
-    
-    <g class="bubble bubble-14">
-      <circle class="bubble-outline"
-              cx="304.52" cy="404.95" r="24.80"
-              fill="#701516" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
-              filter="url(#shadow)"/>
-
-      <circle cx="304.52" cy="404.95" r="23.80"
-              fill="url(#gloss)" pointer-events="none"/>
-
-      <ellipse cx="297.58"
-               cy="390.57"
-               rx="7.94"
-               ry="3.00"
-               fill="#ffffff" opacity=".40"
-               filter="url(#softGlow)" pointer-events="none"/>
-
-      <path d="M 291.38 392.80
-               Q 297.58 385.61
-                 304.03 391.81"
-            fill="none" stroke="#ffffff" stroke-opacity=".68"
-            stroke-width="1.00"
-            stroke-linecap="round" pointer-events="none"/>
-
-      <circle class="spark"
-              cx="318.41"
-              cy="395.03"
-              r="1.20"
-              fill="#ffffff" filter="url(#softGlow)"
-              pointer-events="none"/>
-
-      <g clip-path="url(#clip-14)">
-        <rect class="sweep"
-              x="267.32"
-              y="375.19"
-              width="74.41"
-              height="59.52"
-              fill="url(#shineBand)"
-              transform="rotate(-25 304.52 404.95)"
-              pointer-events="none"/>
-      </g>
-
-      <text x="304.52" y="402.95" text-anchor="middle"
-            textLength="38.44"
-            lengthAdjust="spacingAndGlyphs"
-            fill="#ffffff" font-size="8" font-weight="700">
-        Ruby
-      </text>
-
-      <text x="304.52" y="419.95" text-anchor="middle"
-            fill="#ffffff" font-size="8" font-weight="700">
-        0.06%
-      </text>
-    </g>
-    
-    <g class="bubble bubble-15">
-      <circle class="bubble-outline"
-              cx="405.93" cy="410.62" r="24.55"
-              fill="#8b949e" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
-              filter="url(#shadow)"/>
-
-      <circle cx="405.93" cy="410.62" r="23.55"
-              fill="url(#gloss)" pointer-events="none"/>
-
-      <ellipse cx="399.05"
-               cy="396.38"
-               rx="7.86"
-               ry="3.00"
-               fill="#ffffff" opacity=".40"
-               filter="url(#softGlow)" pointer-events="none"/>
-
-      <path d="M 392.92 398.59
-               Q 399.05 391.47
-                 405.44 397.61"
-            fill="none" stroke="#ffffff" stroke-opacity=".68"
-            stroke-width="1.00"
-            stroke-linecap="round" pointer-events="none"/>
-
-      <circle class="spark"
-              cx="419.67"
-              cy="400.80"
-              r="1.20"
-              fill="#ffffff" filter="url(#softGlow)"
-              pointer-events="none"/>
-
-      <g clip-path="url(#clip-15)">
-        <rect class="sweep"
-              x="369.10"
-              y="381.16"
-              width="73.65"
-              height="58.92"
-              fill="url(#shineBand)"
-              transform="rotate(-25 405.93 410.62)"
-              pointer-events="none"/>
-      </g>
-
-      <text x="405.93" y="408.62" text-anchor="middle"
-            textLength="38.05"
-            lengthAdjust="spacingAndGlyphs"
-            fill="#ffffff" font-size="8" font-weight="700">
-        Dockerfile
-      </text>
-
-      <text x="405.93" y="425.62" text-anchor="middle"
-            fill="#ffffff" font-size="8" font-weight="700">
-        0.03%
-      </text>
-    </g>
-    
-    <g class="bubble bubble-16">
-      <circle class="bubble-outline"
-              cx="485.49" cy="337.62" r="24.50"
-              fill="#DA5B0B" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
-              filter="url(#shadow)"/>
-
-      <circle cx="485.49" cy="337.62" r="23.50"
-              fill="url(#gloss)" pointer-events="none"/>
-
-      <ellipse cx="478.63"
-               cy="323.41"
-               rx="7.84"
-               ry="3.00"
-               fill="#ffffff" opacity=".40"
-               filter="url(#softGlow)" pointer-events="none"/>
-
-      <path d="M 472.50 325.62
-               Q 478.63 318.51
-                 485.00 324.64"
-            fill="none" stroke="#ffffff" stroke-opacity=".68"
-            stroke-width="1.00"
-            stroke-linecap="round" pointer-events="none"/>
-
-      <circle class="spark"
-              cx="499.21"
-              cy="327.82"
-              r="1.20"
-              fill="#ffffff" filter="url(#softGlow)"
-              pointer-events="none"/>
-
-      <g clip-path="url(#clip-16)">
-        <rect class="sweep"
-              x="448.74"
-              y="308.22"
-              width="73.49"
-              height="58.79"
-              fill="url(#shineBand)"
-              transform="rotate(-25 485.49 337.62)"
-              pointer-events="none"/>
-      </g>
-
-      <text x="485.49" y="335.62" text-anchor="middle"
-            textLength="37.97"
-            lengthAdjust="spacingAndGlyphs"
-            fill="#ffffff" font-size="8" font-weight="700">
-        Jupyter Notebook
-      </text>
-
-      <text x="485.49" y="352.62" text-anchor="middle"
-            fill="#ffffff" font-size="8" font-weight="700">
-        0.02%
-      </text>
-    </g>
-    
-    <g class="bubble bubble-17">
-      <circle class="bubble-outline"
-              cx="425.69" cy="161.09" r="24.40"
-              fill="#8b949e" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
-              filter="url(#shadow)"/>
-
-      <circle cx="425.69" cy="161.09" r="23.40"
-              fill="url(#gloss)" pointer-events="none"/>
-
-      <ellipse cx="418.86"
-               cy="146.94"
-               rx="7.81"
-               ry="3.00"
-               fill="#ffffff" opacity=".40"
-               filter="url(#softGlow)" pointer-events="none"/>
-
-      <path d="M 412.76 149.14
-               Q 418.86 142.06
-                 425.20 148.16"
-            fill="none" stroke="#ffffff" stroke-opacity=".68"
-            stroke-width="1.00"
-            stroke-linecap="round" pointer-events="none"/>
-
-      <circle class="spark"
-              cx="439.36"
-              cy="151.33"
-              r="1.20"
-              fill="#ffffff" filter="url(#softGlow)"
-              pointer-events="none"/>
-
-      <g clip-path="url(#clip-17)">
-        <rect class="sweep"
-              x="389.09"
-              y="131.81"
-              width="73.21"
-              height="58.57"
-              fill="url(#shineBand)"
-              transform="rotate(-25 425.69 161.09)"
-              pointer-events="none"/>
-      </g>
-
-      <text x="425.69" y="159.09" text-anchor="middle"
-            textLength="37.83"
-            lengthAdjust="spacingAndGlyphs"
-            fill="#ffffff" font-size="8" font-weight="700">
-        Assembly
-      </text>
-
-      <text x="425.69" y="176.09" text-anchor="middle"
-            fill="#ffffff" font-size="8" font-weight="700">
-        0.01%
-      </text>
-    </g>
-    
-    <g class="bubble bubble-18">
-      <circle class="bubble-outline"
-              cx="253.84" cy="387.70" r="24.30"
-              fill="#8b949e" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
-              filter="url(#shadow)"/>
-
-      <circle cx="253.84" cy="387.70" r="23.30"
-              fill="url(#gloss)" pointer-events="none"/>
-
-      <ellipse cx="247.04"
-               cy="373.60"
-               rx="7.78"
-               ry="3.00"
-               fill="#ffffff" opacity=".40"
-               filter="url(#softGlow)" pointer-events="none"/>
-
-      <path d="M 240.96 375.79
-               Q 247.04 368.74
-                 253.36 374.82"
-            fill="none" stroke="#ffffff" stroke-opacity=".68"
-            stroke-width="1.00"
-            stroke-linecap="round" pointer-events="none"/>
-
-      <circle class="spark"
-              cx="267.45"
-              cy="377.98"
-              r="1.20"
-              fill="#ffffff" filter="url(#softGlow)"
-              pointer-events="none"/>
-
-      <g clip-path="url(#clip-18)">
-        <rect class="sweep"
-              x="217.39"
-              y="358.53"
-              width="72.91"
-              height="58.33"
-              fill="url(#shineBand)"
-              transform="rotate(-25 253.84 387.70)"
-              pointer-events="none"/>
-      </g>
-
-      <text x="253.84" y="385.70" text-anchor="middle"
-            textLength="37.67"
-            lengthAdjust="spacingAndGlyphs"
-            fill="#ffffff" font-size="8" font-weight="700">
-        Smarty
-      </text>
-
-      <text x="253.84" y="402.70" text-anchor="middle"
-            fill="#ffffff" font-size="8" font-weight="700">
-        0.01%
-      </text>
-    </g>
-    
-    <g class="bubble bubble-19">
-      <circle class="bubble-outline"
-              cx="498.87" cy="237.77" r="24.30"
-              fill="#8b949e" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
-              filter="url(#shadow)"/>
-
-      <circle cx="498.87" cy="237.77" r="23.30"
-              fill="url(#gloss)" pointer-events="none"/>
-
-      <ellipse cx="492.06"
-               cy="223.68"
-               rx="7.78"
-               ry="3.00"
-               fill="#ffffff" opacity=".40"
-               filter="url(#softGlow)" pointer-events="none"/>
-
-      <path d="M 485.99 225.86
-               Q 492.06 218.82
-                 498.38 224.89"
-            fill="none" stroke="#ffffff" stroke-opacity=".68"
-            stroke-width="1.00"
-            stroke-linecap="round" pointer-events="none"/>
-
-      <circle class="spark"
-              cx="512.48"
-              cy="228.05"
-              r="1.20"
-              fill="#ffffff" filter="url(#softGlow)"
-              pointer-events="none"/>
-
-      <g clip-path="url(#clip-19)">
-        <rect class="sweep"
-              x="462.42"
-              y="208.61"
-              width="72.90"
-              height="58.32"
-              fill="url(#shineBand)"
-              transform="rotate(-25 498.87 237.77)"
-              pointer-events="none"/>
-      </g>
-
-      <text x="498.87" y="235.77" text-anchor="middle"
-            textLength="37.66"
-            lengthAdjust="spacingAndGlyphs"
-            fill="#ffffff" font-size="8" font-weight="700">
-        Just
-      </text>
-
-      <text x="498.87" y="252.77" text-anchor="middle"
-            fill="#ffffff" font-size="8" font-weight="700">
-        0.01%
-      </text>
-    </g>
-    
-    <g class="bubble bubble-20">
-      <circle class="bubble-outline"
-              cx="357.85" cy="434.09" r="24.24"
-              fill="#8b949e" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
-              filter="url(#shadow)"/>
-
-      <circle cx="357.85" cy="434.09" r="23.24"
-              fill="url(#gloss)" pointer-events="none"/>
-
-      <ellipse cx="351.06"
-               cy="420.04"
-               rx="7.76"
-               ry="3.00"
-               fill="#ffffff" opacity=".40"
-               filter="url(#softGlow)" pointer-events="none"/>
-
-      <path d="M 345.00 422.22
-               Q 351.06 415.19
-                 357.37 421.25"
-            fill="none" stroke="#ffffff" stroke-opacity=".68"
-            stroke-width="1.00"
-            stroke-linecap="round" pointer-events="none"/>
-
-      <circle class="spark"
-              cx="371.42"
-              cy="424.40"
-              r="1.20"
-              fill="#ffffff" filter="url(#softGlow)"
-              pointer-events="none"/>
-
-      <g clip-path="url(#clip-20)">
-        <rect class="sweep"
-              x="321.49"
-              y="405.01"
-              width="72.71"
-              height="58.17"
-              fill="url(#shineBand)"
-              transform="rotate(-25 357.85 434.09)"
-              pointer-events="none"/>
-      </g>
-
-      <text x="357.85" y="432.09" text-anchor="middle"
-            textLength="37.57"
-            lengthAdjust="spacingAndGlyphs"
-            fill="#ffffff" font-size="8" font-weight="700">
-        Nix
-      </text>
-
-      <text x="357.85" y="449.09" text-anchor="middle"
-            fill="#ffffff" font-size="8" font-weight="700">
-        0.00%
-      </text>
-    </g>
-    
-    <g class="bubble bubble-21">
-      <circle class="bubble-outline"
-              cx="206.59" cy="292.93" r="24.24"
-              fill="#d29922" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
-              filter="url(#shadow)"/>
-
-      <circle cx="206.59" cy="292.93" r="23.24"
-              fill="url(#gloss)" pointer-events="none"/>
-
-      <ellipse cx="199.80"
-               cy="278.87"
-               rx="7.76"
-               ry="3.00"
-               fill="#ffffff" opacity=".40"
-               filter="url(#softGlow)" pointer-events="none"/>
-
-      <path d="M 193.74 281.05
-               Q 199.80 274.02
-                 206.10 280.08"
-            fill="none" stroke="#ffffff" stroke-opacity=".68"
-            stroke-width="1.00"
-            stroke-linecap="round" pointer-events="none"/>
-
-      <circle class="spark"
-              cx="220.16"
-              cy="283.23"
-              r="1.20"
-              fill="#ffffff" filter="url(#softGlow)"
-              pointer-events="none"/>
-
-      <g clip-path="url(#clip-21)">
-        <rect class="sweep"
-              x="170.23"
-              y="263.84"
-              width="72.71"
-              height="58.17"
-              fill="url(#shineBand)"
-              transform="rotate(-25 206.59 292.93)"
-              pointer-events="none"/>
-      </g>
-
-      <text x="206.59" y="290.93" text-anchor="middle"
-            textLength="37.57"
+      <text x="391.20" y="143.51" text-anchor="middle"
+            textLength="39.10"
             lengthAdjust="spacingAndGlyphs"
             fill="#ffffff" font-size="8" font-weight="700">
         Java
       </text>
 
-      <text x="206.59" y="307.93" text-anchor="middle"
+      <text x="391.20" y="160.51" text-anchor="middle"
             fill="#ffffff" font-size="8" font-weight="700">
-        0.00%
-      </text>
-    </g>
-    
-    <g class="bubble bubble-22">
-      <circle class="bubble-outline"
-              cx="238.06" cy="195.14" r="24.21"
-              fill="#8b949e" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
-              filter="url(#shadow)"/>
-
-      <circle cx="238.06" cy="195.14" r="23.21"
-              fill="url(#gloss)" pointer-events="none"/>
-
-      <ellipse cx="231.28"
-               cy="181.10"
-               rx="7.75"
-               ry="3.00"
-               fill="#ffffff" opacity=".40"
-               filter="url(#softGlow)" pointer-events="none"/>
-
-      <path d="M 225.23 183.28
-               Q 231.28 176.25
-                 237.58 182.31"
-            fill="none" stroke="#ffffff" stroke-opacity=".68"
-            stroke-width="1.00"
-            stroke-linecap="round" pointer-events="none"/>
-
-      <circle class="spark"
-              cx="251.62"
-              cy="185.45"
-              r="1.20"
-              fill="#ffffff" filter="url(#softGlow)"
-              pointer-events="none"/>
-
-      <g clip-path="url(#clip-22)">
-        <rect class="sweep"
-              x="201.75"
-              y="166.09"
-              width="72.62"
-              height="58.10"
-              fill="url(#shineBand)"
-              transform="rotate(-25 238.06 195.14)"
-              pointer-events="none"/>
-      </g>
-
-      <text x="238.06" y="193.14" text-anchor="middle"
-            textLength="37.52"
-            lengthAdjust="spacingAndGlyphs"
-            fill="#ffffff" font-size="8" font-weight="700">
-        Makefile
-      </text>
-
-      <text x="238.06" y="210.14" text-anchor="middle"
-            fill="#ffffff" font-size="8" font-weight="700">
-        0.00%
-      </text>
-    </g>
-    
-    <g class="bubble bubble-23">
-      <circle class="bubble-outline"
-              cx="321.90" cy="136.14" r="24.14"
-              fill="#8b949e" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
-              filter="url(#shadow)"/>
-
-      <circle cx="321.90" cy="136.14" r="23.14"
-              fill="url(#gloss)" pointer-events="none"/>
-
-      <ellipse cx="315.14"
-               cy="122.14"
-               rx="7.72"
-               ry="3.00"
-               fill="#ffffff" opacity=".40"
-               filter="url(#softGlow)" pointer-events="none"/>
-
-      <path d="M 309.10 124.31
-               Q 315.14 117.31
-                 321.41 123.34"
-            fill="none" stroke="#ffffff" stroke-opacity=".68"
-            stroke-width="1.00"
-            stroke-linecap="round" pointer-events="none"/>
-
-      <circle class="spark"
-              cx="335.41"
-              cy="126.48"
-              r="1.20"
-              fill="#ffffff" filter="url(#softGlow)"
-              pointer-events="none"/>
-
-      <g clip-path="url(#clip-23)">
-        <rect class="sweep"
-              x="285.69"
-              y="107.17"
-              width="72.41"
-              height="57.93"
-              fill="url(#shineBand)"
-              transform="rotate(-25 321.90 136.14)"
-              pointer-events="none"/>
-      </g>
-
-      <text x="321.90" y="134.14" text-anchor="middle"
-            textLength="37.41"
-            lengthAdjust="spacingAndGlyphs"
-            fill="#ffffff" font-size="8" font-weight="700">
-        C#
-      </text>
-
-      <text x="321.90" y="151.14" text-anchor="middle"
-            fill="#ffffff" font-size="8" font-weight="700">
-        0.00%
-      </text>
-    </g>
-    
-    <g class="bubble bubble-24">
-      <circle class="bubble-outline"
-              cx="513.58" cy="292.93" r="24.07"
-              fill="#8b949e" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
-              filter="url(#shadow)"/>
-
-      <circle cx="513.58" cy="292.93" r="23.07"
-              fill="url(#gloss)" pointer-events="none"/>
-
-      <ellipse cx="506.84"
-               cy="278.97"
-               rx="7.70"
-               ry="3.00"
-               fill="#ffffff" opacity=".40"
-               filter="url(#softGlow)" pointer-events="none"/>
-
-      <path d="M 500.82 281.13
-               Q 506.84 274.15
-                 513.10 280.17"
-            fill="none" stroke="#ffffff" stroke-opacity=".68"
-            stroke-width="1.00"
-            stroke-linecap="round" pointer-events="none"/>
-
-      <circle class="spark"
-              cx="527.06"
-              cy="283.30"
-              r="1.20"
-              fill="#ffffff" filter="url(#softGlow)"
-              pointer-events="none"/>
-
-      <g clip-path="url(#clip-24)">
-        <rect class="sweep"
-              x="477.48"
-              y="264.05"
-              width="72.21"
-              height="57.76"
-              fill="url(#shineBand)"
-              transform="rotate(-25 513.58 292.93)"
-              pointer-events="none"/>
-      </g>
-
-      <text x="513.58" y="290.93" text-anchor="middle"
-            textLength="37.31"
-            lengthAdjust="spacingAndGlyphs"
-            fill="#ffffff" font-size="8" font-weight="700">
-        Batchfile
-      </text>
-
-      <text x="513.58" y="307.93" text-anchor="middle"
-            fill="#ffffff" font-size="8" font-weight="700">
-        0.00%
-      </text>
-    </g>
-    
-    <g class="bubble bubble-25">
-      <circle class="bubble-outline"
-              cx="473.18" cy="388.73" r="24.02"
-              fill="#8b949e" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
-              filter="url(#shadow)"/>
-
-      <circle cx="473.18" cy="388.73" r="23.02"
-              fill="url(#gloss)" pointer-events="none"/>
-
-      <ellipse cx="466.46"
-               cy="374.80"
-               rx="7.69"
-               ry="3.00"
-               fill="#ffffff" opacity=".40"
-               filter="url(#softGlow)" pointer-events="none"/>
-
-      <path d="M 460.45 376.96
-               Q 466.46 370.00
-                 472.70 376.00"
-            fill="none" stroke="#ffffff" stroke-opacity=".68"
-            stroke-width="1.00"
-            stroke-linecap="round" pointer-events="none"/>
-
-      <circle class="spark"
-              cx="486.63"
-              cy="379.13"
-              r="1.20"
-              fill="#ffffff" filter="url(#softGlow)"
-              pointer-events="none"/>
-
-      <g clip-path="url(#clip-25)">
-        <rect class="sweep"
-              x="437.16"
-              y="359.91"
-              width="72.06"
-              height="57.65"
-              fill="url(#shineBand)"
-              transform="rotate(-25 473.18 388.73)"
-              pointer-events="none"/>
-      </g>
-
-      <text x="473.18" y="386.73" text-anchor="middle"
-            textLength="37.23"
-            lengthAdjust="spacingAndGlyphs"
-            fill="#ffffff" font-size="8" font-weight="700">
-        Procfile
-      </text>
-
-      <text x="473.18" y="403.73" text-anchor="middle"
-            fill="#ffffff" font-size="8" font-weight="700">
-        0.00%
+        0.12%
       </text>
     </g>
     
 
-  <text x="688" y="489"
+  <text x="688" y="372"
         text-anchor="end" fill="#8b949e" font-size="9">
-    UPDATED 2026-10-12 07:15 WIB
+    UPDATED 2026-10-12 07:24 WIB
   </text>
 </svg>
