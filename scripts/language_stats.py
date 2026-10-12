@@ -1,3 +1,4 @@
+
 import json
 import math
 import os
@@ -19,35 +20,6 @@ HEADERS = {
 
 if TOKEN:
     HEADERS["Authorization"] = f"Bearer {TOKEN}"
-
-SVG_WIDTH = 720
-SIDE_MARGIN = 22
-TOP = 112
-PACKING_GAP = 4
-MIN_RADIUS = 24
-MAX_RADIUS = 53
-
-COLORS = {
-    "HTML": "#e34c26",
-    "CSS": "#a371f7",
-    "JavaScript": "#f1e05a",
-    "TypeScript": "#3178c6",
-    "Python": "#58a6ff",
-    "Java": "#d29922",
-    "C++": "#f34b7d",
-    "C#": "#8b949e",
-    "C": "#8b949e",
-    "PHP": "#4F5D95",
-    "Shell": "#89e051",
-    "Go": "#00ADD8",
-    "Rust": "#dea584",
-    "Ruby": "#701516",
-    "Dart": "#00B4AB",
-    "Kotlin": "#A97BFF",
-    "Swift": "#F05138",
-    "Vue": "#41B883",
-    "Jupyter Notebook": "#DA5B0B",
-}
 
 
 def github_get(url):
@@ -104,7 +76,6 @@ def candidate_positions(placed, radius, width, height, gap):
 
     yield center_x, center_y
 
-    # Search outward from the center.
     for ring in range(1, 90):
         ring_distance = ring * 2.5
         sample_count = max(24, ring * 16)
@@ -116,7 +87,6 @@ def candidate_positions(placed, radius, width, height, gap):
                 center_y + math.sin(angle) * ring_distance,
             )
 
-    # Test positions around circles already placed.
     for other in placed:
         distance = radius + other["radius"] + gap
 
@@ -136,11 +106,7 @@ def try_pack(items, width, height, gap):
         chosen = None
 
         for x, y in candidate_positions(
-            placed,
-            radius,
-            width,
-            height,
-            gap,
+            placed, radius, width, height, gap
         ):
             if (
                 x < radius + 3
@@ -171,9 +137,7 @@ def pack_circles(language_data):
 
     for item in language_data:
         share = item["bytes"] / largest_value
-        item["radius"] = MIN_RADIUS + (
-            MAX_RADIUS - MIN_RADIUS
-        ) * math.sqrt(share)
+        item["radius"] = 24 + (53 - 24) * math.sqrt(share)
 
     ordered = sorted(
         language_data,
@@ -181,8 +145,8 @@ def pack_circles(language_data):
         reverse=True,
     )
 
-    pack_width = SVG_WIDTH - 2 * SIDE_MARGIN
-    gap = PACKING_GAP
+    pack_width = 720 - 44
+    gap = 4
     height = max(230, int(math.sqrt(len(ordered)) * 190))
     placed = None
 
@@ -208,22 +172,21 @@ def pack_circles(language_data):
 
     cluster_width = max_x - min_x
     horizontal_shift = (pack_width - cluster_width) / 2 - min_x
-    vertical_shift = TOP - min_y
+    vertical_shift = 112 - min_y
 
     for item in placed:
-        item["x"] += horizontal_shift + SIDE_MARGIN
+        item["x"] += horizontal_shift + 22
         item["y"] += vertical_shift
 
     final_bottom = max(
-        item["y"] + item["radius"]
-        for item in placed
+        item["y"] + item["radius"] for item in placed
     )
     svg_height = math.ceil(final_bottom + 48)
 
     for index, first in enumerate(placed):
         if (
             first["x"] - first["radius"] < 8
-            or first["x"] + first["radius"] > SVG_WIDTH - 8
+            or first["x"] + first["radius"] > 712
             or first["y"] - first["radius"] < 8
             or first["y"] + first["radius"] > svg_height - 8
         ):
@@ -249,7 +212,30 @@ def make_bubble(index, item, total_bytes):
     cx = item["x"]
     cy = item["y"]
     percentage = item["bytes"] / total_bytes * 100
-    fill_color = COLORS.get(language, "#8b949e")
+
+    colors = {
+        "HTML": "#e34c26",
+        "CSS": "#a371f7",
+        "JavaScript": "#f1e05a",
+        "TypeScript": "#3178c6",
+        "Python": "#58a6ff",
+        "Java": "#d29922",
+        "C++": "#f34b7d",
+        "C#": "#8b949e",
+        "C": "#8b949e",
+        "PHP": "#4F5D95",
+        "Shell": "#89e051",
+        "Go": "#00ADD8",
+        "Rust": "#dea584",
+        "Ruby": "#701516",
+        "Dart": "#00B4AB",
+        "Kotlin": "#A97BFF",
+        "Swift": "#F05138",
+        "Vue": "#41B883",
+        "Jupyter Notebook": "#DA5B0B",
+    }
+
+    fill_color = colors.get(language, "#8b949e")
 
     if radius >= 46:
         label_size = 12
@@ -318,7 +304,7 @@ def make_bubble(index, item, total_bytes):
         {percentage:.2f}%
       </text>
     </g>
-"""
+    """
 
 
 def make_global_animation_css(bubbles):
@@ -350,11 +336,10 @@ def make_global_animation_css(bubbles):
         62% {{ transform: translate({dx2}px, {dy2}px); }}
         84% {{ transform: translate({dx3}px, {dy3}px); }}
       }}
-"""
+      """
         )
 
-    return "
-".join(rules)
+    return "\n".join(rules)
 
 
 def build_svg(username, repositories, language_totals):
@@ -395,9 +380,7 @@ def build_svg(username, repositories, language_totals):
             f"</clipPath>"
         )
 
-        bubble_groups.append(
-            make_bubble(index, item, total_bytes)
-        )
+        bubble_groups.append(make_bubble(index, item, total_bytes))
 
     updated = datetime.now(
         ZoneInfo("Asia/Jakarta")
@@ -406,8 +389,8 @@ def build_svg(username, repositories, language_totals):
     animation_css = make_global_animation_css(bubbles)
 
     return f"""<svg xmlns="http://www.w3.org/2000/svg"
-     width="{SVG_WIDTH}" height="{svg_height}"
-     viewBox="0 0 {SVG_WIDTH} {svg_height}"
+     width="720" height="{svg_height}"
+     viewBox="0 0 720 {svg_height}"
      role="img" aria-labelledby="title desc">
   <title id="title">Repository Language Bubbles</title>
   <desc id="desc">
@@ -528,7 +511,7 @@ def build_svg(username, repositories, language_totals):
     </style>
   </defs>
 
-  <rect x="8" y="8" width="{SVG_WIDTH - 16}"
+  <rect x="8" y="8" width="704"
         height="{svg_height - 16}" rx="22"
         fill="url(#bg)" stroke="#30363d"/>
 
@@ -543,7 +526,7 @@ def build_svg(username, repositories, language_totals):
 
   {''.join(bubble_groups)}
 
-  <text x="{SVG_WIDTH - 32}" y="{svg_height - 18}"
+  <text x="688" y="{svg_height - 18}"
         text-anchor="end" fill="#8b949e" font-size="9">
     UPDATED {updated}
   </text>
