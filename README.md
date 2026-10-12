@@ -62,6 +62,9 @@
 <a href="https://gitlab.com/0xbabyalien">
   <img src="https://img.shields.io/badge/Gitlab-%23000000.svg?style=for-the-badge&logo=Gitlab&logoColor=#FC6D26" alt="Gitlab">
 </a>
+<a href="https://luma.com/user/0xbabyalien">
+  <img src="https://img.shields.io/badge/Luma-%23000000.svg?style=for-the-badge&logo=googlegemini&logoColor=#8E75B2" alt="Luma">
+</a>
 <a href="https://0xbabyalien.vercel.app/">
   <img src="https://img.shields.io/badge/Vercel-%23000000.svg?style=for-the-badge&logo=Vercel&logoColor=white" alt="Vercel">
 </a>
