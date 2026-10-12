@@ -10,7 +10,6 @@ from zoneinfo import ZoneInfo
 
 USERNAME = os.environ.get("GITHUB_USERNAME", "0xbabyalien")
 OUTPUT = Path("assets/language-stats.svg")
-
 TOKEN = os.environ.get("GH_STATS_TOKEN") or os.environ.get("GITHUB_TOKEN")
 
 HEADERS = {
@@ -27,7 +26,6 @@ TOP = 112
 PACKING_GAP = 4
 MIN_RADIUS = 24
 MAX_RADIUS = 53
-MIN_ANIMATION_GAP = 13
 
 COLORS = {
     "HTML": "#e34c26",
@@ -86,9 +84,7 @@ def get_language_totals(repositories):
         name = repository["name"]
         url = f"https://api.github.com/repos/{owner}/{name}/languages"
 
-        repository_languages = github_get(url)
-
-        for language, byte_count in repository_languages.items():
+        for language, byte_count in github_get(url).items():
             totals[language] = totals.get(language, 0) + byte_count
 
     return totals
@@ -179,7 +175,6 @@ def pack_circles(language_data):
             MAX_RADIUS - MIN_RADIUS
         ) * math.sqrt(share)
 
-    # Large circles are placed first for a more compact cluster.
     ordered = sorted(
         language_data,
         key=lambda item: item["radius"],
@@ -191,7 +186,6 @@ def pack_circles(language_data):
     height = max(230, int(math.sqrt(len(ordered)) * 190))
     placed = None
 
-    # If the layout does not fit, add height; then reduce spacing if necessary.
     for attempt in range(18):
         placed = try_pack(ordered, pack_width, height, gap)
 
@@ -211,7 +205,6 @@ def pack_circles(language_data):
     min_x = min(item["x"] - item["radius"] for item in placed)
     max_x = max(item["x"] + item["radius"] for item in placed)
     min_y = min(item["y"] - item["radius"] for item in placed)
-    max_y = max(item["y"] + item["radius"] for item in placed)
 
     cluster_width = max_x - min_x
     horizontal_shift = (pack_width - cluster_width) / 2 - min_x
@@ -227,7 +220,6 @@ def pack_circles(language_data):
     )
     svg_height = math.ceil(final_bottom + 48)
 
-    # Check that every initial circle is inside the canvas and non-overlapping.
     for index, first in enumerate(placed):
         if (
             first["x"] - first["radius"] < 8
@@ -403,11 +395,14 @@ def build_svg(username, repositories, language_totals):
             f"</clipPath>"
         )
 
-        bubble_groups.append(make_bubble(index, item, total_bytes))
+        bubble_groups.append(
+            make_bubble(index, item, total_bytes)
+        )
 
-    updated = datetime.now(ZoneInfo("Asia/Jakarta")).strftime(
-        "%Y-%m-%d %H:%M WIB"
-    )
+    updated = datetime.now(
+        ZoneInfo("Asia/Jakarta")
+    ).strftime("%Y-%m-%d %H:%M WIB")
+
     animation_css = make_global_animation_css(bubbles)
 
     return f"""<svg xmlns="http://www.w3.org/2000/svg"
@@ -533,10 +528,12 @@ def build_svg(username, repositories, language_totals):
     </style>
   </defs>
 
-  <rect x="8" y="8" width="{SVG_WIDTH - 16}" height="{svg_height - 16}"
-        rx="22" fill="url(#bg)" stroke="#30363d"/>
+  <rect x="8" y="8" width="{SVG_WIDTH - 16}"
+        height="{svg_height - 16}" rx="22"
+        fill="url(#bg)" stroke="#30363d"/>
 
-  <text x="32" y="42" fill="#f0f6fc" font-size="18" font-weight="700">
+  <text x="32" y="42" fill="#f0f6fc"
+        font-size="18" font-weight="700">
     Repository Language Bubbles
   </text>
 
@@ -546,8 +543,8 @@ def build_svg(username, repositories, language_totals):
 
   {''.join(bubble_groups)}
 
-  <text x="{SVG_WIDTH - 32}" y="{svg_height - 18}" text-anchor="end"
-        fill="#8b949e" font-size="9">
+  <text x="{SVG_WIDTH - 32}" y="{svg_height - 18}"
+        text-anchor="end" fill="#8b949e" font-size="9">
     UPDATED {updated}
   </text>
 </svg>
