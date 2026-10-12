@@ -8,11 +8,6 @@
   </desc>
 
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#171e2b"/>
-      <stop offset="1" stop-color="#0b1018"/>
-    </linearGradient>
-
     <linearGradient id="shineBand" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
       <stop offset=".42" stop-color="#ffffff" stop-opacity="0"/>
@@ -40,7 +35,7 @@
       </feMerge>
     </filter>
 
-    <clipPath id="clip-0"><circle cx="352.53" cy="218.39" r="53.00"/></clipPath><clipPath id="clip-1"><circle cx="447.53" cy="218.39" r="36.15"/></clipPath><clipPath id="clip-2"><circle cx="416.87" cy="288.28" r="35.95"/></clipPath><clipPath id="clip-3"><circle cx="346.64" cy="308.19" r="32.92"/></clipPath><clipPath id="clip-4"><circle cx="285.51" cy="278.46" r="30.70"/></clipPath><clipPath id="clip-5"><circle cx="265.03" cy="218.39" r="28.70"/></clipPath><clipPath id="clip-6"><circle cx="289.54" cy="165.11" r="25.44"/></clipPath><clipPath id="clip-7"><circle cx="336.92" cy="137.38" r="25.38"/></clipPath><clipPath id="clip-8"><circle cx="391.20" cy="145.51" r="25.23"/></clipPath>
+    <clipPath id="clip-0"><circle cx="352.53" cy="218.39" r="53.00"/></clipPath><clipPath id="clip-1"><circle cx="447.53" cy="218.39" r="36.15"/></clipPath><clipPath id="clip-2"><circle cx="416.87" cy="288.28" r="35.95"/></clipPath><clipPath id="clip-3"><circle cx="346.64" cy="308.19" r="32.92"/></clipPath><clipPath id="clip-4"><circle cx="285.51" cy="278.46" r="30.65"/></clipPath><clipPath id="clip-5"><circle cx="265.03" cy="218.39" r="28.70"/></clipPath><clipPath id="clip-6"><circle cx="289.54" cy="165.11" r="25.44"/></clipPath><clipPath id="clip-7"><circle cx="336.92" cy="137.38" r="25.38"/></clipPath><clipPath id="clip-8"><circle cx="391.20" cy="145.51" r="25.23"/></clipPath>
 
     <style>
       text {
@@ -55,150 +50,46 @@
       }
 
       .bubble-outline {
-        stroke: #0ad;
-        stroke-width: 1.5;
-        animation: outline-pulse 2s ease-in-out infinite alternate;
+        stroke: #a819bb;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 10 10;
+        stroke-dashoffset: 0;
+        animation: walk 0.8s linear infinite;
       }
 
-      @keyframes outline-pulse {
-        from {
-          stroke: #0ad;
-          stroke-width: 1.5;
-          stroke-opacity: .95;
-        }
+      @keyframes walk {
         to {
-          stroke: #a819bb;
-          stroke-width: 1.8;
-          stroke-opacity: .9;
+          stroke-dashoffset: -20;
         }
       }
 
       
-      .bubble-0 {
-        animation-name: drift-0;
-        animation-duration: 13s;
-        animation-delay: -8.72s;
+      .bubble-container {
+        animation: float-cluster 6s ease-in-out infinite alternate;
+        transform-box: fill-box;
+        transform-origin: center;
       }
 
-      @keyframes drift-0 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(2px, -1px); }
-        62% { transform: translate(-3px, 1px); }
-        84% { transform: translate(-2px, 2px); }
+      @keyframes float-cluster {
+        0% {
+          transform: translate(0px, 0px) rotate(0deg) scale(1);
+        }
+        25% {
+          transform: translate(18px, -15px) rotate(1.2deg) scale(1.015);
+        }
+        50% {
+          transform: translate(-15px, 20px) rotate(-1.5deg) scale(0.985);
+        }
+        75% {
+          transform: translate(22px, 12px) rotate(1deg) scale(1.01);
+        }
+        100% {
+          transform: translate(-18px, -18px) rotate(-1deg) scale(1);
+        }
       }
-      
-
-      .bubble-1 {
-        animation-name: drift-1;
-        animation-duration: 15s;
-        animation-delay: -10.86s;
-      }
-
-      @keyframes drift-1 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(2px, 0px); }
-        62% { transform: translate(-1px, 0px); }
-        84% { transform: translate(-1px, 0px); }
-      }
-      
-
-      .bubble-2 {
-        animation-name: drift-2;
-        animation-duration: 16s;
-        animation-delay: -2.33s;
-      }
-
-      @keyframes drift-2 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(-1px, 1px); }
-        62% { transform: translate(-2px, 1px); }
-        84% { transform: translate(-2px, -2px); }
-      }
-      
-
-      .bubble-3 {
-        animation-name: drift-3;
-        animation-duration: 10s;
-        animation-delay: -8.85s;
-      }
-
-      @keyframes drift-3 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(2px, -2px); }
-        62% { transform: translate(-1px, -1px); }
-        84% { transform: translate(2px, -1px); }
-      }
-      
-
-      .bubble-4 {
-        animation-name: drift-4;
-        animation-duration: 17s;
-        animation-delay: -4.98s;
-      }
-
-      @keyframes drift-4 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(2px, 1px); }
-        62% { transform: translate(-1px, -2px); }
-        84% { transform: translate(-1px, 0px); }
-      }
-      
-
-      .bubble-5 {
-        animation-name: drift-5;
-        animation-duration: 10s;
-        animation-delay: -8.21s;
-      }
-
-      @keyframes drift-5 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(2px, -2px); }
-        62% { transform: translate(0px, -1px); }
-        84% { transform: translate(0px, -2px); }
-      }
-      
-
-      .bubble-6 {
-        animation-name: drift-6;
-        animation-duration: 17s;
-        animation-delay: -0.86s;
-      }
-
-      @keyframes drift-6 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(0px, -1px); }
-        62% { transform: translate(0px, -1px); }
-        84% { transform: translate(0px, -2px); }
-      }
-      
-
-      .bubble-7 {
-        animation-name: drift-7;
-        animation-duration: 12s;
-        animation-delay: -5.39s;
-      }
-
-      @keyframes drift-7 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(2px, -2px); }
-        62% { transform: translate(-2px, -2px); }
-        84% { transform: translate(-1px, -1px); }
-      }
-      
-
-      .bubble-8 {
-        animation-name: drift-8;
-        animation-duration: 14s;
-        animation-delay: -8.43s;
-      }
-
-      @keyframes drift-8 {
-        0%, 100% { transform: translate(0, 0); }
-        28% { transform: translate(-2px, 2px); }
-        62% { transform: translate(2px, -1px); }
-        84% { transform: translate(-1px, -2px); }
-      }
-      
+    
 
       .sweep {
         animation: sweep 4.6s ease-in-out infinite;
@@ -225,13 +116,12 @@
       }
 
       @media (prefers-reduced-motion: reduce) {
-        .bubble, .bubble-outline, .sweep, .spark {
+        .bubble, .bubble-outline, .sweep, .spark, .bubble-container {
           animation: none !important;
         }
         .bubble-outline {
-          stroke: #0ad;
-          stroke-width: 1.5;
-          stroke-opacity: .95;
+          stroke: #a819bb;
+          stroke-width: 2;
         }
         .sweep {
           display: none;
@@ -245,7 +135,7 @@
 
   <rect x="8" y="8" width="704"
         height="374" rx="22"
-        fill="url(#bg)" stroke="#30363d"/>
+        fill="#0d1117" stroke="#30363d"/>
 
   <text x="32" y="42" fill="#f0f6fc"
         font-size="18" font-weight="700">
@@ -256,12 +146,12 @@
     0xbabyalien · 5 non-fork public repositories · 9 languages
   </text>
 
-  
+  <g class="bubble-container">
+    
     <g class="bubble bubble-0">
       <circle class="bubble-outline"
               cx="352.53" cy="218.39" r="53.00"
               fill="#e34c26" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
               filter="url(#shadow)"/>
 
       <circle cx="352.53" cy="218.39" r="52.00"
@@ -309,7 +199,7 @@
 
       <text x="352.53" y="233.39" text-anchor="middle"
             fill="#ffffff" font-size="10" font-weight="700">
-        65.54%
+        65.57%
       </text>
     </g>
     
@@ -317,7 +207,6 @@
       <circle class="bubble-outline"
               cx="447.53" cy="218.39" r="36.15"
               fill="#a371f7" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
               filter="url(#shadow)"/>
 
       <circle cx="447.53" cy="218.39" r="35.15"
@@ -365,7 +254,7 @@
 
       <text x="447.53" y="233.39" text-anchor="middle"
             fill="#ffffff" font-size="9" font-weight="700">
-        11.49%
+        11.50%
       </text>
     </g>
     
@@ -373,7 +262,6 @@
       <circle class="bubble-outline"
               cx="416.87" cy="288.28" r="35.95"
               fill="#f1e05a" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
               filter="url(#shadow)"/>
 
       <circle cx="416.87" cy="288.28" r="34.95"
@@ -429,7 +317,6 @@
       <circle class="bubble-outline"
               cx="346.64" cy="308.19" r="32.92"
               fill="#3178c6" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
               filter="url(#shadow)"/>
 
       <circle cx="346.64" cy="308.19" r="31.92"
@@ -483,31 +370,30 @@
     
     <g class="bubble bubble-4">
       <circle class="bubble-outline"
-              cx="285.51" cy="278.46" r="30.70"
+              cx="285.51" cy="278.46" r="30.65"
               fill="#58a6ff" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
               filter="url(#shadow)"/>
 
-      <circle cx="285.51" cy="278.46" r="29.70"
+      <circle cx="285.51" cy="278.46" r="29.65"
               fill="url(#gloss)" pointer-events="none"/>
 
-      <ellipse cx="276.92"
-               cy="260.66"
-               rx="9.82"
-               ry="3.38"
+      <ellipse cx="276.93"
+               cy="260.68"
+               rx="9.81"
+               ry="3.37"
                fill="#ffffff" opacity=".40"
                filter="url(#softGlow)" pointer-events="none"/>
 
-      <path d="M 269.24 263.42
-               Q 276.92 254.52
-                 284.90 262.19"
+      <path d="M 269.27 263.44
+               Q 276.93 254.55
+                 284.90 262.22"
             fill="none" stroke="#ffffff" stroke-opacity=".68"
             stroke-width="1.00"
             stroke-linecap="round" pointer-events="none"/>
 
       <circle class="spark"
-              cx="302.71"
-              cy="266.18"
+              cx="302.68"
+              cy="266.20"
               r="1.20"
               fill="#ffffff" filter="url(#softGlow)"
               pointer-events="none"/>
@@ -515,17 +401,17 @@
       <g clip-path="url(#clip-4)">
         <g transform="rotate(-25 285.51 278.46)">
           <rect class="sweep"
-                x="239.47"
-                y="241.62"
-                width="92.10"
-                height="73.68"
+                x="239.54"
+                y="241.68"
+                width="91.96"
+                height="73.57"
                 fill="url(#shineBand)"
                 pointer-events="none"/>
         </g>
       </g>
 
       <text x="285.51" y="276.46" text-anchor="middle"
-            textLength="47.58"
+            textLength="47.51"
             lengthAdjust="spacingAndGlyphs"
             fill="#ffffff" font-size="8" font-weight="700">
         Python
@@ -533,7 +419,7 @@
 
       <text x="285.51" y="293.46" text-anchor="middle"
             fill="#ffffff" font-size="8" font-weight="700">
-        3.50%
+        3.45%
       </text>
     </g>
     
@@ -541,7 +427,6 @@
       <circle class="bubble-outline"
               cx="265.03" cy="218.39" r="28.70"
               fill="#f34b7d" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
               filter="url(#shadow)"/>
 
       <circle cx="265.03" cy="218.39" r="27.70"
@@ -597,7 +482,6 @@
       <circle class="bubble-outline"
               cx="289.54" cy="165.11" r="25.44"
               fill="#8b949e" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
               filter="url(#shadow)"/>
 
       <circle cx="289.54" cy="165.11" r="24.44"
@@ -653,7 +537,6 @@
       <circle class="bubble-outline"
               cx="336.92" cy="137.38" r="25.38"
               fill="#89e051" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
               filter="url(#shadow)"/>
 
       <circle cx="336.92" cy="137.38" r="24.38"
@@ -709,7 +592,6 @@
       <circle class="bubble-outline"
               cx="391.20" cy="145.51" r="25.23"
               fill="#d29922" fill-opacity=".96"
-              stroke="#0ad" stroke-width="1.5"
               filter="url(#shadow)"/>
 
       <circle cx="391.20" cy="145.51" r="24.23"
@@ -761,9 +643,10 @@
       </text>
     </g>
     
+  </g>
 
   <text x="688" y="372"
         text-anchor="end" fill="#8b949e" font-size="9">
-    UPDATED 2026-10-12 08:54 SGT
+    UPDATED 2026-10-12 09:04 SGT
   </text>
 </svg>
