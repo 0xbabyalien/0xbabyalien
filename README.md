@@ -219,7 +219,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">The man who does not value himself, cannot value anything or anyone.</font><br/>— <font color="#808080">Ayn Rand</font></center>
+<center><font color="#0c7ec9">Men trust their ears less than their eyes.</font><br/>— <font color="#808080">Herodotus</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
