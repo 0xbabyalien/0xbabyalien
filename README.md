@@ -171,7 +171,7 @@
   <img src="x/banner1-babyalien-svg-1500x500.svg" width="100%" alt="Banner1 — 0xbabyalien">
 </picture><br><br>
 <details>
-  <summary>📝 Template portfolio-001</summary><br>
+  <summary>📝 Template Portfolio</summary><br>
     <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/github/ffffff"/></a>
     <a href="https://github.com/0xbabyalien/0x228a/tree/0xBabyAlien/template/portfolio-001" style="text-decoration: none;">
     github </a>
@@ -180,14 +180,21 @@
     live demo </a> - <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/files/c8ff00" style="text-decoration: none;"/></a>
     <a href="https://0xbabyalien.pages.dev/template/portfolio-001/" style="text-decoration: none;">
     live demo </a>
-  </details><br>
+</details>
   <details>
-   <summary>📝 Template projects-001</summary><br>
+   <summary>🧌 Template Projects</summary><br>
     <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/git/888888"/></a>
     <a href="https://github.com/0xbabyalien/virtual-office"> github </a>  —  <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/files/c5ff88"/></a>
     <a href="https://0xbabyalien.github.io/virtual-office/"> live demo </a> 
     <br><br>
 </details>
+  <details>
+    <summary>👾 Game Gangster2D</summary><br>
+    <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/git/888888"/></a>
+    <a href="https://github.com/0xbabyalien/Gangster2D"> github </a>  —  <a href="#"><img height="15" width="15" src="https://cdn.simpleicons.org/files/c5ff88"/></a>
+    <a href="https://0xbabyalien.github.io/Gangster2D/"> live demo </a> 
+    <br><br>
+  </details>
 <br>
 <h2>📊 Stats</h2>
 <picture>
