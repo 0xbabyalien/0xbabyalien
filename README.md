@@ -219,7 +219,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Men trust their ears less than their eyes.</font><br/>— <font color="#808080">Herodotus</font></center>
+<center><font color="#0c7ec9">If you chase two rabbits, you catch none.</font><br/>— <font color="#808080">Confucius</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
