@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">If you chase two rabbits, you catch none.</font><br/>— <font color="#808080">Confucius</font></center>
+<center><font color="#0c7ec9">You do not read a book for the book's sake, but for your own.</font><br/>— <font color="#808080">Earl Nightingale</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
