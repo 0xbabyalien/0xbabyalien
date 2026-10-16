@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">You do not read a book for the book's sake, but for your own.</font><br/>— <font color="#808080">Earl Nightingale</font></center>
+<center><font color="#0c7ec9">When uncomfortable, my instinct is not to avoid the discomfort but to become at peace with it.</font><br/>— <font color="#808080">Josh Waitzkin</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
