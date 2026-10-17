@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">When uncomfortable, my instinct is not to avoid the discomfort but to become at peace with it.</font><br/>— <font color="#808080">Josh Waitzkin</font></center>
+<center><font color="#0c7ec9">Awakening is possible only for those who seek it and want it.</font><br/>— <font color="#808080">G.I. Gurdjieff</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
