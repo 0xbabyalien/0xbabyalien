@@ -1,10 +1,8 @@
 import json
 import math
 import os
-import random
 import urllib.error
 import urllib.request
-from datetime import datetime, timedelta, timezone
 from html import escape
 from pathlib import Path
 
@@ -12,573 +10,217 @@ USERNAME = os.environ.get("GITHUB_USERNAME", "0xbabyalien")
 OUTPUT = Path("assets/language-stats.svg")
 TOKEN = os.environ.get("GH_STATS_TOKEN") or os.environ.get("GITHUB_TOKEN")
 
-SVG_WIDTH = 720
-SIDE_MARGIN = 22
-TOP = 112
-PACKING_GAP = 6
-MIN_RADIUS = 24
-MAX_RADIUS = 53
+SVG_WIDTH = 800
+SVG_HEIGHT = 500
+CX = 250
+CY = 250
+RING_RADIUS = 160
+PIE_RADIUS = 80
 
 COLORS = {
-    "HTML": "#e34c26",
-    "CSS": "#a371f7",
-    "JavaScript": "#f1e05a",
-    "TypeScript": "#3178c6",
-    "Python": "#58a6ff",
-    "Java": "#d29922",
-    "C++": "#f34b7d",
-    "C#": "#8b949e",
-    "C": "#8b949e",
-    "PHP": "#4F5D95",
-    "Shell": "#89e051",
-    "Go": "#00ADD8",
-    "Rust": "#dea584",
-    "Ruby": "#701516",
-    "Dart": "#00B4AB",
-    "Kotlin": "#A97BFF",
-    "Swift": "#F05138",
-    "Vue": "#41B883",
-    "Jupyter Notebook": "#DA5B0B",
+    "HTML": "#e34c26", "CSS": "#a371f7", "JavaScript": "#f1e05a",
+    "TypeScript": "#3178c6", "Python": "#58a6ff", "Java": "#d29922",
+    "C++": "#f34b7d", "C#": "#8b949e", "PHP": "#4F5D95", "Shell": "#89e051",
+    "Go": "#00ADD8", "Rust": "#dea584", "Ruby": "#701516", "Dart": "#00B4AB",
 }
 
 HEADERS = {
     "Accept": "application/vnd.github+json",
-    "X-GitHub-Api-Version": "2022-11-28",
     "User-Agent": "github-language-stats",
 }
 
 if TOKEN:
     HEADERS["Authorization"] = f"Bearer {TOKEN}"
 
-
-def github_get(url):
+def fetch_github_data(url):
     request = urllib.request.Request(url, headers=HEADERS)
     try:
         with urllib.request.urlopen(request, timeout=30) as response:
             return json.load(response)
-    except urllib.error.HTTPError as error:
-        details = error.read().decode("utf-8", errors="replace")
-        raise RuntimeError(
-            f"GitHub API returned HTTP {error.code} for {url}: {details}"
-        ) from error
     except urllib.error.URLError as error:
-        raise RuntimeError(
-            f"Could not connect to GitHub API: {error.reason}"
-        ) from error
-
+        raise RuntimeError(f"Failed to fetch data from {url}: {error}")
 
 def get_all_public_repositories(username):
     repositories = []
     page = 1
-
     while True:
-        url = (
-            f"https://api.github.com/users/{username}/repos"
-            f"?type=owner&sort=updated&per_page=100&page={page}"
-        )
-        batch = github_get(url)
-
-        if not batch:
-            break
-
-        repositories.extend(
-            repository
-            for repository in batch
-            if not repository.get("fork", False)
-        )
+        url = f"https://api.github.com/users/{username}/repos?type=owner&sort=updated&per_page=100&page={page}"
+        batch = fetch_github_data(url)
+        if not batch: break
+        repositories.extend(r for r in batch if not r.get("fork", False))
         page += 1
-
     return repositories
-
 
 def get_language_totals(repositories):
     totals = {}
-
-    for repository in repositories:
-        owner = repository["owner"]["login"]
-        name = repository["name"]
-        url = f"https://api.github.com/repos/{owner}/{name}/languages"
-
-        for language, byte_count in github_get(url).items():
-            totals[language] = totals.get(language, 0) + byte_count
-
+    for repo in repositories:
+        url = f"https://api.github.com/repos/{repo['owner']['login']}/{repo['name']}/languages"
+        for lang, count in fetch_github_data(url).items():
+            totals[lang] = totals.get(lang, 0) + count
     return totals
 
+def generate_svg(totals):
+    if not totals: return ""
 
-def circles_overlap(x, y, radius, placed, gap):
-    for other in placed:
-        distance = math.hypot(x - other["x"], y - other["y"])
-        if distance < radius + other["radius"] + gap:
-            return True
-    return False
+    # Sort and get top 5 languages
+    sorted_langs = sorted(totals.items(), key=lambda i: i[1], reverse=True)[:5]
+    total_bytes = sum(count for _, count in sorted_langs)
+    
+    # Circle Math Calculations
+    ring_circ = 2 * math.pi * RING_RADIUS
+    pie_circ = 2 * math.pi * PIE_RADIUS
+    
+    # SVG Element Builder Variables
+    css_keyframes = []
+    chart_items = []
+    legends = []
+    
+    cumulative_percent = 0
+    duration = 8.0 # Total animation cycle duration
+    
+    for i, (lang, byte_count) in enumerate(sorted_langs):
+        percent = (byte_count / total_bytes) * 100
+        color = COLORS.get(lang, "#8b949e")
+        
+        # Calculate Outer Ring (Static but segmented)
+        ring_dash_len = (percent / 100) * ring_circ
+        ring_offset = -(cumulative_percent / 100) * ring_circ
+        
+        # Calculate Inner Pie (Wipe Animation)
+        pie_dash_len = (percent / 100) * pie_circ
+        rotation = -90 + (cumulative_percent / 100) * 360
+        
+        # Calculate Percentage Text Position (Trigonometry)
+        mid_angle_deg = cumulative_percent * 3.6 + (percent / 2) * 3.6
+        mid_angle_rad = math.radians(mid_angle_deg - 90)
+        
+        text_x = CX + math.cos(mid_angle_rad) * 100
+        text_y = CY + math.sin(mid_angle_rad) * 100
 
-
-def candidate_positions(placed, radius, width, height, gap):
-    center_x = width / 2
-    center_y = height / 2
-
-    yield center_x, center_y
-
-    for ring in range(1, 90):
-        ring_distance = ring * 2.5
-        sample_count = max(24, ring * 16)
-
-        for step in range(sample_count):
-            angle = 2 * math.pi * step / sample_count
-            yield (
-                center_x + math.cos(angle) * ring_distance,
-                center_y + math.sin(angle) * ring_distance,
-            )
-
-    for other in placed:
-        distance = radius + other["radius"] + gap
-
-        for step in range(72):
-            angle = 2 * math.pi * step / 72
-            yield (
-                other["x"] + math.cos(angle) * distance,
-                other["y"] + math.sin(angle) * distance,
-            )
-
-
-def try_pack(items, width, height, gap):
-    placed = []
-
-    for item in items:
-        radius = item["radius"]
-        chosen = None
-
-        for x, y in candidate_positions(
-            placed, radius, width, height, gap
-        ):
-            if (
-                x < radius + 3
-                or x > width - radius - 3
-                or y < radius + 3
-                or y > height - radius - 3
-            ):
-                continue
-
-            if not circles_overlap(x, y, radius, placed, gap):
-                chosen = (x, y)
-                break
-
-        if chosen is None:
-            return None
-
-        item["x"], item["y"] = chosen
-        placed.append(item)
-
-    return placed
-
-
-def pack_circles(language_data):
-    if not language_data:
-        return [], 220
-
-    largest_value = max(item["bytes"] for item in language_data)
-
-    for item in language_data:
-        share = item["bytes"] / largest_value
-        item["radius"] = MIN_RADIUS + (
-            MAX_RADIUS - MIN_RADIUS
-        ) * math.sqrt(share)
-
-    ordered = sorted(
-        language_data,
-        key=lambda item: item["radius"],
-        reverse=True,
-    )
-
-    pack_width = SVG_WIDTH - 2 * SIDE_MARGIN
-    gap = PACKING_GAP
-    height = max(230, int(math.sqrt(len(ordered)) * 190))
-    placed = None
-
-    for attempt in range(18):
-        placed = try_pack(ordered, pack_width, height, gap)
-
-        if placed is not None:
-            break
-
-        if attempt % 2 == 0:
-            height += 140
-        else:
-            gap = max(1, gap - 1)
-
-    if placed is None:
-        raise RuntimeError(
-            "Could not place all language bubbles in the SVG layout."
-        )
-
-    min_x = min(item["x"] - item["radius"] for item in placed)
-    max_x = max(item["x"] + item["radius"] for item in placed)
-    min_y = min(item["y"] - item["radius"] for item in placed)
-
-    cluster_width = max_x - min_x
-    horizontal_shift = (pack_width - cluster_width) / 2 - min_x
-    vertical_shift = TOP - min_y
-
-    for item in placed:
-        item["x"] += horizontal_shift + SIDE_MARGIN
-        item["y"] += vertical_shift
-
-    final_bottom = max(
-        item["y"] + item["radius"] for item in placed
-    )
-    svg_height = math.ceil(final_bottom + 48)
-
-    for index, first in enumerate(placed):
-        if (
-            first["x"] - first["radius"] < 8
-            or first["x"] + first["radius"] > SVG_WIDTH - 8
-            or first["y"] - first["radius"] < 8
-            or first["y"] + first["radius"] > svg_height - 8
-        ):
-            raise RuntimeError(
-                f"Bubble for {first['language']} is outside the SVG canvas."
-            )
-
-        for second in placed[index + 1:]:
-            distance = math.hypot(
-                second["x"] - first["x"],
-                second["y"] - first["y"],
-            )
-            if distance < first["radius"] + second["radius"] + gap:
-                raise RuntimeError("Bubble overlap detected.")
-
-    return placed, svg_height
-
-
-def make_bubble(index, item, total_bytes):
-    language = item["language"]
-    radius = item["radius"]
-    cx = item["x"]
-    cy = item["y"]
-    percentage = item["bytes"] / total_bytes * 100
-    fill_color = COLORS.get(language, "#8b949e")
-
-    if radius >= 46:
-        label_size = 12
-        percentage_size = 10
-    elif radius >= 34:
-        label_size = 10
-        percentage_size = 9
-    else:
-        label_size = 8
-        percentage_size = 8
-
-    text_width = max(26, radius * 1.55)
-
-    return f"""
-    <g class="bubble bubble-{index}">
-      <circle class="bubble-outline"
-              cx="{cx:.2f}" cy="{cy:.2f}" r="{radius:.2f}"
-              fill="{fill_color}" fill-opacity=".96"
-              filter="url(#shadow)"/>
-
-      <circle cx="{cx:.2f}" cy="{cy:.2f}" r="{radius - 1:.2f}"
-              fill="url(#gloss)" pointer-events="none"/>
-
-      <ellipse cx="{cx - radius * 0.28:.2f}"
-               cy="{cy - radius * 0.58:.2f}"
-               rx="{radius * 0.32:.2f}"
-               ry="{max(3, radius * 0.11):.2f}"
-               fill="#ffffff" opacity=".40"
-               filter="url(#softGlow)" pointer-events="none"/>
-
-      <path d="M {cx - radius * 0.53:.2f} {cy - radius * 0.49:.2f}
-               Q {cx - radius * 0.28:.2f} {cy - radius * 0.78:.2f}
-                 {cx - radius * 0.02:.2f} {cy - radius * 0.53:.2f}"
-            fill="none" stroke="#ffffff" stroke-opacity=".68"
-            stroke-width="{max(1, radius * 0.025):.2f}"
-            stroke-linecap="round" pointer-events="none"/>
-
-      <circle class="spark"
-              cx="{cx + radius * 0.56:.2f}"
-              cy="{cy - radius * 0.40:.2f}"
-              r="{max(1.2, radius * 0.035):.2f}"
-              fill="#ffffff" filter="url(#softGlow)"
-              pointer-events="none"/>
-
-      <g clip-path="url(#clip-{index})">
-        <g transform="rotate(-25 {cx:.2f} {cy:.2f})">
-          <rect class="sweep"
-                x="{cx - radius * 1.5:.2f}"
-                y="{cy - radius * 1.2:.2f}"
-                width="{radius * 3:.2f}"
-                height="{radius * 2.4:.2f}"
-                fill="url(#shineBand)"
-                pointer-events="none"/>
+        # Keyframe Animation Timing Setup
+        total_items = len(sorted_langs)
+        slice_time = 100 / total_items 
+        
+        start_time = max(3.0, i * slice_time) 
+        end_time = (i + 1) * slice_time
+        
+        t0 = start_time
+        t1 = start_time + 0.1
+        t2 = start_time + (slice_time * 0.25)
+        t3 = start_time + (slice_time * 0.6)
+        t4 = start_time + (slice_time * 0.9)
+        t_end = t4 + 0.1
+        
+        # CSS Generator per language
+        css_keyframes.append(f"""
+        @keyframes wipe-pie-{i} {{
+            0%, {t0:.1f}% {{ opacity: 0; stroke-dasharray: 0 {pie_circ:.1f}; stroke-dashoffset: 0; }}
+            {t1:.1f}% {{ opacity: 1; stroke-dasharray: 0 {pie_circ:.1f}; stroke-dashoffset: 0; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }}
+            {t2:.1f}% {{ stroke-dasharray: {pie_dash_len:.1f} {pie_circ:.1f}; stroke-dashoffset: 0; opacity: 1; }}
+            {t3:.1f}% {{ stroke-dasharray: {pie_dash_len:.1f} {pie_circ:.1f}; stroke-dashoffset: 0; opacity: 1; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }}
+            {t4:.1f}% {{ stroke-dasharray: 0 {pie_circ:.1f}; stroke-dashoffset: -{pie_dash_len:.1f}; opacity: 1; }}
+            {t_end:.1f}%, 100% {{ opacity: 0; stroke-dasharray: 0 {pie_circ:.1f}; stroke-dashoffset: 0; }}
+        }}
+        @keyframes text-fade-{i} {{
+            0%, {t0 + 2:.1f}%, {t4:.1f}%, 100% {{ opacity: 0; }}
+            {t2:.1f}%, {t3:.1f}% {{ opacity: 1; }}
+        }}
+        """)
+        
+        # Chart Element Generator
+        chart_items.append(f"""
+        <g class="chart-item">
+            <circle cx="{CX}" cy="{CY}" r="{RING_RADIUS}" fill="transparent" stroke="{color}" 
+                    stroke-width="4" stroke-dasharray="{max(0.1, ring_dash_len - 4):.1f} {ring_circ:.1f}" 
+                    stroke-dashoffset="{ring_offset:.1f}" class="ring"/>
+            <circle cx="{CX}" cy="{CY}" r="{PIE_RADIUS}" stroke="{color}" class="inner-pie" 
+                    style="transform: rotate({rotation:.1f}deg); animation: wipe-pie-{i} {duration}s infinite;"/>
+            <text x="{text_x:.1f}" y="{text_y:.1f}" class="pie-text" fill="#ffffff" 
+                  style="animation: text-fade-{i} {duration}s infinite;">{percent:.1f}%</text>
         </g>
-      </g>
+        """)
 
-      <text x="{cx:.2f}" y="{cy - 2:.2f}" text-anchor="middle"
-            textLength="{text_width:.2f}"
-            lengthAdjust="spacingAndGlyphs"
-            fill="#ffffff" font-size="{label_size}" font-weight="700">
-        {escape(language)}
-      </text>
+        # Legend Generator
+        legends.append(f"""
+        <g class="legend-item" transform="translate(520, {150 + i * 40})">
+            <rect x="0" y="-10" width="14" height="14" rx="3" fill="{color}"/>
+            <text x="30" y="2" fill="#f0f6fc" font-size="16" font-family="sans-serif">{escape(lang)}</text>
+        </g>
+        """)
 
-      <text x="{cx:.2f}" y="{cy + 15:.2f}" text-anchor="middle"
-            fill="#ffffff" font-size="{percentage_size}" font-weight="700">
-        {percentage:.2f}%
-      </text>
-    </g>
-    """
+        cumulative_percent += percent
 
-
-def make_global_animation_css(bubbles):
-    rules = []
-
-    for index, item in enumerate(bubbles):
-        rng = random.Random(f"{item['language']}-{index}")
-
-        r1 = rng.uniform(4.0, 8.0)
-        r2 = rng.uniform(4.0, 8.0)
-        
-        dir_x = 1 if rng.random() > 0.5 else -1
-        dir_y = 1 if rng.random() > 0.5 else -1
-
-        dx1 = round(dir_x * r1, 2)
-        dy1 = round(dir_y * (r2 * 0.6), 2)
-        
-        dx2 = round(-dir_x * (r1 * 0.5), 2)
-        dy2 = round(dir_y * r2, 2)
-
-        dx3 = round(-dir_x * r1, 2)
-        dy3 = round(-dir_y * (r2 * 0.7), 2)
-
-        duration = round(rng.uniform(6.0, 11.0), 2)
-        delay = round(-rng.uniform(0.0, duration), 2)
-
-        rules.append(
-            f"""
-      .bubble-{index} {{
-        animation: float-indiv-{index} {duration}s ease-in-out infinite;
-        animation-delay: {delay}s;
-      }}
-
-      @keyframes float-indiv-{index} {{
-        0%, 100% {{
-          transform: translate(0px, 0px);
-        }}
-        25% {{
-          transform: translate({dx1}px, {dy1}px);
-        }}
-        50% {{
-          transform: translate({dx2}px, {dy2}px);
-        }}
-        75% {{
-          transform: translate({dx3}px, {dy3}px);
-        }}
-      }}
-      """
-        )
-
-    return "\n".join(rules)
-
-
-def build_svg(username, repositories, language_totals):
-    if not language_totals:
-        raise SystemExit(
-            f"No language data found for {username}'s non-fork repositories."
-        )
-
-    total_bytes = sum(language_totals.values())
-
-    if total_bytes <= 0:
-        raise SystemExit("No language bytes found.")
-
-    languages = sorted(
-        language_totals.items(),
-        key=lambda item: item[1],
-        reverse=True,
-    )
-
-    language_data = [
-        {"language": language, "bytes": byte_count}
-        for language, byte_count in languages
-    ]
-
-    bubbles, svg_height = pack_circles(language_data)
-
-    clip_paths = []
-    bubble_groups = []
-
-    for index, item in enumerate(bubbles):
-        cx = item["x"]
-        cy = item["y"]
-        radius = item["radius"]
-
-        clip_paths.append(
-            f'<clipPath id="clip-{index}">'
-            f'<circle cx="{cx:.2f}" cy="{cy:.2f}" r="{radius:.2f}"/>'
-            f"</clipPath>"
-        )
-        bubble_groups.append(make_bubble(index, item, total_bytes))
-
-    sgt_timezone = timezone(timedelta(hours=8))
-    updated = datetime.now(sgt_timezone).strftime("%Y-%m-%d %H:%M SGT")
-
-    animation_css = make_global_animation_css(bubbles)
-
-    return f"""<svg xmlns="http://www.w3.org/2000/svg"
-     width="{SVG_WIDTH}" height="{svg_height}"
-     viewBox="0 0 {SVG_WIDTH} {svg_height}"
-     role="img" aria-labelledby="title desc">
-  <title id="title">Repository Language Bubbles</title>
-  <desc id="desc">
-    Combined language statistics for {escape(username)}'s non-fork public repositories
-  </desc>
-
+    # Assemble main SVG structure
+    svg_template = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{SVG_WIDTH}" height="{SVG_HEIGHT}" viewBox="0 0 {SVG_WIDTH} {SVG_HEIGHT}">
   <defs>
-    <linearGradient id="shineBand" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset=".42" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset=".50" stop-color="#ffffff" stop-opacity=".8"/>
-      <stop offset=".58" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
-    </linearGradient>
-
-    <radialGradient id="gloss" cx="32%" cy="20%" r="80%">
-      <stop offset="0" stop-color="#ffffff" stop-opacity=".38"/>
-      <stop offset=".28" stop-color="#ffffff" stop-opacity=".12"/>
-      <stop offset=".58" stop-color="#ffffff" stop-opacity="0"/>
-    </radialGradient>
-
-    <filter id="shadow" x="-45%" y="-45%" width="190%" height="190%">
-      <feDropShadow dx="0" dy="7" stdDeviation="7"
-                    flood-color="#000000" flood-opacity=".33"/>
+    <filter id="shadow" x="-100%" y="-100%" width="300%" height="300%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.5" />
     </filter>
 
-    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="2.2" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    {''.join(clip_paths)}
+    <mask id="ring-mask">
+      <circle cx="{CX}" cy="{CY}" r="{RING_RADIUS}" fill="none" stroke="white" stroke-width="10" 
+              stroke-dasharray="{ring_circ:.1f}" stroke-dashoffset="{ring_circ:.1f}" 
+              style="animation: draw-ring {duration}s infinite;" />
+    </mask>
 
     <style>
-      text {{
-        font-family: Arial, Helvetica, sans-serif;
-      }}
-
-      .bubble {{
-        transform-box: fill-box;
-        transform-origin: center;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-      }}
-
-      .bubble-outline {{
-        stroke: #a819bb;
-        stroke-width: 2;
+      .bg {{ fill: #041b36; }} 
+      .ring {{
+        transform: rotate(-90deg);
+        transform-origin: {CX}px {CY}px;
         stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-dasharray: 10 10;
-        stroke-dashoffset: 0;
-        animation: walk 0.8s linear infinite;
+        mask: url(#ring-mask);
       }}
-
-      @keyframes walk {{
-        to {{
-          stroke-dashoffset: -20;
-        }}
+      @keyframes draw-ring {{
+        0% {{ stroke-dashoffset: {ring_circ:.1f}; opacity: 1; }}
+        3% {{ stroke-dashoffset: 0; opacity: 1; }}
+        98% {{ stroke-dashoffset: 0; opacity: 1; }}
+        98.1%, 100% {{ stroke-dashoffset: 0; opacity: 0; }}
       }}
-
-      {animation_css}
-
-      .sweep {{
-        animation: sweep 4.6s ease-in-out infinite;
+      .inner-pie {{
+        fill: transparent;
+        stroke-width: 160; 
+        transform-origin: {CX}px {CY}px;
+        filter: url(#shadow);
+      }}
+      .pie-text {{
+        font-family: sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        text-anchor: middle;
+        dominant-baseline: middle;
         opacity: 0;
       }}
-
-      .spark {{
-        transform-box: fill-box;
-        transform-origin: center;
-        animation: spark 2.8s ease-in-out infinite alternate;
-      }}
-
-      @keyframes sweep {{
-        0%, 18% {{ transform: translateX(-150%); opacity: 0; }}
-        28% {{ opacity: .7; }}
-        70% {{ opacity: .42; }}
-        88%, 100% {{ transform: translateX(150%); opacity: 0; }}
-      }}
-
-      @keyframes spark {{
-        0% {{ opacity: .15; transform: scale(.75); }}
-        55% {{ opacity: .88; transform: scale(1.16); }}
-        100% {{ opacity: .28; transform: scale(.85); }}
-      }}
-
-      @media (prefers-reduced-motion: reduce) {{
-        .bubble, .bubble-outline, .sweep, .spark {{
-          animation: none !important;
-        }}
-        .bubble-outline {{
-          stroke: #a819bb;
-          stroke-width: 2;
-        }}
-        .sweep {{
-          display: none;
-        }}
-        .spark {{
-          opacity: .5;
-        }}
-      }}
+      {''.join(css_keyframes)}
     </style>
   </defs>
 
-  <rect x="8" y="8" width="{SVG_WIDTH - 16}"
-        height="{svg_height - 16}" rx="22"
-        fill="#0d1117" stroke="#30363d"/>
+  <rect width="100%" height="100%" class="bg" rx="15" />
 
-  <text x="32" y="42" fill="#f0f6fc"
-        font-size="18" font-weight="700">
-    Repository Language Bubbles
-  </text>
+  <g id="chart-container">
+    {''.join(chart_items)}
+  </g>
+  
+  <g id="legends">
+    {''.join(legends)}
+  </g>
+</svg>"""
 
-  <text x="32" y="62" fill="#8b949e" font-size="11">
-    {escape(username)} · {len(repositories)} non-fork public repositories · {len(languages)} languages
-  </text>
-
-  {''.join(bubble_groups)}
-
-  <text x="{SVG_WIDTH - 32}" y="{svg_height - 18}"
-        text-anchor="end" fill="#8b949e" font-size="9">
-    UPDATED {updated}
-  </text>
-</svg>
-"""
+    return svg_template
 
 
 def main():
-    repositories = get_all_public_repositories(USERNAME)
-
-    print(
-        f"Found {len(repositories)} non-fork public repositories "
-        f"for {USERNAME}."
-    )
-
-    language_totals = get_language_totals(repositories)
-    svg_content = build_svg(USERNAME, repositories, language_totals)
-
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(svg_content, encoding="utf-8")
-
-    print(
-        f"Updated {OUTPUT} with {len(language_totals)} languages "
-        f"from {len(repositories)} non-fork public repositories."
-    )
-
+    print(f"Fetching repository data for {USERNAME}...")
+    repos = get_all_public_repositories(USERNAME)
+    totals = get_language_totals(repos)
+    
+    if totals:
+        svg_output = generate_svg(totals)
+        OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+        OUTPUT.write_text(svg_output, encoding="utf-8")
+        print(f"Successfully rendered {OUTPUT} with the new animation logic!")
+    else:
+        print("No programming languages found.")
 
 if __name__ == "__main__":
-    try:
-        main()
-    except (RuntimeError, urllib.error.URLError, json.JSONDecodeError) as error:
-        raise SystemExit(f"Error: {error}") from error
+    main()
