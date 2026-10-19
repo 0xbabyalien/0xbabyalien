@@ -164,7 +164,7 @@ def generate_svg(totals):
     </mask>
 
     <style>
-      .bg {{ fill: #041b36; }} 
+      .bg {{ fill: #0d1117; }} 
       .ring {{
         transform: rotate(-90deg);
         transform-origin: {CX}px {CY}px;
