@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">You don't have to move mountains. You'll change the world simply by being a warm, kind-hearted human being.</font><br/>— <font color="#808080">Anita Krizzan</font></center>
+<center><font color="#0c7ec9">By failing to prepare, you are preparing to fail.</font><br/>— <font color="#808080">Benjamin Franklin</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
