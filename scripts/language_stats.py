@@ -22,6 +22,7 @@ COLORS = {
     "TypeScript": "#3178c6", "Python": "#58a6ff", "Java": "#d29922",
     "C++": "#f34b7d", "C#": "#8b949e", "PHP": "#4F5D95", "Shell": "#89e051",
     "Go": "#00ADD8", "Rust": "#dea584", "Ruby": "#701516", "Dart": "#00B4AB",
+    "Other": "#8b949e",
 }
 
 HEADERS = {
@@ -62,8 +63,15 @@ def get_language_totals(repositories):
 def generate_svg(totals):
     if not totals: return ""
 
-    # Sort and get top 5 languages
-    sorted_langs = sorted(totals.items(), key=lambda i: i[1], reverse=True)[:5]
+    # Process all languages: keep top 4 and combine the rest into "Other"
+    all_sorted = sorted(totals.items(), key=lambda i: i[1], reverse=True)
+    if len(all_sorted) > 5:
+        top_4 = all_sorted[:4]
+        other_bytes = sum(count for _, count in all_sorted[4:])
+        sorted_langs = top_4 + [("Other", other_bytes)]
+    else:
+        sorted_langs = all_sorted
+
     total_bytes = sum(count for _, count in sorted_langs)
     
     # Circle Math Calculations
@@ -218,7 +226,7 @@ def main():
         svg_output = generate_svg(totals)
         OUTPUT.parent.mkdir(parents=True, exist_ok=True)
         OUTPUT.write_text(svg_output, encoding="utf-8")
-        print(f"Successfully rendered {OUTPUT} with the new animation logic!")
+        print(f"Successfully rendered {OUTPUT} with all languages included!")
     else:
         print("No programming languages found.")
 
