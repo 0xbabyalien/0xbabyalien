@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">By failing to prepare, you are preparing to fail.</font><br/>— <font color="#808080">Benjamin Franklin</font></center>
+<center><font color="#0c7ec9">The best of us sometimes eat our words.</font><br/>— <font color="#808080">Albus Dumbledore</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
