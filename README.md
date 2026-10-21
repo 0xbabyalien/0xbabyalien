@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">The best of us sometimes eat our words.</font><br/>— <font color="#808080">Albus Dumbledore</font></center>
+<center><font color="#0c7ec9">Be regular and orderly in your life, so that you may be violent and original in your work.</font><br/>— <font color="#808080">Gustave Flaubert</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
