@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Be regular and orderly in your life, so that you may be violent and original in your work.</font><br/>— <font color="#808080">Gustave Flaubert</font></center>
+<center><font color="#0c7ec9">If the misery of the poor be caused not by the laws of nature, but by our institutions, great is our sin.</font><br/>— <font color="#808080">Charles Darwin</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
