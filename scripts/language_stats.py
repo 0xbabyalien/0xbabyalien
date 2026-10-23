@@ -8,7 +8,10 @@ from pathlib import Path
 
 USERNAME = os.environ.get("GITHUB_USERNAME", "0xbabyalien")
 OUTPUT = Path("assets/language-stats.svg")
-TOKEN = os.environ.get("GH_STATS_TOKEN") or os.environ.get("GITHUB_TOKEN")
+
+# A Personal Access Token (PAT) is required to read private repositories.
+# The default GITHUB_TOKEN from GitHub Actions cannot access other private repos.
+TOKEN = os.environ.get("GH_STATS_TOKEN")
 
 SVG_WIDTH = 800
 SVG_HEIGHT = 500
@@ -33,7 +36,9 @@ HEADERS = {
 if TOKEN:
     HEADERS["Authorization"] = f"Bearer {TOKEN}"
 
+
 def fetch_github_data(url):
+    """Send a GET request to the GitHub API and return the parsed JSON."""
     request = urllib.request.Request(url, headers=HEADERS)
     try:
         with urllib.request.urlopen(request, timeout=30) as response:
@@ -41,29 +46,65 @@ def fetch_github_data(url):
     except urllib.error.URLError as error:
         raise RuntimeError(f"Failed to fetch data from {url}: {error}")
 
-def get_all_public_repositories(username):
+
+def get_all_repositories(username):
+    """Fetch all repositories owned by the account (public + private), excluding forks."""
+    if not TOKEN:
+        raise RuntimeError(
+            "GH_STATS_TOKEN is not set. A token is required to read private repositories."
+        )
+
+    # Make sure the token belongs to the target username, because the
+    # /user/repos endpoint returns repositories of the token owner.
+    token_owner = fetch_github_data("https://api.github.com/user").get("login", "")
+    if token_owner.lower() != username.lower():
+        raise RuntimeError(
+            f"The token belongs to '{token_owner}', but USERNAME is '{username}'. "
+            "Please use a token from the same account."
+        )
+
     repositories = []
     page = 1
     while True:
-        url = f"https://api.github.com/users/{username}/repos?type=owner&sort=updated&per_page=100&page={page}"
+        # /user/repos with visibility=all returns both public and private repos
+        url = (
+            "https://api.github.com/user/repos"
+            f"?affiliation=owner&visibility=all&sort=updated&per_page=100&page={page}"
+        )
         batch = fetch_github_data(url)
-        if not batch: break
+        if not batch:
+            break
         repositories.extend(r for r in batch if not r.get("fork", False))
         page += 1
+
+    public_count = sum(1 for r in repositories if not r.get("private"))
+    private_count = len(repositories) - public_count
+    print(f"Found {public_count} public and {private_count} private repositories.")
     return repositories
 
+
 def get_language_totals(repositories):
+    """Sum the bytes of code per language across all repositories."""
     totals = {}
     for repo in repositories:
         url = f"https://api.github.com/repos/{repo['owner']['login']}/{repo['name']}/languages"
-        for lang, count in fetch_github_data(url).items():
+        # A single failing repository should not stop the whole process
+        try:
+            languages = fetch_github_data(url)
+        except RuntimeError as error:
+            print(f"Skipping {repo['name']}: {error}")
+            continue
+        for lang, count in languages.items():
             totals[lang] = totals.get(lang, 0) + count
     return totals
 
-def generate_svg(totals):
-    if not totals: return ""
 
-    # Process all languages: keep top 4 and combine the rest into "Other"
+def generate_svg(totals):
+    """Build the animated SVG donut/pie chart from the language totals."""
+    if not totals:
+        return ""
+
+    # Keep the top 4 languages and combine the rest into "Other"
     all_sorted = sorted(totals.items(), key=lambda i: i[1], reverse=True)
     if len(all_sorted) > 5:
         top_4 = all_sorted[:4]
@@ -73,53 +114,52 @@ def generate_svg(totals):
         sorted_langs = all_sorted
 
     total_bytes = sum(count for _, count in sorted_langs)
-    
-    # Circle Math Calculations
+
+    # Circle math
     ring_circ = 2 * math.pi * RING_RADIUS
     pie_circ = 2 * math.pi * PIE_RADIUS
-    
-    # SVG Element Builder Variables
+
+    # SVG element builders
     css_keyframes = []
     chart_items = []
     legends = []
-    
+
     cumulative_percent = 0
-    duration = 8.0 # Total animation cycle duration
-    
+    duration = 8.0  # Total animation cycle duration in seconds
+
     for i, (lang, byte_count) in enumerate(sorted_langs):
         percent = (byte_count / total_bytes) * 100
         color = COLORS.get(lang, "#8b949e")
-        
-        # Calculate Outer Ring (Static but segmented)
+
+        # Outer ring (static but segmented)
         ring_dash_len = (percent / 100) * ring_circ
         ring_offset = -(cumulative_percent / 100) * ring_circ
-        
-        # Calculate Inner Pie (Wipe Animation)
+
+        # Inner pie (wipe animation)
         pie_dash_len = (percent / 100) * pie_circ
         rotation = -90 + (cumulative_percent / 100) * 360
-        
-        # Calculate Percentage Text Position (Trigonometry)
+
+        # Percentage text position (trigonometry)
         mid_angle_deg = cumulative_percent * 3.6 + (percent / 2) * 3.6
         mid_angle_rad = math.radians(mid_angle_deg - 90)
-        
+
         text_x = CX + math.cos(mid_angle_rad) * 100
         text_y = CY + math.sin(mid_angle_rad) * 100
 
-        # Keyframe Animation Timing Setup
+        # Keyframe animation timing
         total_items = len(sorted_langs)
-        slice_time = 100 / total_items 
-        
-        start_time = max(3.0, i * slice_time) 
-        end_time = (i + 1) * slice_time
-        
+        slice_time = 100 / total_items
+
+        start_time = max(3.0, i * slice_time)
+
         t0 = start_time
         t1 = start_time + 0.1
         t2 = start_time + (slice_time * 0.25)
         t3 = start_time + (slice_time * 0.6)
         t4 = start_time + (slice_time * 0.9)
         t_end = t4 + 0.1
-        
-        # CSS Generator per language
+
+        # CSS keyframes per language
         css_keyframes.append(f"""
         @keyframes wipe-pie-{i} {{
             0%, {t0:.1f}% {{ opacity: 0; stroke-dasharray: 0 {pie_circ:.1f}; stroke-dashoffset: 0; }}
@@ -134,8 +174,8 @@ def generate_svg(totals):
             {t2:.1f}%, {t3:.1f}% {{ opacity: 1; }}
         }}
         """)
-        
-        # Chart Element Generator
+
+        # Chart elements
         chart_items.append(f"""
         <g class="chart-item">
             <circle cx="{CX}" cy="{CY}" r="{RING_RADIUS}" fill="transparent" stroke="{color}" 
@@ -148,7 +188,7 @@ def generate_svg(totals):
         </g>
         """)
 
-        # Legend Generator
+        # Legend entry
         legends.append(f"""
         <g class="legend-item" transform="translate(520, {150 + i * 40})">
             <rect x="0" y="-10" width="14" height="14" rx="3" fill="{color}"/>
@@ -158,7 +198,7 @@ def generate_svg(totals):
 
         cumulative_percent += percent
 
-    # Assemble main SVG structure
+    # Assemble the main SVG structure
     svg_template = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{SVG_WIDTH}" height="{SVG_HEIGHT}" viewBox="0 0 {SVG_WIDTH} {SVG_HEIGHT}">
   <defs>
     <filter id="shadow" x="-100%" y="-100%" width="300%" height="300%">
@@ -219,16 +259,17 @@ def generate_svg(totals):
 
 def main():
     print(f"Fetching repository data for {USERNAME}...")
-    repos = get_all_public_repositories(USERNAME)
+    repos = get_all_repositories(USERNAME)
     totals = get_language_totals(repos)
-    
+
     if totals:
         svg_output = generate_svg(totals)
         OUTPUT.parent.mkdir(parents=True, exist_ok=True)
         OUTPUT.write_text(svg_output, encoding="utf-8")
-        print(f"Successfully rendered {OUTPUT} with all languages included!")
+        print(f"Successfully rendered {OUTPUT} with public and private repositories!")
     else:
         print("No programming languages found.")
+
 
 if __name__ == "__main__":
     main()
