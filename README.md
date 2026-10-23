@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">If the misery of the poor be caused not by the laws of nature, but by our institutions, great is our sin.</font><br/>— <font color="#808080">Charles Darwin</font></center>
+<center><font color="#0c7ec9">If you want to keep your memories, you first have to live them.</font><br/>— <font color="#808080">Bob Dylan</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
