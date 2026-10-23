@@ -42,9 +42,9 @@
         @keyframes wipe-pie-0 {
             0%, 3.0% { opacity: 0; stroke-dasharray: 0 502.7; stroke-dashoffset: 0; }
             3.1% { opacity: 1; stroke-dasharray: 0 502.7; stroke-dashoffset: 0; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
-            8.0% { stroke-dasharray: 295.1 502.7; stroke-dashoffset: 0; opacity: 1; }
-            15.0% { stroke-dasharray: 295.1 502.7; stroke-dashoffset: 0; opacity: 1; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
-            21.0% { stroke-dasharray: 0 502.7; stroke-dashoffset: -295.1; opacity: 1; }
+            8.0% { stroke-dasharray: 176.1 502.7; stroke-dashoffset: 0; opacity: 1; }
+            15.0% { stroke-dasharray: 176.1 502.7; stroke-dashoffset: 0; opacity: 1; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+            21.0% { stroke-dasharray: 0 502.7; stroke-dashoffset: -176.1; opacity: 1; }
             21.1%, 100% { opacity: 0; stroke-dasharray: 0 502.7; stroke-dashoffset: 0; }
         }
         @keyframes text-fade-0 {
@@ -55,9 +55,9 @@
         @keyframes wipe-pie-1 {
             0%, 20.0% { opacity: 0; stroke-dasharray: 0 502.7; stroke-dashoffset: 0; }
             20.1% { opacity: 1; stroke-dasharray: 0 502.7; stroke-dashoffset: 0; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
-            25.0% { stroke-dasharray: 97.9 502.7; stroke-dashoffset: 0; opacity: 1; }
-            32.0% { stroke-dasharray: 97.9 502.7; stroke-dashoffset: 0; opacity: 1; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
-            38.0% { stroke-dasharray: 0 502.7; stroke-dashoffset: -97.9; opacity: 1; }
+            25.0% { stroke-dasharray: 174.5 502.7; stroke-dashoffset: 0; opacity: 1; }
+            32.0% { stroke-dasharray: 174.5 502.7; stroke-dashoffset: 0; opacity: 1; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+            38.0% { stroke-dasharray: 0 502.7; stroke-dashoffset: -174.5; opacity: 1; }
             38.1%, 100% { opacity: 0; stroke-dasharray: 0 502.7; stroke-dashoffset: 0; }
         }
         @keyframes text-fade-1 {
@@ -68,9 +68,9 @@
         @keyframes wipe-pie-2 {
             0%, 40.0% { opacity: 0; stroke-dasharray: 0 502.7; stroke-dashoffset: 0; }
             40.1% { opacity: 1; stroke-dasharray: 0 502.7; stroke-dashoffset: 0; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
-            45.0% { stroke-dasharray: 55.3 502.7; stroke-dashoffset: 0; opacity: 1; }
-            52.0% { stroke-dasharray: 55.3 502.7; stroke-dashoffset: 0; opacity: 1; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
-            58.0% { stroke-dasharray: 0 502.7; stroke-dashoffset: -55.3; opacity: 1; }
+            45.0% { stroke-dasharray: 90.8 502.7; stroke-dashoffset: 0; opacity: 1; }
+            52.0% { stroke-dasharray: 90.8 502.7; stroke-dashoffset: 0; opacity: 1; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+            58.0% { stroke-dasharray: 0 502.7; stroke-dashoffset: -90.8; opacity: 1; }
             58.1%, 100% { opacity: 0; stroke-dasharray: 0 502.7; stroke-dashoffset: 0; }
         }
         @keyframes text-fade-2 {
@@ -81,9 +81,9 @@
         @keyframes wipe-pie-3 {
             0%, 60.0% { opacity: 0; stroke-dasharray: 0 502.7; stroke-dashoffset: 0; }
             60.1% { opacity: 1; stroke-dasharray: 0 502.7; stroke-dashoffset: 0; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
-            65.0% { stroke-dasharray: 27.8 502.7; stroke-dashoffset: 0; opacity: 1; }
-            72.0% { stroke-dasharray: 27.8 502.7; stroke-dashoffset: 0; opacity: 1; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
-            78.0% { stroke-dasharray: 0 502.7; stroke-dashoffset: -27.8; opacity: 1; }
+            65.0% { stroke-dasharray: 44.0 502.7; stroke-dashoffset: 0; opacity: 1; }
+            72.0% { stroke-dasharray: 44.0 502.7; stroke-dashoffset: 0; opacity: 1; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+            78.0% { stroke-dasharray: 0 502.7; stroke-dashoffset: -44.0; opacity: 1; }
             78.1%, 100% { opacity: 0; stroke-dasharray: 0 502.7; stroke-dashoffset: 0; }
         }
         @keyframes text-fade-3 {
@@ -94,9 +94,9 @@
         @keyframes wipe-pie-4 {
             0%, 80.0% { opacity: 0; stroke-dasharray: 0 502.7; stroke-dashoffset: 0; }
             80.1% { opacity: 1; stroke-dasharray: 0 502.7; stroke-dashoffset: 0; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
-            85.0% { stroke-dasharray: 26.5 502.7; stroke-dashoffset: 0; opacity: 1; }
-            92.0% { stroke-dasharray: 26.5 502.7; stroke-dashoffset: 0; opacity: 1; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
-            98.0% { stroke-dasharray: 0 502.7; stroke-dashoffset: -26.5; opacity: 1; }
+            85.0% { stroke-dasharray: 17.3 502.7; stroke-dashoffset: 0; opacity: 1; }
+            92.0% { stroke-dasharray: 17.3 502.7; stroke-dashoffset: 0; opacity: 1; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+            98.0% { stroke-dasharray: 0 502.7; stroke-dashoffset: -17.3; opacity: 1; }
             98.1%, 100% { opacity: 0; stroke-dasharray: 0 502.7; stroke-dashoffset: 0; }
         }
         @keyframes text-fade-4 {
@@ -112,53 +112,53 @@
   <g id="chart-container">
     
         <g class="chart-item">
-            <circle cx="250" cy="250" r="160" fill="transparent" stroke="#e34c26" 
-                    stroke-width="4" stroke-dasharray="586.3 1005.3" 
+            <circle cx="250" cy="250" r="160" fill="transparent" stroke="#3178c6" 
+                    stroke-width="4" stroke-dasharray="348.2 1005.3" 
                     stroke-dashoffset="-0.0" class="ring"/>
-            <circle cx="250" cy="250" r="80" stroke="#e34c26" class="inner-pie" 
+            <circle cx="250" cy="250" r="80" stroke="#3178c6" class="inner-pie" 
                     style="transform: rotate(-90.0deg); animation: wipe-pie-0 8.0s infinite;"/>
-            <text x="346.3" y="277.0" class="pie-text" fill="#ffffff" 
-                  style="animation: text-fade-0 8.0s infinite;">58.7%</text>
+            <text x="339.2" y="204.7" class="pie-text" fill="#ffffff" 
+                  style="animation: text-fade-0 8.0s infinite;">35.0%</text>
+        </g>
+        
+        <g class="chart-item">
+            <circle cx="250" cy="250" r="160" fill="transparent" stroke="#e34c26" 
+                    stroke-width="4" stroke-dasharray="345.0 1005.3" 
+                    stroke-dashoffset="-352.2" class="ring"/>
+            <circle cx="250" cy="250" r="80" stroke="#e34c26" class="inner-pie" 
+                    style="transform: rotate(36.1deg); animation: wipe-pie-1 8.0s infinite;"/>
+            <text x="235.0" y="348.9" class="pie-text" fill="#ffffff" 
+                  style="animation: text-fade-1 8.0s infinite;">34.7%</text>
         </g>
         
         <g class="chart-item">
             <circle cx="250" cy="250" r="160" fill="transparent" stroke="#f1e05a" 
-                    stroke-width="4" stroke-dasharray="191.7 1005.3" 
-                    stroke-dashoffset="-590.3" class="ring"/>
+                    stroke-width="4" stroke-dasharray="177.5 1005.3" 
+                    stroke-dashoffset="-701.2" class="ring"/>
             <circle cx="250" cy="250" r="80" stroke="#f1e05a" class="inner-pie" 
-                    style="transform: rotate(121.4deg); animation: wipe-pie-1 8.0s infinite;"/>
-            <text x="158.4" y="290.0" class="pie-text" fill="#ffffff" 
-                  style="animation: text-fade-1 8.0s infinite;">19.5%</text>
+                    style="transform: rotate(161.1deg); animation: wipe-pie-2 8.0s infinite;"/>
+            <text x="152.8" y="226.5" class="pie-text" fill="#ffffff" 
+                  style="animation: text-fade-2 8.0s infinite;">18.1%</text>
         </g>
         
         <g class="chart-item">
             <circle cx="250" cy="250" r="160" fill="transparent" stroke="#a371f7" 
-                    stroke-width="4" stroke-dasharray="106.6 1005.3" 
-                    stroke-dashoffset="-786.0" class="ring"/>
+                    stroke-width="4" stroke-dasharray="83.9 1005.3" 
+                    stroke-dashoffset="-882.7" class="ring"/>
             <circle cx="250" cy="250" r="80" stroke="#a371f7" class="inner-pie" 
-                    style="transform: rotate(191.5deg); animation: wipe-pie-2 8.0s infinite;"/>
-            <text x="164.5" y="198.1" class="pie-text" fill="#ffffff" 
-                  style="animation: text-fade-2 8.0s infinite;">11.0%</text>
-        </g>
-        
-        <g class="chart-item">
-            <circle cx="250" cy="250" r="160" fill="transparent" stroke="#3178c6" 
-                    stroke-width="4" stroke-dasharray="51.6 1005.3" 
-                    stroke-dashoffset="-896.6" class="ring"/>
-            <circle cx="250" cy="250" r="80" stroke="#3178c6" class="inner-pie" 
-                    style="transform: rotate(231.1deg); animation: wipe-pie-3 8.0s infinite;"/>
-            <text x="201.6" y="162.5" class="pie-text" fill="#ffffff" 
-                  style="animation: text-fade-3 8.0s infinite;">5.5%</text>
+                    style="transform: rotate(226.1deg); animation: wipe-pie-3 8.0s infinite;"/>
+            <text x="202.8" y="161.8" class="pie-text" fill="#ffffff" 
+                  style="animation: text-fade-3 8.0s infinite;">8.7%</text>
         </g>
         
         <g class="chart-item">
             <circle cx="250" cy="250" r="160" fill="transparent" stroke="#8b949e" 
-                    stroke-width="4" stroke-dasharray="49.1 1005.3" 
-                    stroke-dashoffset="-952.2" class="ring"/>
+                    stroke-width="4" stroke-dasharray="30.6 1005.3" 
+                    stroke-dashoffset="-970.7" class="ring"/>
             <circle cx="250" cy="250" r="80" stroke="#8b949e" class="inner-pie" 
-                    style="transform: rotate(251.0deg); animation: wipe-pie-4 8.0s infinite;"/>
-            <text x="233.5" y="151.4" class="pie-text" fill="#ffffff" 
-                  style="animation: text-fade-4 8.0s infinite;">5.3%</text>
+                    style="transform: rotate(257.6deg); animation: wipe-pie-4 8.0s infinite;"/>
+            <text x="239.2" y="150.6" class="pie-text" fill="#ffffff" 
+                  style="animation: text-fade-4 8.0s infinite;">3.4%</text>
         </g>
         
   </g>
@@ -166,23 +166,23 @@
   <g id="legends">
     
         <g class="legend-item" transform="translate(520, 150)">
+            <rect x="0" y="-10" width="14" height="14" rx="3" fill="#3178c6"/>
+            <text x="30" y="2" fill="#f0f6fc" font-size="16" font-family="sans-serif">TypeScript</text>
+        </g>
+        
+        <g class="legend-item" transform="translate(520, 190)">
             <rect x="0" y="-10" width="14" height="14" rx="3" fill="#e34c26"/>
             <text x="30" y="2" fill="#f0f6fc" font-size="16" font-family="sans-serif">HTML</text>
         </g>
         
-        <g class="legend-item" transform="translate(520, 190)">
+        <g class="legend-item" transform="translate(520, 230)">
             <rect x="0" y="-10" width="14" height="14" rx="3" fill="#f1e05a"/>
             <text x="30" y="2" fill="#f0f6fc" font-size="16" font-family="sans-serif">JavaScript</text>
         </g>
         
-        <g class="legend-item" transform="translate(520, 230)">
+        <g class="legend-item" transform="translate(520, 270)">
             <rect x="0" y="-10" width="14" height="14" rx="3" fill="#a371f7"/>
             <text x="30" y="2" fill="#f0f6fc" font-size="16" font-family="sans-serif">CSS</text>
-        </g>
-        
-        <g class="legend-item" transform="translate(520, 270)">
-            <rect x="0" y="-10" width="14" height="14" rx="3" fill="#3178c6"/>
-            <text x="30" y="2" fill="#f0f6fc" font-size="16" font-family="sans-serif">TypeScript</text>
         </g>
         
         <g class="legend-item" transform="translate(520, 310)">
