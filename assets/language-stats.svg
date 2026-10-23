@@ -561,7 +561,7 @@
                 stroke="#e34c26"
                 class="inner-pie"
                 style="
-                    transform: rotate(35.9866deg);
+                    transform: rotate(35.9862deg);
                     animation: wipe-pie-1 8.0s infinite;
                 "
             />
@@ -598,7 +598,7 @@
                 stroke="#f1e05a"
                 class="inner-pie"
                 style="
-                    transform: rotate(160.8053deg);
+                    transform: rotate(160.8052deg);
                     animation: wipe-pie-2 8.0s infinite;
                 "
             />
@@ -635,7 +635,7 @@
                 stroke="#a371f7"
                 class="inner-pie"
                 style="
-                    transform: rotate(225.7421deg);
+                    transform: rotate(225.7420deg);
                     animation: wipe-pie-3 8.0s infinite;
                 "
             />
