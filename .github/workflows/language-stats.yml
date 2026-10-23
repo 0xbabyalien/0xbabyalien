@@ -23,7 +23,7 @@ jobs:
 
       - name: Generate language stats SVG
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_STAT: ${{ secrets.GH_STAT }}
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: python scripts/language_stats.py
 
