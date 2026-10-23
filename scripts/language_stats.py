@@ -11,7 +11,7 @@ OUTPUT = Path("assets/language-stats.svg")
 
 # A Personal Access Token (PAT) is required to read private repositories.
 # The default GITHUB_TOKEN from GitHub Actions cannot access other private repos.
-TOKEN = os.environ.get("GH_STATS_TOKEN")
+TOKEN = os.environ.get("GH_STAT")
 
 SVG_WIDTH = 800
 SVG_HEIGHT = 500
@@ -51,7 +51,7 @@ def get_all_repositories(username):
     """Fetch all repositories owned by the account (public + private), excluding forks."""
     if not TOKEN:
         raise RuntimeError(
-            "GH_STATS_TOKEN is not set. A token is required to read private repositories."
+            "GH_STAT is not set. A token is required to read private repositories."
         )
 
     # Make sure the token belongs to the target username, because the
