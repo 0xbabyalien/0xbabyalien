@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">If you want to keep your memories, you first have to live them.</font><br/>— <font color="#808080">Bob Dylan</font></center>
+<center><font color="#0c7ec9">I never said it would be easy, I only said it would be worth it.</font><br/>— <font color="#808080">Mae West</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
