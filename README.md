@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">We can see through others only when we can see through ourselves.</font><br/>— <font color="#808080">Bruce Lee</font></center>
+<center><font color="#0c7ec9">People should pursue what they're passionate about. That will make them happier than pretty much anything else.</font><br/>— <font color="#808080">Elon Musk</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
