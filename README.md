@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">People should pursue what they're passionate about. That will make them happier than pretty much anything else.</font><br/>— <font color="#808080">Elon Musk</font></center>
+<center><font color="#0c7ec9">Nothing is hopeless; we must hope for everything.</font><br/>— <font color="#808080">Euripides</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
