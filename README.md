@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Nothing is hopeless; we must hope for everything.</font><br/>— <font color="#808080">Euripides</font></center>
+<center><font color="#0c7ec9">The chief cause of failure and unhappiness is trading what you want most for what you want right now.</font><br/>— <font color="#808080">Zig Ziglar</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
