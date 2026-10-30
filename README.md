@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">The swift wind of compromise is a lot more devastating than the sudden jolt of misfortune.</font><br/>— <font color="#808080">Charles Swindoll</font></center>
+<center><font color="#0c7ec9">Remember to look up at the stars and not down at your feet.</font><br/>— <font color="#808080">Stephen Hawking</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
