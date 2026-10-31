@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Remember to look up at the stars and not down at your feet.</font><br/>— <font color="#808080">Stephen Hawking</font></center>
+<center><font color="#0c7ec9">The whole world is a series of miracles, but we're so used to them we call them ordinary things.</font><br/>— <font color="#808080">Hans Christian Andersen</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
