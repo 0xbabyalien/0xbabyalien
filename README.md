@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">The whole world is a series of miracles, but we're so used to them we call them ordinary things.</font><br/>— <font color="#808080">Hans Christian Andersen</font></center>
+<center><font color="#0c7ec9">Success is the sum of small efforts, repeated day in and day out.</font><br/>— <font color="#808080">Robert Collier</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
