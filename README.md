@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Success is the sum of small efforts, repeated day in and day out.</font><br/>— <font color="#808080">Robert Collier</font></center>
+<center><font color="#0c7ec9">Any idea, plan, or purpose may be placed in the mind through repetition of thought.</font><br/>— <font color="#808080">Napoleon Hill</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
