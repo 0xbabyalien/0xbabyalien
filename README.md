@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Any idea, plan, or purpose may be placed in the mind through repetition of thought.</font><br/>— <font color="#808080">Napoleon Hill</font></center>
+<center><font color="#0c7ec9">Always focus on the front windshield and not the rear view mirror.</font><br/>— <font color="#808080">Colin Powell</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
