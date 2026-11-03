@@ -4,7 +4,7 @@ on:
     - cron: '0 0,12 * * *' 
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [0xBabyAlien]
 
 jobs:
   update-chart:
@@ -19,7 +19,7 @@ jobs:
       - run: pip install requests
       - run: python scripts/daily-linechart.py
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
