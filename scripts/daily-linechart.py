@@ -9,7 +9,7 @@ if not TOKEN:
     raise ValueError("GitHub token not found. Ensure GH_TOKEN or GITHUB_TOKEN is set in environment variables.")
 
 query = """
-query($login:String!, $from:DateTime!,$to:DateTime!){
+query($login:String!, $from:DateTime!, $to:DateTime!){
   user(login:$login){
     contributionsCollection(from:$from, to:$to){
       contributionCalendar{
@@ -79,7 +79,7 @@ poly_points.append(f"{RIGHT},144")
 points_str = " ".join([f"{x:.1f},{y:.1f}" for x, y, _ in points])
 polygon_str = " ".join(poly_points)
 
-svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="170" viewBox="0 0 {VIEW_W} 170" role="img" aria-label="Daily GitHub activity line chart - last {DAYS} days">
+svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="170" viewBox="0 0 {VIEW_W} 170" role="img" aria-label="Daily GitHub activity line chart - last {DAYS} days">
 <style>
 .bg{{fill:#fff}} .t{{font:9px -apple-system,Segoe UI,Arial,sans-serif;fill:#57606a}}
 .h{{font:600 12px -apple-system,Segoe UI,Arial,sans-serif;fill:#1f2328}}
@@ -94,4 +94,36 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="170" view
   stroke-dashoffset: 0;
   animation: walk 0.8s linear infinite;
 }}
-.d{{fill:#fff;stroke
+.d{{fill:#fff;stroke:#216e39;stroke-width:1.5}}
+@keyframes walk{{ to {{ stroke-dashoffset: -20; }} }}
+@media (prefers-color-scheme: dark){{.bg{{fill:#0d1117}} .t{{fill:#8b949e}} .h{{fill:#e6edf3}} .g{{stroke:#30363d}} .a{{fill:#0ad}} .ln{{stroke:#0ad}} .d{{fill:#0d1117;stroke:#a819bb}}}}
+@media (prefers-reduced-motion: reduce){{ .ln{{animation:none}} }}
+</style>
+<rect class="bg" width="100%" height="100%" rx="8"/>
+<text x="{LEFT}" y="20" class="h"></text>
+<text x="{RIGHT}" y="20" class="t" text-anchor="end">{total} contributions / {DAYS} days</text>
+"""
+
+for val in [0, round(MAX_Y * 0.33), round(MAX_Y * 0.66), MAX_Y]:
+    y = y_for(val)
+    svg += f'<line x1="{LEFT}" x2="{RIGHT}" y1="{y:.1f}" y2="{y:.1f}" class="g"/><text x="26" y="{y+3:.1f}" class="t" text-anchor="end">{val}</text>\n'
+
+svg += f'<polygon points="{polygon_str}" class="a"/>\n'
+svg += f'<polyline points="{points_str}" class="ln"/>\n'
+
+for x, y, d in points:
+    date = datetime.fromisoformat(d["date"]).strftime("%b %d")
+    label = "contribution" if d["contributionCount"] == 1 else "contributions"
+    svg += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="2.5" class="d"><title>{date}: {d["contributionCount"]} {label}</title></circle>\n'
+
+for i, (x, y, d) in enumerate(points):
+    if i % 5 == 0 or i == DAYS - 1:
+        date = datetime.fromisoformat(d["date"]).strftime("%b %d")
+        svg += f'<text x="{x:.1f}" y="162" class="t" text-anchor="middle">{date}</text>\n'
+
+svg += '</svg>'
+
+with open("github-activity-30days.svg", "w", encoding="utf-8") as f:
+    f.write(svg)
+
+print(f"Generated {total} contributions for {DAYS} days, MAX_Y={MAX_Y}")
