@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Always focus on the front windshield and not the rear view mirror.</font><br/>— <font color="#808080">Colin Powell</font></center>
+<center><font color="#0c7ec9">Mistakes are painful when they happen, but years later a collection of mistakes is what is called experience.</font><br/>— <font color="#808080">Denis Waitley</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
