@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Mistakes are painful when they happen, but years later a collection of mistakes is what is called experience.</font><br/>— <font color="#808080">Denis Waitley</font></center>
+<center><font color="#0c7ec9">Debt is the slavery of the free.</font><br/>— <font color="#808080">Publilius Syrus</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
