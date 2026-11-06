@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Debt is the slavery of the free.</font><br/>— <font color="#808080">Publilius Syrus</font></center>
+<center><font color="#0c7ec9">The big thing is to make a winning effort. I'm not obsessed with wins.</font><br/>— <font color="#808080">Morgan Wootten</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
