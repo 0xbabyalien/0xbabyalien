@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">The big thing is to make a winning effort. I'm not obsessed with wins.</font><br/>— <font color="#808080">Morgan Wootten</font></center>
+<center><font color="#0c7ec9">Decide upon your major definite purpose in life and then organize all your activities around it.</font><br/>— <font color="#808080">Brian Tracy</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
