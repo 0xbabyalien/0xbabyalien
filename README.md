@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">The content of your character is your choice. Day by day, what you choose, what you think and what you do is who you become.</font><br/>— <font color="#808080">Heraclitus</font></center>
+<center><font color="#0c7ec9">The wise learn many things from their enemies.</font><br/>— <font color="#808080">Aristophanes</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
