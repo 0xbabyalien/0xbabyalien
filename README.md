@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">The wise learn many things from their enemies.</font><br/>— <font color="#808080">Aristophanes</font></center>
+<center><font color="#0c7ec9">Once you choose hope, anything's possible.</font><br/>— <font color="#808080">Christopher Reeve</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
