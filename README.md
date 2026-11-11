@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Once you choose hope, anything's possible.</font><br/>— <font color="#808080">Christopher Reeve</font></center>
+<center><font color="#0c7ec9">If you are depressed, you are living in the past. If you are anxious, you are living in the future. if you are at peace, you are living in the present.</font><br/>— <font color="#808080">Lao Tzu</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
