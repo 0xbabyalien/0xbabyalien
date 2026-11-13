@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Be fascinated instead of frustrated.</font><br/>— <font color="#808080">Jim Rohn</font></center>
+<center><font color="#0c7ec9">Our heart is a treasury; if you pour out all its wealth at once, you are bankrupt.</font><br/>— <font color="#808080">Honore de Balzac</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
