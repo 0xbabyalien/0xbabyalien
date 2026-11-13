@@ -99,13 +99,13 @@
             }
             5.5833% {
                 stroke-dasharray:
-                    167.26 502.65;
+                    167.15 502.65;
                 stroke-dashoffset: 0;
                 opacity: 1;
             }
             9.2000% {
                 stroke-dasharray:
-                    167.26 502.65;
+                    167.15 502.65;
                 stroke-dashoffset: 0;
                 opacity: 1;
                 animation-timing-function:
@@ -113,7 +113,7 @@
             }
             12.3000% {
                 stroke-dasharray: 0 502.65;
-                stroke-dashoffset: -167.26;
+                stroke-dashoffset: -167.15;
                 opacity: 1;
             }
             12.4000%, 100% {
@@ -144,13 +144,13 @@
             }
             15.9167% {
                 stroke-dasharray:
-                    165.71 502.65;
+                    165.61 502.65;
                 stroke-dashoffset: 0;
                 opacity: 1;
             }
             19.5333% {
                 stroke-dasharray:
-                    165.71 502.65;
+                    165.61 502.65;
                 stroke-dashoffset: 0;
                 opacity: 1;
                 animation-timing-function:
@@ -158,7 +158,7 @@
             }
             22.6333% {
                 stroke-dasharray: 0 502.65;
-                stroke-dashoffset: -165.71;
+                stroke-dashoffset: -165.61;
                 opacity: 1;
             }
             22.7333%, 100% {
@@ -189,13 +189,13 @@
             }
             26.2500% {
                 stroke-dasharray:
-                    98.32 502.65;
+                    98.25 502.65;
                 stroke-dashoffset: 0;
                 opacity: 1;
             }
             29.8667% {
                 stroke-dasharray:
-                    98.32 502.65;
+                    98.25 502.65;
                 stroke-dashoffset: 0;
                 opacity: 1;
                 animation-timing-function:
@@ -203,7 +203,7 @@
             }
             32.9667% {
                 stroke-dasharray: 0 502.65;
-                stroke-dashoffset: -98.32;
+                stroke-dashoffset: -98.25;
                 opacity: 1;
             }
             33.0667%, 100% {
@@ -234,13 +234,13 @@
             }
             36.5833% {
                 stroke-dasharray:
-                    41.76 502.65;
+                    41.73 502.65;
                 stroke-dashoffset: 0;
                 opacity: 1;
             }
             40.2000% {
                 stroke-dasharray:
-                    41.76 502.65;
+                    41.73 502.65;
                 stroke-dashoffset: 0;
                 opacity: 1;
                 animation-timing-function:
@@ -248,7 +248,7 @@
             }
             43.3000% {
                 stroke-dasharray: 0 502.65;
-                stroke-dashoffset: -41.76;
+                stroke-dashoffset: -41.73;
                 opacity: 1;
             }
             43.4000%, 100% {
@@ -279,13 +279,13 @@
             }
             46.9167% {
                 stroke-dasharray:
-                    15.91 502.65;
+                    15.90 502.65;
                 stroke-dashoffset: 0;
                 opacity: 1;
             }
             50.5333% {
                 stroke-dasharray:
-                    15.91 502.65;
+                    15.90 502.65;
                 stroke-dashoffset: 0;
                 opacity: 1;
                 animation-timing-function:
@@ -293,7 +293,7 @@
             }
             53.6333% {
                 stroke-dasharray: 0 502.65;
-                stroke-dashoffset: -15.91;
+                stroke-dashoffset: -15.90;
                 opacity: 1;
             }
             53.7333%, 100% {
@@ -324,13 +324,13 @@
             }
             57.2500% {
                 stroke-dasharray:
-                    9.30 502.65;
+                    9.62 502.65;
                 stroke-dashoffset: 0;
                 opacity: 1;
             }
             60.8667% {
                 stroke-dasharray:
-                    9.30 502.65;
+                    9.62 502.65;
                 stroke-dashoffset: 0;
                 opacity: 1;
                 animation-timing-function:
@@ -338,7 +338,7 @@
             }
             63.9667% {
                 stroke-dasharray: 0 502.65;
-                stroke-dashoffset: -9.30;
+                stroke-dashoffset: -9.62;
                 opacity: 1;
             }
             64.0667%, 100% {
@@ -510,7 +510,7 @@
                 stroke="#3178c6"
                 stroke-width="4"
                 stroke-dasharray="
-                    330.53
+                    330.31
                     1005.31
                 "
                 stroke-dashoffset="-0.00"
@@ -530,8 +530,8 @@
             />
 
             <text
-                x="336.51"
-                y="199.84"
+                x="336.48"
+                y="199.78"
                 class="pie-text"
                 fill="#ffffff"
                 style="animation: text-fade-0 8.0s infinite;"
@@ -547,10 +547,10 @@
                 stroke="#e34c26"
                 stroke-width="4"
                 stroke-dasharray="
-                    327.43
+                    327.21
                     1005.31
                 "
-                stroke-dashoffset="-334.53"
+                stroke-dashoffset="-334.31"
                 class="ring"
             />
 
@@ -561,18 +561,18 @@
                 stroke="#e34c26"
                 class="inner-pie"
                 style="
-                    transform: rotate(29.7937deg);
+                    transform: rotate(29.7153deg);
                     animation: wipe-pie-1 8.0s infinite;
                 "
             />
 
             <text
-                x="251.51"
+                x="251.71"
                 y="349.99"
                 class="pie-text"
                 fill="#ffffff"
                 style="animation: text-fade-1 8.0s infinite;"
-            >33.0%</text>
+            >32.9%</text>
         </g>
         
         <g class="chart-item">
@@ -584,10 +584,10 @@
                 stroke="#f1e05a"
                 stroke-width="4"
                 stroke-dasharray="
-                    192.63
+                    192.50
                     1005.31
                 "
-                stroke-dashoffset="-665.96"
+                stroke-dashoffset="-665.52"
                 class="ring"
             />
 
@@ -598,18 +598,18 @@
                 stroke="#f1e05a"
                 class="inner-pie"
                 style="
-                    transform: rotate(148.4776deg);
+                    transform: rotate(148.3214deg);
                     animation: wipe-pie-2 8.0s infinite;
                 "
             />
 
             <text
-                x="150.21"
-                y="243.57"
+                x="150.19"
+                y="243.89"
                 class="pie-text"
                 fill="#ffffff"
                 style="animation: text-fade-2 8.0s infinite;"
-            >19.6%</text>
+            >19.5%</text>
         </g>
         
         <g class="chart-item">
@@ -621,10 +621,10 @@
                 stroke="#a371f7"
                 stroke-width="4"
                 stroke-dasharray="
-                    79.52
+                    79.47
                     1005.31
                 "
-                stroke-dashoffset="-862.59"
+                stroke-dashoffset="-862.02"
                 class="ring"
             />
 
@@ -635,14 +635,14 @@
                 stroke="#a371f7"
                 class="inner-pie"
                 style="
-                    transform: rotate(218.8912deg);
+                    transform: rotate(218.6889deg);
                     animation: wipe-pie-3 8.0s infinite;
                 "
             />
 
             <text
-                x="191.00"
-                y="169.26"
+                x="190.71"
+                y="169.48"
                 class="pie-text"
                 fill="#ffffff"
                 style="animation: text-fade-3 8.0s infinite;"
@@ -658,10 +658,10 @@
                 stroke="#58a6ff"
                 stroke-width="4"
                 stroke-dasharray="
-                    27.83
+                    27.81
                     1005.31
                 "
-                stroke-dashoffset="-946.11"
+                stroke-dashoffset="-945.49"
                 class="ring"
             />
 
@@ -672,14 +672,14 @@
                 stroke="#58a6ff"
                 class="inner-pie"
                 style="
-                    transform: rotate(248.8003deg);
+                    transform: rotate(248.5785deg);
                     animation: wipe-pie-4 8.0s infinite;
                 "
             />
 
             <text
-                x="223.27"
-                y="153.64"
+                x="222.90"
+                y="153.74"
                 class="pie-text"
                 fill="#ffffff"
                 style="animation: text-fade-4 8.0s infinite;"
@@ -695,10 +695,10 @@
                 stroke="#f34b7d"
                 stroke-width="4"
                 stroke-dasharray="
-                    14.59
+                    15.24
                     1005.31
                 "
-                stroke-dashoffset="-977.94"
+                stroke-dashoffset="-977.30"
                 class="ring"
             />
 
@@ -709,18 +709,18 @@
                 stroke="#f34b7d"
                 class="inner-pie"
                 style="
-                    transform: rotate(260.1978deg);
+                    transform: rotate(259.9685deg);
                     animation: wipe-pie-5 8.0s infinite;
                 "
             />
 
             <text
-                x="238.73"
-                y="150.64"
+                x="238.53"
+                y="150.66"
                 class="pie-text"
                 fill="#ffffff"
                 style="animation: text-fade-5 8.0s infinite;"
-            >1.8%</text>
+            >1.9%</text>
         </g>
         
         <g class="chart-item">
@@ -732,7 +732,7 @@
                 stroke="#89e051"
                 stroke-width="4"
                 stroke-dasharray="
-                    3.41
+                    3.40
                     1005.31
                 "
                 stroke-dashoffset="-996.53"
@@ -746,7 +746,7 @@
                 stroke="#89e051"
                 class="inner-pie"
                 style="
-                    transform: rotate(266.8549deg);
+                    transform: rotate(266.8570deg);
                     animation: wipe-pie-6 8.0s infinite;
                 "
             />
@@ -783,7 +783,7 @@
                 stroke="#178600"
                 class="inner-pie"
                 style="
-                    transform: rotate(269.5067deg);
+                    transform: rotate(269.5070deg);
                     animation: wipe-pie-7 8.0s infinite;
                 "
             />
@@ -820,7 +820,7 @@
                 stroke="#d29922"
                 class="inner-pie"
                 style="
-                    transform: rotate(269.7921deg);
+                    transform: rotate(269.7923deg);
                     animation: wipe-pie-8 8.0s infinite;
                 "
             />
@@ -873,7 +873,7 @@
                 fill="#f0f6fc"
                 font-size="13"
                 font-family="sans-serif"
-            >HTML · 33.0%</text>
+            >HTML · 32.9%</text>
         </g>
         
         <g class="legend-item"
@@ -892,7 +892,7 @@
                 fill="#f0f6fc"
                 font-size="13"
                 font-family="sans-serif"
-            >JavaScript · 19.6%</text>
+            >JavaScript · 19.5%</text>
         </g>
         
         <g class="legend-item"
@@ -949,7 +949,7 @@
                 fill="#f0f6fc"
                 font-size="13"
                 font-family="sans-serif"
-            >C++ · 1.8%</text>
+            >C++ · 1.9%</text>
         </g>
         
         <g class="legend-item"
