@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Our heart is a treasury; if you pour out all its wealth at once, you are bankrupt.</font><br/>— <font color="#808080">Honore de Balzac</font></center>
+<center><font color="#0c7ec9">The more acquaintances you have, the less you know them.</font><br/>— <font color="#808080">Chinese Proverb</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
