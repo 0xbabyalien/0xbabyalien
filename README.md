@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">The more acquaintances you have, the less you know them.</font><br/>— <font color="#808080">Chinese Proverb</font></center>
+<center><font color="#0c7ec9">Ancient Rule of Twenty-one: if you do anything for twenty-one days in a row, it will be installed as a habit.</font><br/>— <font color="#808080">Robin Sharma</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
