@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Ancient Rule of Twenty-one: if you do anything for twenty-one days in a row, it will be installed as a habit.</font><br/>— <font color="#808080">Robin Sharma</font></center>
+<center><font color="#0c7ec9">Do not take life too seriously. You will never get out of it alive.</font><br/>— <font color="#808080">Elbert Hubbard</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
