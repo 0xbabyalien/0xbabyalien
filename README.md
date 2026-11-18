@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Men are equal; it is not birth but virtue that makes the difference.</font><br/>— <font color="#808080">Voltaire</font></center>
+<center><font color="#0c7ec9">Few things are more deceptive than memories.</font><br/>— <font color="#808080">Carlos Ruiz Zafon</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
