@@ -226,7 +226,7 @@
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Few things are more deceptive than memories.</font><br/>— <font color="#808080">Carlos Ruiz Zafon</font></center>
+<center><font color="#0c7ec9">Always forgive your enemies - nothing annoys them so much.</font><br/>— <font color="#808080">Oscar Wilde</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
