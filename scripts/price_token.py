@@ -58,7 +58,7 @@ block = NL.join(
         "",
         " ".join(parts),
         "",
-        r'$\color{#4B5563}{\textsf{Updated ' + now + r'}}$',
+        r'$\color{#594236}{\textsf{Updated ' + now + r'}}$',
         "<!-- MARKER_END -->",
     ]
 )
