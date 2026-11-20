@@ -6,9 +6,9 @@
 <div align="center">
 <!-- MARKER_START -->
 
-**BTC** $61,986 · **ETH** $1,751 · **SOL** $72.76 · **BNB** $577.16 · **HYPE** $66.21
+**BTC** $61,999 · **ETH** $1,753 · **SOL** $72.88 · **BNB** $577.27 · **HYPE** $66.16
 
-<sub>Updated 2026-11-20 00:51 UTC</sub>
+<sub>Updated 2026-11-20 00:59 UTC</sub>
 
 <!-- MARKER_END -->
 </div>
