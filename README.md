@@ -5,6 +5,11 @@
 </picture>
 <div align="center">
 <!-- MARKER_START -->
+
+<img src="https://img.shields.io/badge/BTC-%2462%2C328-F7931A?style=flat-square&labelColor=1F2937" alt="BTC"> <img src="https://img.shields.io/badge/ETH-%241%2C763-627EEA?style=flat-square&labelColor=1F2937" alt="ETH"> <img src="https://img.shields.io/badge/SOL-%2473.20-9945FF?style=flat-square&labelColor=1F2937" alt="SOL"> <img src="https://img.shields.io/badge/BNB-%24579.79-F3BA2F?style=flat-square&labelColor=1F2937" alt="BNB"> <img src="https://img.shields.io/badge/HYPE-%2466.39-14B8A6?style=flat-square&labelColor=1F2937" alt="HYPE">
+
+<sub>Updated 2026-11-20 01:13 UTC</sub>
+
 <!-- MARKER_END -->
 </div>
 <hr class="cyberpunk glitched" />
