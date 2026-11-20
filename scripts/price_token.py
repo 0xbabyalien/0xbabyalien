@@ -1,21 +1,20 @@
 import json
 import re
+import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 
-# Display symbol -> CoinGecko ID
+# Display symbol -> (CoinGecko ID, badge color in hex)
 COINS = {
-    "BTC": "bitcoin",
-    "ETH": "ethereum",
-    "SOL": "solana",
-    "BNB": "binancecoin",
-    "HYPE": "hyperliquid",
+    "BTC": ("bitcoin", "F7931A"),
+    "ETH": ("ethereum", "627EEA"),
+    "SOL": ("solana", "9945FF"),
+    "BNB": ("binancecoin", "F3BA2F"),
+    "HYPE": ("hyperliquid", "14B8A6"),
 }
 
-URL = (
-    "https://api.coingecko.com/api/v3/simple/price"
-    f"?ids={','.join(COINS.values())}&vs_currencies=usd"
-)
+ids = ",".join(coin_id for coin_id, _ in COINS.values())
+URL = f"https://api.coingecko.com/api/v3/simple/price?ids={ids}&vs_currencies=usd"
 
 with urllib.request.urlopen(URL, timeout=20) as r:
     data = json.load(r)
@@ -26,11 +25,25 @@ def fmt(price):
     return f"${price:,.0f}" if price >= 1000 else f"${price:,.2f}"
 
 
+def badge(symbol, price, color):
+    # Static shields.io badge: label = symbol, message = price
+    label = urllib.parse.quote(symbol, safe="")
+    message = urllib.parse.quote(fmt(price), safe="")
+    return (
+        f"
+
+![{symbol}](https://img.shields.io/badge/{label}-{message}-{color}"
+        "?style=flat-square&labelColor=1F2937)
+
+"
+    )
+
+
 parts = []
-for symbol, coin_id in COINS.items():
+for symbol, (coin_id, color) in COINS.items():
     price = data.get(coin_id, {}).get("usd")
     if price is not None:
-        parts.append(f"**{symbol}** {fmt(price)}")
+        parts.append(badge(symbol, price, color))
 
 if not parts:
     raise SystemExit("Error: no prices returned from CoinGecko")
@@ -39,7 +52,7 @@ now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
 block = (
     "<!-- MARKER_START -->\n\n"
-    + " · ".join(parts)
+    + " ".join(parts)
     + f"\n\n<sub>Updated {now}</sub>\n\n"
     "<!-- MARKER_END -->"
 )
