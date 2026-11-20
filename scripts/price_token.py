@@ -4,6 +4,8 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 
+NL = chr(10)  # newline, avoids backslash escapes that can break when pasting
+
 # Display symbol -> (CoinGecko ID, badge color in hex)
 COINS = {
     "BTC": ("bitcoin", "F7931A"),
@@ -29,14 +31,15 @@ def badge(symbol, price, color):
     # Static shields.io badge: label = symbol, message = price
     label = urllib.parse.quote(symbol, safe="")
     message = urllib.parse.quote(fmt(price), safe="")
-    return (
-        f"
+    url = (
+        f"https://img.shields.io/badge/{label}-{message}-{color}"
+        "?style=flat-square&labelColor=1F2937"
+    )
+    return f"
 
-![{symbol}](https://img.shields.io/badge/{label}-{message}-{color}"
-        "?style=flat-square&labelColor=1F2937)
+![{symbol}]({url})
 
 "
-    )
 
 
 parts = []
@@ -50,11 +53,16 @@ if not parts:
 
 now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
-block = (
-    "<!-- MARKER_START -->\n\n"
-    + " ".join(parts)
-    + f"\n\n<sub>Updated {now}</sub>\n\n"
-    "<!-- MARKER_END -->"
+block = NL.join(
+    [
+        "<!-- MARKER_START -->",
+        "",
+        " ".join(parts),
+        "",
+        f"<sub>Updated {now}</sub>",
+        "",
+        "<!-- MARKER_END -->",
+    ]
 )
 
 with open("README.md", "r", encoding="utf-8") as f:
