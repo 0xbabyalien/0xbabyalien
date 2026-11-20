@@ -36,7 +36,7 @@ def badge(symbol, price, color):
     src = (
         "https://img.shields.io/badge/"
         + label + "-" + message + "-" + color
-        + "?style=flat-square&labelColor=1F2937"
+        + "?style=plastic&labelColor=1F2937"
     )
     return '<img src="' + src + '" alt="' + symbol + '">'
 
