@@ -3,6 +3,13 @@
   <source media="(prefers-color-scheme: light)" srcset="x/babyalien.svg">
   <img src="x/babyalien.svg" width="100%" alt="0xbabyalien — BBalien">
 </picture>
+<!-- MARKER_START -->
+
+**BTC** $83,543 · **ETH** $2,690 · **SOL** $142.37 · **BNB** $612.80 · **HYPE** $24.15
+
+<sub>Updated 2026-11-20 08:00 UTC</sub>
+
+<!-- MARKER_END -->
 <hr class="cyberpunk glitched" />
 <h2>👩‍🚀 Social</h2><br/>
 <a href="https://github.com/0xbabyalien">
