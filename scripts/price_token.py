@@ -16,7 +16,7 @@ COINS = {
 }
 
 ids = ",".join(coin_id for coin_id, _ in COINS.values())
-URL = f"https://api.coingecko.com/api/v3/simple/price?ids={ids}&vs_currencies=usd"
+URL = "https://api.coingecko.com/api/v3/simple/price?ids=" + ids + "&vs_currencies=usd"
 
 with urllib.request.urlopen(URL, timeout=20) as r:
     data = json.load(r)
@@ -24,22 +24,21 @@ with urllib.request.urlopen(URL, timeout=20) as r:
 
 def fmt(price):
     # No decimals for large prices, two decimals for smaller ones
-    return f"${price:,.0f}" if price >= 1000 else f"${price:,.2f}"
+    if price >= 1000:
+        return "$" + format(price, ",.0f")
+    return "$" + format(price, ",.2f")
 
 
 def badge(symbol, price, color):
-    # Static shields.io badge: label = symbol, message = price
+    # Static shields.io badge rendered with an HTML img tag
     label = urllib.parse.quote(symbol, safe="")
     message = urllib.parse.quote(fmt(price), safe="")
-    url = (
-        f"https://img.shields.io/badge/{label}-{message}-{color}"
-        "?style=flat-square&labelColor=1F2937"
+    src = (
+        "https://img.shields.io/badge/"
+        + label + "-" + message + "-" + color
+        + "?style=flat-square&labelColor=1F2937"
     )
-    return f"
-
-![{symbol}]({url})
-
-"
+    return '<img src="' + src + '" alt="' + symbol + '">'
 
 
 parts = []
@@ -59,7 +58,7 @@ block = NL.join(
         "",
         " ".join(parts),
         "",
-        f"<sub>Updated {now}</sub>",
+        "<sub>Updated " + now + "</sub>",
         "",
         "<!-- MARKER_END -->",
     ]
