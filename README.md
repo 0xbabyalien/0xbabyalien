@@ -5,11 +5,6 @@
 </picture>
 <div align="center">
 <!-- MARKER_START -->
-
-**BTC** $61,999 · **ETH** $1,753 · **SOL** $72.88 · **BNB** $577.27 · **HYPE** $66.16
-
-<sub>Updated 2026-11-20 00:59 UTC</sub>
-
 <!-- MARKER_END -->
 </div>
 <hr class="cyberpunk glitched" />
