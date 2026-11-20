@@ -234,7 +234,7 @@ $\color{#594236}{\textsf{Updated 2026-11-20 01:44 UTC}}$
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Always forgive your enemies - nothing annoys them so much.</font><br/>— <font color="#808080">Oscar Wilde</font></center>
+<center><font color="#0c7ec9">The best answer to anger is silence.</font><br/>— <font color="#808080">Marcus Aurelius</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
