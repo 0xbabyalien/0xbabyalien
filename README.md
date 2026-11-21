@@ -234,7 +234,7 @@ $\color{#594236}{\textsf{Updated 2026-11-21 03:45 UTC}}$
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">The best answer to anger is silence.</font><br/>— <font color="#808080">Marcus Aurelius</font></center>
+<center><font color="#0c7ec9">Greatest success comes just one step beyond the point at which defeat overtakes you.</font><br/>— <font color="#808080">Unknown</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
