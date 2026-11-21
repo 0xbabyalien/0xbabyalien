@@ -6,9 +6,9 @@
 <div align="center"><br>
 <!-- MARKER_START -->
 
-<img src="https://img.shields.io/badge/BTC-%2459%2C026-F7931A?style=plastic&labelColor=1F2937" alt="BTC"> <img src="https://img.shields.io/badge/ETH-%241%2C620-627EEA?style=plastic&labelColor=1F2937" alt="ETH"> <img src="https://img.shields.io/badge/SOL-%2469.13-9945FF?style=plastic&labelColor=1F2937" alt="SOL"> <img src="https://img.shields.io/badge/BNB-%24539.61-F3BA2F?style=plastic&labelColor=1F2937" alt="BNB"> <img src="https://img.shields.io/badge/HYPE-%2461.40-14B8A6?style=plastic&labelColor=1F2937" alt="HYPE">
+<img src="https://img.shields.io/badge/BTC-%2456%2C941-F7931A?style=plastic&labelColor=1F2937" alt="BTC"> <img src="https://img.shields.io/badge/ETH-%241%2C572-627EEA?style=plastic&labelColor=1F2937" alt="ETH"> <img src="https://img.shields.io/badge/SOL-%2466.39-9945FF?style=plastic&labelColor=1F2937" alt="SOL"> <img src="https://img.shields.io/badge/BNB-%24518.26-F3BA2F?style=plastic&labelColor=1F2937" alt="BNB"> <img src="https://img.shields.io/badge/HYPE-%2457.33-14B8A6?style=plastic&labelColor=1F2937" alt="HYPE">
 
-$\color{#594236}{\textsf{Updated 2026-11-20 22:56 UTC}}$
+$\color{#594236}{\textsf{Updated 2026-11-21 03:45 UTC}}$
 <!-- MARKER_END -->
 </div>
 <hr class="cyberpunk glitched" />
