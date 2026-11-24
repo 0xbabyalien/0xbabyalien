@@ -234,7 +234,7 @@ $\color{#594236}{\textsf{Updated 2026-11-24 08:04 UTC}}$
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Words are like Leaves; and where they most abound, Much Fruit of Sense beneath is rarely found.</font><br/>— <font color="#808080">Alexander Pope</font></center>
+<center><font color="#0c7ec9">I dream my painting and I paint my dream.</font><br/>— <font color="#808080">Vincent van Gogh</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
