@@ -234,7 +234,7 @@ $\color{#594236}{\textsf{Updated 2026-11-25 03:19 UTC}}$
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">I dream my painting and I paint my dream.</font><br/>— <font color="#808080">Vincent van Gogh</font></center>
+<center><font color="#0c7ec9">To judge a man by his weakest link or deed is like judging the power of the ocean by one wave.</font><br/>— <font color="#808080">Elvis Presley</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
