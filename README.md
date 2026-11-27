@@ -234,7 +234,7 @@ $\color{#594236}{\textsf{Updated 2026-11-27 06:24 UTC}}$
 <hr class="cyberpunk glitched" />
 <!-- DAILY_QUOTE:START -->
 🗯 Daily Quote :
-<center><font color="#0c7ec9">Good, better, best. Never let it rest. 'Til your good is better and your better is best.</font><br/>— <font color="#808080">St. Jerome</font></center>
+<center><font color="#0c7ec9">Failure is just information and an opportunity to change your course.</font><br/>— <font color="#808080">Oprah Winfrey</font></center>
 <!-- DAILY_QUOTE:END -->
 <hr class="cyberpunk glitched" />
 
